@@ -1,0 +1,1876 @@
+@import url('./fonts/font_family_roboto.css');
+
+.css-hidden, .main-content form [type=checkbox]:checked, .main-content form [type=checkbox]:not(:checked), .sr-only {
+    position: absolute;
+    left: -9999px
+}
+
+.button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline
+}
+
+ol, ul {
+    list-style: none
+}
+
+blockquote, q {
+    quotes: none
+}
+
+    blockquote:after, blockquote:before, q:after, q:before {
+        content: '';
+        content: none
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+canvas {
+    width: 0;
+    height: 0
+}
+
+body {
+    background-color: #f6f6f6;
+    font-family: Roboto,Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-weight: 400;
+    color: #4e4745;
+    line-height: 1.1;
+    -webkit-font-smoothing: antialiased
+}
+
+a, a:visited {
+    color: inherit;
+}
+
+b {
+    font-weight: 700;
+}
+
+.clear {
+    clear: both
+}
+
+.css-hidden, .sr-only {
+    width: 0;
+    height: 0;
+    overflow: hidden
+}
+
+.hidden {
+    display: none;
+}
+
+.button {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: 0 0;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: underline;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s
+}
+
+.button--raised {
+    position: relative;
+    background-color: #008236;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    z-index: 1;
+}
+
+    .button--raised:hover {
+        background-color: #00a545;
+        color: #fff
+    }
+
+    .button--secure::before {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 15px;
+        margin-right: 8px;
+        background-image: url(./images/lock-white.gif);
+        background-repeat: no-repeat;
+        background-size: contain;
+        vertical-align: baseline
+    }
+
+    .button--raised[disabled] {
+        background-color: #D6D6D6;
+        cursor: inherit;
+    }
+
+.banner {
+    background-color: #fff;
+    border-bottom: 1px solid #e3e3e4;
+    text-align: center;
+    line-height: 96px;
+    vertical-align: middle
+}
+
+    .banner .banner-content {
+        max-width: 960px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative
+    }
+
+        .banner .banner-content h1 {
+            float: left;
+            margin: 0;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 42px;
+            color: #4e4745
+        }
+
+        .banner .banner-content .merchant-logo {
+            float: right
+        }
+
+        .banner .banner-content img.logo {
+            vertical-align: middle
+        }
+
+.main-content {
+    min-height: calc(100vh - 298px);
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 50px
+}
+
+    .main-content .orderpart h2, .main-content .paymentpart h2 {
+        margin: 0 0 24px;
+        font-size: 24px;
+        font-weight: 400
+    }
+
+    .main-content .orderpart h3, .main-content .paymentpart h3 {
+        margin: 0 0 18px;
+        font-size: 18px;
+        font-weight: 400
+    }
+
+    #payment_method_list_title h3 {
+        margin: 0 0 18px;
+        padding-top: 8px;
+        font-size: 18px;
+        font-weight: 400
+    }
+
+    .main-content .orderpart .card > label, .main-content .paymentpart .card > label {
+        min-height: 30px;
+        padding: 12px;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        box-shadow: none
+    }
+
+        .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="image"]:focus + label,
+        .main-content .orderpart .card > label:hover, .main-content .paymentpart .card input[type="radio"]:checked + label,
+        .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > label:focus,
+        .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > label:hover {
+            border-color: #008236;
+            cursor: pointer;
+        }
+
+            .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="image"]:focus + label *,
+            .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="radio"]:checked + label *,
+            .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > label:focus *,
+            .main-content .orderpart .card > label:hover *, .main-content .paymentpart .card > label:hover * {
+                color: #008236
+            }
+
+        .main-content .orderpart .card > label *, .main-content .paymentpart .card > label * {
+            vertical-align: middle
+        }
+
+        .main-content .orderpart .card > label .card__radio, .main-content .paymentpart .card > label .card__radio {
+            position: relative;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-top: 6px;
+            border: 2px solid #cccaca;
+            border-radius: 100%
+        }
+
+        .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="image"]:focus + label .card__radio span,
+        .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="radio"]:checked + label .card__radio span,
+        .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > label:focus .card__radio span,
+        .main-content .orderpart .card > label .card__radio, .main-content .paymentpart .card > label:hover .card__radio span {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: block;
+            width: 8px;
+            height: 8px;
+            margin: auto;
+            border-radius: 100%;
+            background-color: #008236;
+        }
+
+        .main-content .orderpart .card > label .card__name, .main-content .paymentpart .card > label .card__name {
+            display: inline-block;
+            margin: 0 16px;
+            font-size: 16px;
+            font-weight: 700;
+            width: calc(100% - 90px);
+        }
+
+    .cobadging label.radio-button ~ label.radio-button, .main-content #input_cardexpirationmonth select + select {
+        margin-left: 8px
+    }
+
+    .main-content .orderpart .card > label img, .main-content .paymentpart .card > label img {
+        max-width: 50px;
+        max-height: 30px;
+        padding: 0 4px
+    }
+
+    .main-content form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist input[type=checkbox][name=cobadging]:checked + .brandlabel {
+        border: 2px solid #008236;
+        padding: 12px 0
+    }
+
+    .main-content form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.brandlabel {
+        display: inline-block;
+        background: #fff;
+        padding: 1px;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        font-size: 14px;
+        text-align: center;
+        white-space: nowrap
+    }
+
+        .main-content form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.brandlabel:hover {
+            border: 2px solid #008236;
+            padding: 0
+        }
+
+        .main-content form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.brandlabel img {
+            max-width: 50px;
+            max-height: 30px;
+            margin-right: 4px;
+            padding: 12px 40px;
+            vertical-align: middle;
+            cursor: pointer
+        }
+
+    .main-content #payment-aliasmerchantusage-text {
+        margin-top: 32px;
+        font-weight: 700;
+        font-size: 16px;
+        display: block
+    }
+
+    .main-content #input_cardexpirationmonth.hidden,
+    .main-content #input_cardexpirationdate.hidden,
+    .main-content #input_cardexpirationdate.hidden + .payment-field-container#input_cvc,
+    .main-content #input_cardexpirationmonth.hidden + .payment-field-container#input_cvc {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 100%;
+    }
+
+        .main-content #input_cardexpirationdate.hidden + .payment-field-container#input_cvc,
+        .main-content #input_cardexpirationmonth.hidden + .payment-field-container#input_cvc {
+            margin-top: -73px;
+            margin-left: 16px;
+            align-self: flex-end;
+            vertical-align: bottom;
+        }
+
+        .main-content #input_cardexpirationmonth.hidden select {
+            display: none;
+        }
+
+    .main-content #input_cardexpirationmonth select {
+        width: 44%
+    }
+    .main-content #input_cardexpirationmonth input-icon {
+        background-color: #ffffff;
+        border: 1px solid #cccaca;
+        border-radius: 4px;
+    }
+
+    .main-content input#payment-cardexpirationdate {
+        margin-top: -18px;
+    }
+
+    .main-content form.payment-paymentmethodform .payment-field-container#input_cvc {
+        display: block;
+    }
+
+    .main-content #payment-submit {
+        margin-top: 24px
+    }
+
+    .main-content form [type=checkbox] + label {
+        position: relative;
+        padding-left: 40px
+    }
+
+        .main-content form [type=checkbox] + label::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            display: block;
+            width: 24px;
+            height: 24px;
+            border: 2px solid #cccaca;
+            border-radius: 4px
+        }
+
+    .main-content form [type=checkbox]:checked + label::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 4px;
+        width: 20px;
+        height: 16px;
+        margin: auto;
+        background: url(./images/success-green.gif) no-repeat;
+        background-size: contain;
+        z-index: 1
+    }
+
+.order-summary__content {
+    padding: 0 24px 8px;
+    background: #fff
+}
+
+    .order-summary__content h2 {
+        margin: 0;
+        padding: 16px 0;
+        font-size: 20px
+    }
+
+.order-summary__label span:first-of-type, .order__total span:first-of-type {
+    margin-right: 1em
+}
+
+.order-summary__label {
+    margin-top: -1px;
+    padding: 16px 24px;
+    border: 1px solid #e5e5e5;
+    border-color: #e5e5e5 transparent;
+    background: #fff
+}
+
+.order-ref {
+    margin-bottom: 16px
+}
+
+.order-summary {
+    width: 100%
+}
+
+    .order-summary td {
+        padding: 12px 0
+    }
+
+        .order-summary td.price {
+            font-size: 18px;
+            text-align: right
+        }
+
+.footer .content .row {
+    float: left
+}
+
+    .footer .content .row + .row {
+        float: right;
+        margin-top: 16px
+    }
+
+    .footer .content .row a, .footer .content .row a:visited {
+        color: #757570;
+        font-size: 14px
+    }
+
+.footer .footer__processed-legend {
+    display: block;
+    margin-bottom: .25em;
+    font-size: 11px;
+    color: #757570;
+}
+
+.footer a img {
+    max-width: 118px;
+}
+
+.payment-statuspage h4 {
+    font-weight: 300;
+    margin: 20px 0 30px;
+    font-size: 30px;
+    line-height: 1.1
+}
+
+.payment-statuspage p {
+    margin: 24px 0
+}
+
+.bold {
+    font-weight: 500
+}
+
+.bolder {
+    font-weight: 700
+}
+
+.accordion {
+    display: none;
+    transition: .2s all
+}
+
+label.accordion__label {
+    position: relative;
+    display: block
+}
+
+    label.accordion__label::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        display: block;
+        width: 32px;
+        height: 32px;
+        background-image: url(./images/caret-grey.gif);
+        background-size: contain;
+        transition: .2s all
+    }
+
+input.accordion__input:checked ~ .accordion {
+    display: block
+}
+
+input.accordion__input:checked ~ label.accordion__label::after {
+    transform: rotate(180deg) translateZ(0)
+}
+
+.order__summary .accordion__label {
+    margin-top: -1px;
+    padding: 16px 24px;
+    border: 1px solid #e5e5e5;
+    border-color: #e5e5e5 transparent;
+    background: #fff
+}
+
+    .order__summary .accordion__label::after {
+        right: 24px
+    }
+
+.order__summary-content {
+    padding: 0 24px 8px;
+    background: #fff
+}
+
+.order__summary-title {
+    margin: 0;
+    padding: 16px 0;
+    font-size: 21px
+}
+
+.order__reference, form {
+    margin-bottom: 16px
+}
+    form.payment-cancelform{
+        margin-bottom: 0px;
+    }
+
+    .order__reference {
+        word-break: break-word
+    }
+
+.order__products table {
+    border-spacing: 0;
+    width: 100%
+}
+
+    .order__products table tbody tr td {
+        padding: 8px 0;
+        border: none;
+        vertical-align: middle
+    }
+
+.order__products td[colspan] + td {
+    text-align: right
+}
+
+.order__products table td img {
+    width: 38px;
+    margin-right: 12px
+}
+
+.order__products .product__name {
+    font-size: 14px
+}
+
+.order__products .product__discount {
+    padding: 2px 4px;
+    background-color: #f19d76;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap
+}
+
+.order__products .product__price {
+    font-size: 17px;
+    padding-left: 0;
+    text-align: right;
+    white-space: nowrap
+}
+
+.order__products .product__price--original {
+    color: #a7a7a7;
+    text-decoration: line-through
+}
+
+.order__products .product__price--discount {
+    color: #f19d76;
+    font-weight: 700
+}
+
+.order__products table tfoot tr:first-of-type td {
+    padding-top: 8px;
+    border-top: 1px solid rgba(68,69,73,.15)
+}
+
+.order__products table tfoot td {
+    padding: 8px 0 4px;
+    font-size: 16px;
+    color: #4e4745
+}
+
+.main-content {
+    padding: 0
+}
+
+form .payment-field-container {
+    position: relative
+}
+
+form .payment-field-container + .payment-field-container {
+    margin-top: 24px
+}
+
+form.payment-paymentmethodform #input_cvc {
+    display: inline-block;
+    min-width: 100px;
+    width: 44%;
+}
+
+form #input_aliasinput {
+    margin: 24px 24px 24px 0
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px
+}
+
+::placeholder {
+    color: #cccaca
+}
+
+form input[type=text], form input[type=tel], form input[type=number], select {
+    position: relative;
+    color: #4e4745;
+    width: 100%;
+    border: 1px solid #cccaca;
+    padding: 12px 32px 12px 16px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: transparent;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+form select, #payment-cardexpirationyear, #payment-cardexpirationmonth {
+    box-sizing: border-box;
+    width: 48.5%;
+    padding: 14px 16px;
+}
+
+form input[readonly] {
+    background-color: #f6f6f6;
+    color: #807c7a
+}
+
+form .payment-field-container.checkbox-field > input[type=checkbox] + label {
+    position: relative;
+    padding-left: 40px
+}
+
+form .payment-field-container.checkbox-field > input[type=checkbox] + label::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #cccaca;
+    border-radius: 4px
+}
+
+form .payment-field-container.checkbox-field > input[type=checkbox]:checked + label::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 4px;
+    width: 20px;
+    height: 16px;
+    margin: auto;
+    background: url(./images/success-green.gif) no-repeat;
+    background-size: contain;
+    z-index: 1
+}
+
+form .payment-field-container .input-icon {
+    position: relative
+}
+
+    form .payment-field-container .input-icon::before,
+    form .payment-field-container .input-icon > img {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 8px;
+        margin: auto;
+        max-width: 39px;
+        z-index: 1
+    }
+
+    form .payment-field-container .input-icon input {
+        padding-left: 36px
+    }
+
+    form .payment-field-container .input-icon::before {
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        pointer-events: none;
+    }
+
+form .payment-field-container#input_cardnumber .input-icon::before {
+    background-image: url(./images/card-grey.gif);
+}
+
+form .payment-field-container#input_cardholdername .input-icon::before {
+    background-image: url(./images/user-grey.gif);
+}
+
+form .payment-field-container#input_cvc .input-icon::before {
+    background-image: url(./images/lock-grey.gif);
+}
+
+form #input_bancontactlogo {
+    text-align: center;
+}
+
+form .payment-field-container#input_cardnumber img.input-bg {
+    display: block;
+    max-height: 35px;
+    left: auto;
+    right: 8px;
+    float: right;
+    pointer-events: none;
+}
+
+#payment-cardnumber {
+    padding-left: 36px;
+}
+
+#payment-cardholdername {
+    padding-left: 36px;
+}
+
+#payment-cvc {
+    padding-left: 36px;
+}
+
+form .payment-field-container#input_cardnumber.valid input {
+    padding-right: 68px
+}
+
+form .payment-field-container#input_cardnumber.valid .input-bg {
+    margin-right: 24px
+}
+
+form .payment-field-container#input_cardnumber .payment-input-valid {
+    padding-right: 70px;
+}
+    form .payment-field-container#input_cardnumber .payment-input-valid ~ .payment-pm-image {
+        right: 32px;
+    }
+form .payment-field-container .payment-input-valid ~ .payment-input-success::after,
+form .payment-field-container.valid .input-icon::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 8px;
+    margin: auto;
+    width: 16px;
+    height: 12px;
+    background: url(./images/success-green.gif) no-repeat;
+    background-size: contain
+}
+
+form .payment-field-container .error {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+form .payment-field-container .error span {
+    color: #a81c14;
+}
+
+form .error label {
+    display: none;
+}
+
+form .error .payment-error:empty ~ label {
+    display: block;
+}
+
+form .payment-field-container.invalid input {
+    border-color: #a81c14
+}
+
+form .payment-field-container.invalid .error, form .payment-field-container.invalid .error [aria-live="polite"] {
+    display: block
+}
+
+form .payment-field-container #input_cvc.invalid .error [aria-live="polite"] {
+    margin-top: -1.1em;
+}
+
+form .payment-field-container.invalid .error [aria-live="polite"] ~ [aria-live="polite"] {
+    display: none;
+}
+
+form .button.raised {
+    float: none;
+    width: 100%;
+    padding: 12px 45px;
+    background-color: #008236;
+    font-size: 18px
+}
+
+.button.raised::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 15px;
+    margin-right: 8px;
+    background-image: url(./images/lock-white.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: baseline
+}
+
+#payment-cancel,
+.cancel {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    color: inherit;
+    text-decoration: underline;
+    text-align: center;
+    z-index: 1;
+}
+
+    #payment-cancel:hover,
+    .cancel:hover {
+        cursor: pointer
+    }
+
+    #payment-cancel:visited,
+    .cancel:visited {
+        color: inherit
+    }
+
+.cobadging-wrapper {
+    margin-top: 4px
+}
+
+    .cobadging-wrapper.hidden {
+        pointer-events: none
+    }
+
+    .cobadging-wrapper input[type=checkbox] ~ .cobadging {
+        display: none
+    }
+
+    .cobadging-wrapper input[type=checkbox] ~ label.link {
+        display: block;
+        font-size: 14px;
+        text-align: right
+    }
+
+    .cobadging-wrapper input[type=checkbox]:checked ~ .cobadging {
+        display: block
+    }
+
+    .cobadging-wrapper input[type=checkbox]:checked ~ label.link {
+        display: none
+    }
+
+    .cobadging-wrapper label.link {
+        text-decoration: underline
+    }
+
+    .cobadging-wrapper input:focus ~ .cobadging label.close, .cobadging-wrapper input:focus ~ label.link {
+        outline: auto
+    }
+
+.cobadging {
+    position: relative;
+    margin-bottom: 8px;
+    border: 1px solid #cccaca;
+    background: #f6f6f6
+}
+
+    .cobadging > label {
+        display: block;
+        width: 22px;
+        height: 24px;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        margin: auto;
+        cursor: pointer
+    }
+
+    .cobadging p {
+        margin: 12px;
+        font-size: 12px;
+        line-height: 1.25
+    }
+
+    .cobadging > .options {
+        margin: 0 11px
+    }
+
+    .cobadging label.radio-button {
+        display: inline-block;
+        width: calc(50% - 8px);
+        padding: 11px 1px;
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+        white-space: nowrap
+    }
+
+        .cobadging label.radio-button img {
+            max-width: 34px;
+            max-height: 24px;
+            margin-right: 4px;
+            vertical-align: middle
+        }
+
+    .cobadging input:checked + label.radio-button {
+        border: 2px solid #008236;
+        padding: 12px 0
+    }
+
+form.payment-paymentmethodform #payment-cardnumber-cobadging-container {
+    display: none;
+    font-family: Roboto,Arial,"Helvetica Neue",Helvetica,sans-serif
+}
+
+form.payment-paymentmethodform #payment-cardnumber-cobadging-link {
+    display: none;
+    float: right;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-align: right
+}
+
+form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-container {
+    display: none;
+    border: 1px solid #cccaca;
+    background: #f6f6f6;
+    margin-top: 4px
+}
+
+form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-label {
+    display: none;
+    color: #4e4745;
+    margin: 12px;
+    line-height: 1.25;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased
+}
+
+    form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-label img {
+        max-width: 34px;
+        max-height: 24px;
+        margin-right: 4px;
+        vertical-align: middle
+    }
+
+form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist {
+    display: none;
+    margin: 0 11px;
+    text-align: center
+}
+
+    form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.brandlabel {
+        display: inline-block;
+        width: auto;
+        margin: 0 5px 8px;
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+        white-space: nowrap
+    }
+
+#payment-BCMC-image {
+    display: block;
+    position: relative;
+    max-width: 200px;
+    pointer-events: none;
+}
+
+form .payment-field-container#input_paywithyourbancontactapp {
+    display: none;
+}
+
+form .payment-field-container#input_paywithyourbancontactapp label.payment-label {
+    font-weight: bold;
+}
+
+form .payment-field-container#input_processingwithbancontactqrcode {
+    display: none;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+#input_urlintent {
+    display: none;
+}
+
+form .payment-field-container#input_urlintent a {
+    width: 100%;
+    display: block;
+    background-color: #008236;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 12px 0;
+}
+    form .payment-field-container#input_urlintent a:hover {
+        background-color: #00a545
+    }
+
+form .payment-field-container#input_urlintent span {
+    color: #ffffff;
+}
+
+form .payment-field-container#input_bancontactmobileseparatorqrcode {
+    display: none;
+}
+
+form .payment-field-container#input_bancontactmobileseparatorqrcode label.payment-label {
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}
+
+form .payment-field-container#input_bancontactmobileseparatorurlintent {
+    display: none;
+}
+
+form .payment-field-container#input_bancontactmobileseparatorurlintent label.payment-label {
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}
+
+    form .payment-field-container#input_bancontactmobileseparatorqrcode label.payment-label:before {
+        text-decoration: line-through;
+        content: "\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0";
+        padding: 0 5px;
+    }
+
+    form .payment-field-container#input_bancontactmobileseparatorurlintent label.payment-label:before {
+        text-decoration: line-through;
+        content: "\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0";
+        padding: 0 5px;
+    }
+
+    form .payment-field-container#input_bancontactmobileseparatorqrcode label.payment-label:after {
+        text-decoration: line-through;
+        content: "\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0";
+        padding: 0 0 0 5px;
+    }
+
+    form .payment-field-container#input_bancontactmobileseparatorurlintent label.payment-label:after {
+        text-decoration: line-through;
+        content: "\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0";
+        padding: 0 0 0 5px;
+    }
+
+form .payment-field-container#input_paybyscanningqrcode {
+    display: none;
+}
+
+form .payment-field-container#input_paybyscanningqrcode label.payment-label {
+    font-weight: bold;
+}
+
+form .payment-field-container#input_paywithyourbancontactcard label.payment-label {
+    font-weight: bold;
+}
+
+#input_qrcode {
+    display: none;
+}
+
+#input_qrcode .input-icon {
+    text-align: center;
+}   
+
+#input_qrcode img {
+    max-width: initial;
+    position: initial;
+}
+
+.progress-bar {
+    padding: 24px;
+    text-align: center
+}
+
+.progress-bar__step {
+    display: inline-block;
+    position: relative;
+    width: 8px;
+    height: 8px;
+    margin: 3px 0;
+    background: #D6D6D6;
+    border-radius: 100%
+}
+
+    .progress-bar__step + .progress-bar__step {
+        margin-left: 52px
+    }
+
+        .progress-bar__step + .progress-bar__step::after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 18px;
+            display: block;
+            content: '';
+            width: 36px;
+            height: 2px;
+            margin: auto;
+            background: #D6D6D6
+        }
+
+    .progress-bar__step + .progress-bar__step--active::after,
+    .progress-bar__step + .progress-bar__step--error::after,
+    .progress-bar__step + .progress-bar__step--failureretry::after,
+    .progress-bar__step + .progress-bar__step--failurenoretry::after,
+    .progress-bar__step + .progress-bar__step--success::after,
+    .progress-bar__step--active {
+        background: #4E4745
+    }
+
+.progress-bar__step--error,
+.progress-bar__step--failureretry,
+.progress-bar__step--failurenoretry,
+.progress-bar__step--success {
+    width: 17px;
+    height: 14px;
+    margin: 0
+}
+
+.progress-bar__step--error,
+.progress-bar__step--failureretry,
+.progress-bar__step--failurenoretry {
+    background: url(./images/cross_stepper.gif) no-repeat;
+    background-size: contain;
+}
+
+.progress-bar__step--success {
+    background: url(images/success-green.gif) no-repeat;
+    background-size: contain;
+}
+
+.progress-bar__step + .progress-bar__step--error::after,
+.progress-bar__step + .progress-bar__step--failureretry::after,
+.progress-bar__step + .progress-bar__step--failurenoretry::after,
+.progress-bar__step + .progress-bar__step--success::after {
+    right: 25px
+}
+
+.progress-bar--desktop {
+    width: 53%;
+    margin: auto;
+    float: right;
+    text-align: center
+}
+
+    .progress-bar--desktop .progress-bar__step {
+        width: 25%;
+        height: auto;
+        margin-bottom: 24px;
+        background: 0 0;
+        font-size: 12px;
+        text-align: center
+    }
+
+        .progress-bar--desktop .progress-bar__step + .progress-bar__step {
+            margin-left: 12.5%
+        }
+
+        .progress-bar--desktop .progress-bar__step:before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin: 8px auto 0;
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: #D6D6D6;
+            border-radius: 100%
+        }
+
+        .progress-bar--desktop .progress-bar__step:after {
+            top: 100%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            margin-top: 11px;
+            transform: translateX(calc(-50% - 24px))
+        }
+
+    .progress-bar--desktop .progress-bar__step--active:before {
+        background-color: #4E4745
+    }
+
+    .progress-bar--desktop .progress-bar__step--error:before,
+    .progress-bar--desktop .progress-bar__step--failureretry:before,
+    .progress-bar--desktop .progress-bar__step--failurenoretry:before {
+        width: 16px;
+        height: 16px;
+        background: url(./images/cross_stepper.gif) center no-repeat;
+        background-size: contain
+    }
+
+    .progress-bar--desktop .progress-bar__step--success:before {
+        width: 16px;
+        height: 16px;
+        background: url(./images/success-green.gif) no-repeat;
+        background-size: contain
+    }
+
+.with-tooltip,
+#input_cvc {
+    position: relative;
+    padding-right: 32px;
+}
+
+.row.aliascreation {
+    position: relative;
+    padding-right: 32px;
+}
+
+.payment-tooltip {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    width: 16px;
+    height: 16px;
+    margin: auto auto auto 8px;
+    background-image: url(./images/question-circle-regular.gif);
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-size: contain;
+}
+
+    .payment-tooltip > img {
+        width: .9em;
+        height: .9em
+    }
+
+    .payment-tooltip:focus .payment-tooltip-container, .payment-tooltip:hover .payment-tooltip-container {
+        display: block;
+        opacity: 1;
+        z-index: 99
+    }
+
+    .payment-tooltip-container label {
+        display: none
+    }
+
+.payment-tooltip-container {
+    position: absolute;
+    bottom: 200%;
+    right: 0;
+    margin: 0 auto;
+    padding: 1em;
+    width: 240px;
+    background: #FFF;
+    border: 1px solid rgba(68,69,73,.15);
+    font-size: 14px;
+    text-align: left;
+    line-height: initial;
+    transition: .2s all;
+    box-shadow: 0 0 10px rgba(0,0,0,.05);
+    opacity: 0;
+    z-index: -10
+}
+
+    .payment-tooltip-container .payment-title--big {
+        font-size: 16px
+    }
+
+    .payment-tooltip-container .payment-title {
+        display: block;
+        margin: 1.5em auto .5em;
+        font-weight: 700
+    }
+
+        .payment-tooltip-container .payment-title:first-of-type {
+            margin-top: 0
+        }
+
+    .payment-tooltip-container p, .payment-tooltip-container ul, .payment-tooltip-container .payment-content {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        list-style-type: none;
+    }
+
+    .payment-tooltip-container div {
+        text-align: center
+    }
+
+#security-code-amex, #security-code-visa {
+    width: 100%;
+    max-width: 49%
+}
+
+.payment-tooltip-container label {
+    position: absolute;
+    top: 8px;
+    right: 8px
+}
+
+#payment-tooltip-cvc {
+    margin-left: 16px;
+}
+
+    #payment-tooltip-cvc #payment-tooltip-cvc-card-text,
+    #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
+        display: inline-block;
+        width: 149px;
+        height: 98px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        text-indent: -9999px;
+    }
+
+    #payment-tooltip-cvc #payment-tooltip-cvc-card-text {
+        background-image: url('./images/security-code-card.gif');
+    }
+
+    #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
+        background-image: url('./images/security-code-amex.gif');
+    }
+
+img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-card-text {
+    display: none;
+}
+
+img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
+    display: inline-block;
+}
+
+#payment-tooltip-alias {
+    left: auto;
+    right: 0;
+}
+
+@media (min-width:680px) {
+    .payment-tooltip-container {
+        left: auto;
+        width: 320px;
+        transform: translateX(50%)
+    }
+}
+
+@media (hover:none) and (max-width:959px) {
+    .payment-tooltip-container {
+        position: fixed;
+        top: 1em;
+        bottom: auto;
+        left: 0;
+        right: 0;
+        max-height: 80vh;
+        margin: auto;
+        overflow: auto;
+    }
+}
+
+@media (hover:none) and (min-width:679px) and (max-width:959px) {
+    .payment-tooltip-container {
+        position: absolute;
+        left: auto;
+        top: auto;
+        bottom: 24px;
+        transform: translateZ(0);
+    }
+}
+
+@media (min-width:961px) {
+    .banner-content {
+        padding: 0 24px
+    }
+
+    .main-content aside.orderpart {
+        display: inline-block;
+        padding-bottom: 24px
+    }
+
+    .main-content .orderpart, .main-content .paymentpart {
+        max-width: calc(50% - 24px);
+        width: 440px;
+        margin-left: 16px
+    }
+
+    .main-content .orderpart {
+        width: 100%
+    }
+
+    main .payment-form {
+        padding: 16px
+    }
+
+        main .payment-form h2 {
+            padding-top: 16px
+        }
+
+    .error-container.show {
+        position: relative;
+        margin-top: 32px
+    }
+
+        .error-container.show::before {
+            content: "Please select a payment method";
+            display: block;
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #cf2117
+        }
+
+        .error-container.show::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -8px;
+            bottom: -8px;
+            left: -8px;
+            right: -8px;
+            border: 1px solid #cf2117;
+            border-radius: 4px;
+            pointer-events: none
+        }
+
+    .order__summary, .redirect .button-container {
+        display: none
+    }
+
+    .order__products .footer td {
+        padding: 24px 0;
+        border-top: 1px solid #cccaca;
+        font-size: 21px
+    }
+
+    /*.payment-tooltip {
+        margin-left: 0
+    }*/
+
+    .button-container {
+        margin-bottom: 8px
+    }
+
+    #paypal > label {
+        border-bottom: 1px solid #e5e5e5;
+        border-radius: 4px
+    }
+
+    .payment-back {
+        margin-bottom: 12px;
+        text-align: center
+    }
+
+    form .payment-field-container #input_aliasinput {
+        margin-bottom: 0
+    }
+
+    .main-content {
+        min-height: calc(100vh - 220px)
+    }
+
+    .footer {
+        margin-top: 0;
+        padding: 35px;
+        background-color: #fff
+    }
+
+        .footer .footer__processed-legend {
+            display: block;
+            margin-bottom: .25em;
+            font-size: 11px;
+            color: #757570;
+        }
+
+        .footer a {
+            display: inline-block;
+        }
+
+    .main-content .orderpart, .main-content .paymentpart {
+        padding: 0 24px;
+        margin-bottom: 24px
+    }
+
+    .order__summary-title {
+        margin-top: 16px
+    }
+
+    .footer .content {
+        max-width: 960px;
+        margin: auto
+    }
+}
+
+@media screen and (max-width:960px) {
+    .banner .banner-content h1, .footer .content .row, .footer .content .row + .row {
+        float: none;
+        text-align: center
+    }
+
+    .banner .banner-content h1 {
+        font-size: 24px
+    }
+
+    .footer, form {
+        padding: 24px
+    }
+
+        .main-content .orderpart .card > label, .main-content .paymentpart .card > label, .main-content form [type=checkbox] + label::before, form input[type=text], form input[type=tel], form input[type=number], select {
+            background-color: #fff
+        }
+
+        form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-container {
+            background: #fff
+        }
+
+    .navigation__back,
+    .order-summary tfoot,
+    .main-content .orderpart {
+        display: none;
+        line-height: normal
+    }
+
+    .progress-bar__step {
+        text-indent: -9999px;
+        margin-top: 3px;
+        vertical-align: top;
+    }
+
+        .progress-bar__step.progress-bar__step--success,
+        .progress-bar__step.progress-bar__step--error,
+        .progress-bar__step.progress-bar__step--failureretry,
+        .progress-bar__step.progress-bar__step--failurenoretry {
+            margin-top: 0;
+        }
+}
+
+@media (min-width:961px) {
+    .banner-content {
+        margin: 0 auto
+    }
+
+    .footer .content {
+        text-align: left
+    }
+
+    .footer .row {
+        float: left
+    }
+
+        .footer .row + .row {
+            float: right
+        }
+
+    .order-summary--mobile, .progress-bar--mobile {
+        display: none
+    }
+
+    .progress-bar {
+        width: 47.5%;
+        margin: auto;
+        max-height: 41px;
+        margin: 0 16px 0 auto;
+        padding: 24px 0 6px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+        .progress-bar .progress-bar__step {
+            width: 23.5%;
+            height: auto;
+            margin-bottom: 24px;
+            background: 0 0;
+            font-size: 12px;
+            text-align: center;
+            white-space: normal;
+        }
+
+            .progress-bar .progress-bar__step + .progress-bar__step {
+                margin-left: 12.5%
+            }
+
+            .progress-bar .progress-bar__step:before {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                margin: 8px auto 0;
+                display: block;
+                width: 8px;
+                height: 8px;
+                background: #d6d6d6;
+                border-radius: 100%
+            }
+
+            .progress-bar .progress-bar__step:after {
+                top: 100%;
+                left: 0;
+                right: 0;
+                width: 100%;
+                margin-top: 11px;
+                transform: translateX(calc(-50% - 30px))
+            }
+
+        .progress-bar .progress-bar__step--active:before {
+            background-color: #4e4745
+        }
+
+        .progress-bar .progress-bar__step--error:before,
+        .progress-bar .progress-bar__step--failureretry:before,
+        .progress-bar .progress-bar__step--failurenoretry:before {
+            width: 16px;
+            height: 16px;
+            background: url(./images/cross_stepper.gif) center no-repeat;
+            background-size: contain
+        }
+
+        .progress-bar .progress-bar__step--success:before {
+            width: 16px;
+            height: 16px;
+            background: url(./images/success-green.gif) no-repeat;
+            background-size: contain
+        }
+
+    .navigation {
+        width: 100%;
+        height: 95px;
+    }
+
+    .navigation__back {
+        float: left;
+        display: inline-block;
+        margin-top: 24.5px;
+        margin-left: 16px;
+        padding: 16px 0 4px;
+        border-bottom: 1px solid transparent;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+        .navigation__back:hover {
+            border-bottom: 1px solid;
+            color: #757570;
+        }
+
+        .navigation__back::before {
+            content: "<";
+            margin-right: 8px;
+        }
+
+        .navigation__back span {
+            margin-left: 14px;
+            text-decoration: underline
+        }
+
+    .main-content h2 {
+        padding-top: 16px
+    }
+
+    .main-content .orderpart, .main-content .paymentpart {
+        box-sizing: border-box;
+        float: left;
+        width: 50%;
+        margin: 0 12px 16px;
+        padding: 16px 24px;
+        background-color: #fff;
+        border: 1px solid #e3e3e4;
+        border-radius: 4px
+    }
+
+    .payment-paymentmethodform .paymentpart {
+        padding-top: 32px;
+    }
+
+
+    .main-content .orderpart {
+        display: block;
+    }
+
+    .order-summary .accordion__input,
+    .order-summary .accordion__label {
+        display: none;
+    }
+
+    .order-summary__content {
+        box-sizing: border-box;
+        display: block;
+        float: right;
+        width: 47.5%;
+        margin-top: 95px;
+        margin-right: 16px;
+        padding: 16px 24px 24px;
+        border: 1px solid #e3e3e4;
+        border-radius: 4px;
+    }
+
+    h2.order__summary-title {
+        margin: 0 0 8px;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    .order-ref {
+        margin: 8px 0 16px;
+    }
+
+    .order-summary {
+        width: 100%;
+        max-width: 960px;
+        margin: auto;
+    }
+
+        .order-summary td {
+            font-size: 14px;
+        }
+
+        .order-summary tfoot {
+            border-top: 1px solid #cccaca;
+            font-size: 21px;
+            font-weight: 700
+        }
+
+            .order-summary tfoot td {
+                padding: 24px 0;
+                font-size: 21px;
+            }
+
+    .banner {
+        padding: 0;
+        line-height: 96px
+    }
+
+        .banner .banner__merchant-name {
+            float: left;
+            margin: 0 16px;
+            padding: 0;
+            font-size: 32px
+        }
+
+        .banner .banner__merchant-logo {
+            float: right;
+            max-height: 96px
+        }
+
+    .footer .content {
+        padding-left: 0;
+        padding-right: 0
+    }
+}
+
+.payment-submit-switch-mobile {
+    display: none;
+}
+
+.paysecurely-switch #payment-submit-switch {
+    display: none;
+}
+
+.js-paysecurely-switch #payment-submit-switch {
+    display: block;
+}
+
+.js-paysecurely-switch #payment-submit,
+.js-paysecurely-switch #payment-ContinueToPaymentPage {
+    display: none;
+}
+
+.js-expirydate-switch #payment-cardexpirationmonth,
+.js-expirydate-switch #payment-cardexpirationyear {
+    display: none;
+}
+
+.js-expirydate-switch form .payment-field-container#input_cardexpirationdate .input-icon::before,
+.js-expirydate-switch form .payment-field-container#input_cardexpirationmonth .input-icon::before {
+    background-image: url(./images/calendar-grey.gif);
+}
+
+.js-expirydate-switch form.payment-paymentmethodform #input_cardexpirationmonth {
+    display: inline-block;
+    min-width: 131px;
+    width: calc(50% - 12px);
+}
+
+.js-expirydate-switch form.payment-paymentmethodform #input_cvc {
+    margin-top: 24px;
+    margin-left: 12px;
+}
+
+
+.js-expirydate-switch .payment-paymentmethodform .paymentpart {
+    display: flex;
+    flex-direction: column;
+}
+
+    .js-expirydate-switch .payment-paymentmethodform .paymentpart .payment-field-container {
+        order: 0;
+    }
+
+    .js-expirydate-switch .payment-paymentmethodform .paymentpart #input_cardholdername {
+        order: 1;
+    }
+
+    .js-expirydate-switch .payment-paymentmethodform .paymentpart #payment-aliascreation {
+        order: 2;
+    }
+
+    .js-expirydate-switch .payment-paymentmethodform .paymentpart #payment-submit-field-container {
+        order: 3;
+    }
+
+@media (max-width:960px) {
+    .js-paysecurely-switch #payment-submit-switch { display: none; }
+
+    .js-paysecurely-switch .payment-submit-switch-mobile {
+        display: block;
+        margin-top: 24px;
+    }
+    /*.js-paysecurely-switch #payment-submit { display: block; }*/
+}
+
+.apple-pay-button {
+    display: inline-block;
+    min-width: 140pt;
+    min-height: 30pt;
+    text-align: center;
+    -webkit-appearance: -apple-pay-button;
+    -apple-pay-button-type: buy; /* Use any supported button type. */
+    cursor: pointer;
+}
+
+.apple-pay-button-black {
+    -apple-pay-button-style: black;
+}
+
+.apple-pay-button-white {
+    -apple-pay-button-style: white;
+}
+
+.apple-pay-button-white-with-line {
+    -apple-pay-button-style: white-outline;
+}
