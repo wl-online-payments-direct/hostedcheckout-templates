@@ -28,6 +28,10 @@
                 <div class="row">
                     <h2 class="order__summary-title"><payment-order-overview-text /></h2>
                 </div>
+                <div class="row order-total">
+                    <span><payment-total-amount-text />:&nbsp;</span>
+                    <span><payment-currency />&nbsp;<payment-total-amount /></span>
+                </div>
                 <div class="row order-ref order__reference">
                     <payment-orderid-text />: <payment-orderid />
                 </div>
@@ -60,6 +64,38 @@
                         </tfoot>
                     </table>
                 </payment-lineitems>
+                <payment-splitpayment class="order__products">
+                    <table class="order-summary">
+                        <tbody>
+                            <payment-splitpayments-list>
+                                <tr>
+                                    <td>
+                                        <payment-splitpayment-brand />
+                                        <span>
+                                            <payment-splitpayment-gift-card-text />
+                                        </span>
+                                    </td>
+                                    <td class="price">
+                                        <payment-currency />
+                                        -<payment-splitpayment-amount />
+                                    </td>
+                                </tr>
+                            </payment-splitpayments-list>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>
+                                    <payment-remaining-amount-text />
+                                </td>
+                                <td class="price">
+                                    <payment-currency />
+                                    <payment-remaining-amount />
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </payment-splitpayment>
+
                 <div id="payment-submit-switch">
                     <div class="button button--raised button--secure" id="submit-all">
                         <span class="next-step-dynamic-text"><payment-next-step-dynamic-text /></span>
@@ -73,8 +109,8 @@
                 <span class="bold"><payment-currency />&nbsp;<payment-total-amount /></span>
             </label>
         </div>
-
         <div class="row main-content">
+
             <payment-paymentmethod-selection>
                 <div class="navigation">
                     <div class="progress-bar">
@@ -155,13 +191,18 @@
                 <div class="navigation">
                     <payment-back-link class="navigation__back" />
                     <div class="progress-bar">
-                        <div class="progress-bar__step progress-bar__step--success">
+                        <div class="<payment-progress-bar-sep-class /> progress-bar__step--success">
                             <payment-progress-bar-cart-text />
                         </div>
-                        <div class="progress-bar__step progress-bar__step--active">
+                        <payment-gift-card-navigation-point>
+                            <div class="<payment-progress-bar-sep-class /> progress-bar__step--success">
+                                <payment-progress-bar-gift-card-text />
+                            </div>
+                        </payment-gift-card-navigation-point>
+                        <div class="<payment-progress-bar-sep-class /> progress-bar__step--success">
                             <payment-progress-bar-details-text />
                         </div>
-                        <div class="progress-bar__step">
+                        <div class="<payment-progress-bar-sep-class /> progress-bar__step--<payment-flow-status-indicator />">
                             <payment-progress-bar-complete-text />
                         </div>
                     </div>
@@ -185,7 +226,22 @@
                         </div>
                     </payment-input-list>
 
+                    <div id="payment-gift-card-maxvalue" hidden="hidden" class="row payment-field-container">
+                        <div id="payment-max-amount" class="payment-label">
+                            <div id="payment-max-amount-tooltip" class="payment-tooltip">
+                                <div class="payment-tooltip-container">
+                                    <div class="payment-content"><payment-max-amount-tooltip-text /></div>
+                                </div>
+                            </div>
+                            <payment-max-amount-info-text />
+                        </div>
+                    </div>
+
                     <div class="clear"></div>
+
+                    <div id="payment-gift-card-maxvalue" hidden="hidden">
+                        50 euros max
+                    </div>
 
                     <payment-alias-section>
                         <div id="payment-aliascreation">
@@ -218,13 +274,18 @@
             <payment-status-page>
                 <div class="navigation">
                     <div class="progress-bar">
-                        <div class="progress-bar__step progress-bar__step--success">
+                        <div class="<payment-progress-bar-sep-class /> progress-bar__step--success">
                             <payment-progress-bar-cart-text />
                         </div>
-                        <div class="progress-bar__step progress-bar__step--success">
+                        <payment-gift-card-navigation-point>
+                            <div class="<payment-progress-bar-sep-class /> progress-bar__step--success">
+                                <payment-progress-bar-gift-card-text />
+                            </div>
+                        </payment-gift-card-navigation-point>
+                        <div class="<payment-progress-bar-sep-class /> progress-bar__step--success">
                             <payment-progress-bar-details-text />
                         </div>
-                        <div class="progress-bar__step progress-bar__step--<payment-flow-status-indicator />">
+                        <div class="<payment-progress-bar-sep-class /> progress-bar__step--<payment-flow-status-indicator />">
                             <payment-progress-bar-complete-text />
                         </div>
                     </div>
@@ -232,6 +293,7 @@
                 <div class="paymentpart">
                     <div class="row">
                         <h4>
+                            <span class="payment-status-icon--<payment-icon-status-indicator />"></span>
                             <payment-status-title />
                         </h4>
                     </div>
@@ -240,16 +302,111 @@
                             <payment-status-text />
                         </p>
                         <p>
+                            <payment-status-remaining-amount />
+                        </p>
+                        <p>
                             <payment-status-error />
                         </p>
                     </div>
                     <div id="redirect-button-query" class="row">
-                        <payment-redirect-button class="button button--raised button--secure"  />
+                        <payment-redirect-button class="button button--raised button--secure" />
                     </div>
                 </div>
 
                 <div class="clear"></div>
             </payment-status-page>
+
+            <payment-split-payment-status-page>
+                <div class="navigation">
+                    <div class="progress-bar">
+                        <div class="<payment-progress-bar-sep-class /> progress-bar__step--success">
+                            <payment-progress-bar-cart-text />
+                        </div>
+                        <div class="<payment-progress-bar-sep-class /> progress-bar__step--success">
+                            <payment-progress-bar-gift-card-text />
+                        </div>
+                        <div class="<payment-progress-bar-sep-class /> progress-bar__step--success">
+                            <payment-progress-bar-details-text />
+                        </div>
+                        <div class="<payment-progress-bar-sep-class /> progress-bar__step--<payment-flow-status-indicator />">
+                            <payment-progress-bar-complete-text />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paymentpart">
+                    <!-- Status -->
+                    <div class="row">
+                        <h4>
+                            <span class="payment-status-icon--<payment-icon-status-indicator />"></span>
+                            <payment-status-title />
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <p>
+                            <payment-status-text />
+                        </p>
+                        <p>
+                            <payment-status-error />
+                        </p>
+                    </div>
+
+                    <!-- Payment selection -->
+                    <div class="row">
+                        <h2>
+                            <payment-selection-title />
+                        </h2>
+                    </div>
+
+                    <div id="alias_list_title" class="row hidden">
+                        <h3>
+                            <payment-select-alias-text />
+                        </h3>
+                    </div>
+
+                    <payment-alias-list>
+                        <div id="aliaslist">
+                            <div class="row card">
+                                <input id="lbl_<payment-alias-inputid />"
+                                       class="sr-only"
+                                       type="submit"
+                                       name="<payment-alias-inputname />"
+                                       alt="" />
+                                <label for="lbl_<payment-alias-inputid />" class="pmchoice_label">
+                                    <span>
+                                        <span class="card__name"><payment-alias-displayvalue /></span>
+                                    </span>
+                                    <img src="<payment-alias-pm-image-url />"
+                                         alt="<payment-alias-displayvalue />" />
+                                </label>
+                            </div>
+                        </div>
+                    </payment-alias-list>
+
+                    <div id="payment_method_list_title" class="row hidden">
+                        <h3>
+                            <payment-paymentmethod-selection-text />
+                        </h3>
+                    </div>
+
+                    <payment-pm-list>
+                        <div class="row card">
+                            <input id="lbl_<payment-pm-inputid />"
+                                   class="sr-only"
+                                   type="submit"
+                                   name="<payment-pm-inputname />"
+                                   alt="" />
+                            <label for="lbl_<payment-pm-inputid />" class="pmchoice_label">
+                                <span class="card__name"><payment-pm-brand /></span>
+                                <img src="<payment-pm-image-url />"
+                                     alt="<payment-pm-brand />" />
+                            </label>
+                        </div>
+                    </payment-pm-list>
+                </div>
+                <div class="clear"></div>
+            </payment-split-payment-status-page>
         </div>
     </div>
 

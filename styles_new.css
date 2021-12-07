@@ -404,6 +404,11 @@ b {
             text-align: right
         }
 
+        .order-summary td span {
+            font-size: 12px;
+            color: #9a9695;
+        }
+
 .footer .content .row {
     float: left
 }
@@ -429,14 +434,23 @@ b {
     max-width: 118px;
 }
 
-.payment-statuspage h4 {
+.paymentpart h4 {
     font-weight: 300;
     margin: 20px 0 30px;
     font-size: 30px;
     line-height: 1.1
 }
 
-.payment-statuspage p {
+.payment-status-icon--success {
+    width: 48px;
+    height: 48px;
+    background: url(./images/success_white.gif) no-repeat;
+    background-size: contain;
+    display: inline-block;
+    margin: 0px 10px -10px 0px;
+}
+
+.paymentpart p {
     margin: 24px 0
 }
 
@@ -675,8 +689,8 @@ form .payment-field-container .input-icon {
     position: relative
 }
 
-    form .payment-field-container .input-icon::before,
-    form .payment-field-container .input-icon > img {
+        form .payment-field-container .input-icon::before,
+        form .payment-field-container .input-icon > img:not([alt="QRCode"]) {
         content: "";
         position: absolute;
         top: 0;
@@ -707,7 +721,8 @@ form .payment-field-container#input_cardholdername .input-icon::before {
     background-image: url(./images/user-grey.gif);
 }
 
-form .payment-field-container#input_cvc .input-icon::before {
+form .payment-field-container#input_cvc .input-icon::before,
+form .payment-field-container#input_pincode .input-icon::before {
     background-image: url(./images/lock-grey.gif);
 }
 
@@ -1149,6 +1164,42 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
         background: #4E4745
     }
 
+.progress-bar__step-short {
+    display: inline-block;
+    position: relative;
+    width: 8px;
+    height: 8px;
+    margin: 3px 0;
+    background: #D6D6D6;
+    border-radius: 100%
+}
+
+    .progress-bar__step-short + .progress-bar__step-short {
+        margin-left: 52px
+    }
+
+        .progress-bar__step-short + .progress-bar__step-short::after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 18px;
+            display: block;
+            content: '';
+            width: 36px;
+            height: 2px;
+            margin: auto;
+            background: #D6D6D6
+        }
+
+    .progress-bar__step-short + .progress-bar__step--active::after,
+    .progress-bar__step-short + .progress-bar__step--error::after,
+    .progress-bar__step-short + .progress-bar__step--failureretry::after,
+    .progress-bar__step-short + .progress-bar__step--failurenoretry::after,
+    .progress-bar__step-short + .progress-bar__step--success::after,
+    .progress-bar__step--active {
+        background: #4E4745
+    }
+
 .progress-bar__step--error,
 .progress-bar__step--failureretry,
 .progress-bar__step--failurenoretry,
@@ -1170,10 +1221,17 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
     background-size: contain;
 }
 
-.progress-bar__step + .progress-bar__step--error::after,
-.progress-bar__step + .progress-bar__step--failureretry::after,
-.progress-bar__step + .progress-bar__step--failurenoretry::after,
-.progress-bar__step + .progress-bar__step--success::after {
+.progress-bar__step-short + .progress-bar__step--error::after,
+.progress-bar__step-short + .progress-bar__step--failureretry::after,
+.progress-bar__step-short + .progress-bar__step--failurenoretry::after,
+.progress-bar__step-short + .progress-bar__step--success::after {
+    right: 25px
+}
+
+.progress-bar__step-short + .progress-bar__step--error::after,
+.progress-bar__step-short + .progress-bar__step--failureretry::after,
+.progress-bar__step-short + .progress-bar__step--failurenoretry::after,
+.progress-bar__step-short + .progress-bar__step--success::after {
     right: 25px
 }
 
@@ -1212,6 +1270,42 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
         }
 
         .progress-bar--desktop .progress-bar__step:after {
+            top: 100%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            margin-top: 11px;
+            transform: translateX(calc(-50% - 24px))
+        }
+
+    .progress-bar--desktop .progress-bar__step-short {
+        width: 25%;
+        height: auto;
+        margin-bottom: 24px;
+        background: 0 0;
+        font-size: 12px;
+        text-align: center
+    }
+
+        .progress-bar--desktop .progress-bar__step-short + .progress-bar__step-short {
+            margin-left: 12.5%
+        }
+
+        .progress-bar--desktop .progress-bar__step-short:before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin: 8px auto 0;
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: #D6D6D6;
+            border-radius: 100%
+        }
+
+        .progress-bar--desktop .progress-bar__step-short:after {
             top: 100%;
             left: 0;
             right: 0;
@@ -1367,6 +1461,17 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
 #payment-tooltip-alias {
     left: auto;
     right: 0;
+}
+
+#payment-max-amount {
+    display: inline;
+}
+
+#payment-max-amount-tooltip {
+    position: relative !important;
+    left: auto !important;
+    margin-bottom: -2px !important;
+    display: inline-block !important;
 }
 
 @media (min-width:680px) {
@@ -1566,6 +1671,23 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         .progress-bar__step.progress-bar__step--failurenoretry {
             margin-top: 0;
         }
+
+    .progress-bar__step-short {
+        text-indent: -9999px;
+        margin-top: 3px;
+        vertical-align: top;
+    }
+
+        .progress-bar__step-short.progress-bar__step--success,
+        .progress-bar__step-short.progress-bar__step--error,
+        .progress-bar__step-short.progress-bar__step--failureretry,
+        .progress-bar__step-short.progress-bar__step--failurenoretry {
+            margin-top: 0;
+        }
+
+    .order-total {
+        display: none;
+    }
 }
 
 @media (min-width:961px) {
@@ -1628,6 +1750,43 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
             }
 
             .progress-bar .progress-bar__step:after {
+                top: 100%;
+                left: 0;
+                right: 0;
+                width: 100%;
+                margin-top: 11px;
+                transform: translateX(calc(-50% - 30px))
+            }
+
+        .progress-bar .progress-bar__step-short {
+            width: 15%;
+            height: auto;
+            margin-bottom: 24px;
+            background: 0 0;
+            font-size: 12px;
+            text-align: center;
+            white-space: normal;
+        }
+
+            .progress-bar .progress-bar__step-short + .progress-bar__step-short {
+                margin-left: 12.5%
+            }
+
+            .progress-bar .progress-bar__step-short:before {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                margin: 8px auto 0;
+                display: block;
+                width: 8px;
+                height: 8px;
+                background: #d6d6d6;
+                border-radius: 100%
+            }
+
+            .progress-bar .progress-bar__step-short:after {
                 top: 100%;
                 left: 0;
                 right: 0;
@@ -1735,7 +1894,8 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         font-weight: 400;
     }
 
-    .order-ref {
+    .order-ref,
+    .order-total {
         margin: 8px 0 16px;
     }
 
@@ -1851,6 +2011,10 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         margin-top: 24px;
     }
     /*.js-paysecurely-switch #payment-submit { display: block; }*/
+
+    .js-paysecurely-switch #payment-ContinueToPaymentPage {
+        display: block;
+    }
 }
 
 .apple-pay-button {
@@ -1873,4 +2037,8 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
 
 .apple-pay-button-white-with-line {
     -apple-pay-button-style: white-outline;
+}
+
+.pm-selection-hidden {
+    visibility: hidden;
 }
