@@ -1,4 +1,4 @@
-@import url('./fonts/font_family_roboto.css');
+@import url('font_family_roboto.css');
 
 .css-hidden, .main-content form [type=checkbox]:checked, .main-content form [type=checkbox]:not(:checked), .sr-only {
     position: absolute;
@@ -110,7 +110,7 @@ b {
         width: 12px;
         height: 15px;
         margin-right: 8px;
-        background-image: url(./images/lock-white.gif);
+        background-image: url(lock-white.gif);
         background-repeat: no-repeat;
         background-size: contain;
         vertical-align: baseline
@@ -359,7 +359,7 @@ b {
         width: 20px;
         height: 16px;
         margin: auto;
-        background: url(./images/success-green.gif) no-repeat;
+        background: url(success-green.gif) no-repeat;
         background-size: contain;
         z-index: 1
     }
@@ -444,7 +444,7 @@ b {
 .payment-status-icon--success {
     width: 48px;
     height: 48px;
-    background: url(./images/success_white.gif) no-repeat;
+    background: url(success_white.gif) no-repeat;
     background-size: contain;
     display: inline-block;
     margin: 0px 10px -10px 0px;
@@ -482,7 +482,7 @@ label.accordion__label {
         display: block;
         width: 32px;
         height: 32px;
-        background-image: url(./images/caret-grey.gif);
+        background-image: url(caret-grey.gif);
         background-size: contain;
         transition: .2s all
     }
@@ -680,7 +680,7 @@ form .payment-field-container.checkbox-field > input[type=checkbox]:checked + la
     width: 20px;
     height: 16px;
     margin: auto;
-    background: url(./images/success-green.gif) no-repeat;
+    background: url(success-green.gif) no-repeat;
     background-size: contain;
     z-index: 1
 }
@@ -714,16 +714,16 @@ form .payment-field-container .input-icon {
     }
 
 form .payment-field-container#input_cardnumber .input-icon::before {
-    background-image: url(./images/card-grey.gif);
+    background-image: url(card-grey.gif);
 }
 
 form .payment-field-container#input_cardholdername .input-icon::before {
-    background-image: url(./images/user-grey.gif);
+    background-image: url(user-grey.gif);
 }
 
 form .payment-field-container#input_cvc .input-icon::before,
 form .payment-field-container#input_pincode .input-icon::before {
-    background-image: url(./images/lock-grey.gif);
+    background-image: url(lock-grey.gif);
 }
 
 form #input_bancontactlogo {
@@ -776,7 +776,7 @@ form .payment-field-container.valid .input-icon::after {
     margin: auto;
     width: 16px;
     height: 12px;
-    background: url(./images/success-green.gif) no-repeat;
+    background: url(success-green.gif) no-repeat;
     background-size: contain
 }
 
@@ -827,7 +827,7 @@ form .button.raised {
     width: 12px;
     height: 15px;
     margin-right: 8px;
-    background-image: url(./images/lock-white.gif);
+    background-image: url(lock-white.gif);
     background-repeat: no-repeat;
     background-size: contain;
     vertical-align: baseline
@@ -1212,12 +1212,12 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
 .progress-bar__step--error,
 .progress-bar__step--failureretry,
 .progress-bar__step--failurenoretry {
-    background: url(./images/cross_stepper.gif) no-repeat;
+    background: url(cross_stepper.gif) no-repeat;
     background-size: contain;
 }
 
 .progress-bar__step--success {
-    background: url(images/success-green.gif) no-repeat;
+    background: url(success-green.gif) no-repeat;
     background-size: contain;
 }
 
@@ -1323,14 +1323,14 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
     .progress-bar--desktop .progress-bar__step--failurenoretry:before {
         width: 16px;
         height: 16px;
-        background: url(./images/cross_stepper.gif) center no-repeat;
+        background: url(cross_stepper.gif) center no-repeat;
         background-size: contain
     }
 
     .progress-bar--desktop .progress-bar__step--success:before {
         width: 16px;
         height: 16px;
-        background: url(./images/success-green.gif) no-repeat;
+        background: url(success-green.gif) no-repeat;
         background-size: contain
     }
 
@@ -1353,7 +1353,7 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
     width: 16px;
     height: 16px;
     margin: auto auto auto 8px;
-    background-image: url(./images/question-circle-regular.gif);
+    background-image: url(question-circle-regular.gif);
     background-repeat: no-repeat;
     background-size: 16px;
     background-size: contain;
@@ -1443,11 +1443,11 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
     }
 
     #payment-tooltip-cvc #payment-tooltip-cvc-card-text {
-        background-image: url('./images/security-code-card.gif');
+        background-image: url('security-code-card.gif');
     }
 
     #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
-        background-image: url('./images/security-code-amex.gif');
+        background-image: url('security-code-amex.gif');
     }
 
 img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-card-text {
@@ -1804,14 +1804,14 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         .progress-bar .progress-bar__step--failurenoretry:before {
             width: 16px;
             height: 16px;
-            background: url(./images/cross_stepper.gif) center no-repeat;
+            background: url(cross_stepper.gif) center no-repeat;
             background-size: contain
         }
 
         .progress-bar .progress-bar__step--success:before {
             width: 16px;
             height: 16px;
-            background: url(./images/success-green.gif) no-repeat;
+            background: url(success-green.gif) no-repeat;
             background-size: contain
         }
 
@@ -1967,7 +1967,7 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
 
 .js-expirydate-switch form .payment-field-container#input_cardexpirationdate .input-icon::before,
 .js-expirydate-switch form .payment-field-container#input_cardexpirationmonth .input-icon::before {
-    background-image: url(./images/calendar-grey.gif);
+    background-image: url(calendar-grey.gif);
 }
 
 .js-expirydate-switch form.payment-paymentmethodform #input_cardexpirationmonth {
