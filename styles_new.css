@@ -1,4 +1,4 @@
-@import url('font_family_roboto.css');
+@import url('./fonts/font_family_roboto.css');
 
 .css-hidden, .main-content form [type=checkbox]:checked, .main-content form [type=checkbox]:not(:checked), .sr-only {
     position: absolute;
@@ -25,10 +25,10 @@ blockquote, q {
     quotes: none
 }
 
-    blockquote:after, blockquote:before, q:after, q:before {
-        content: '';
-        content: none
-    }
+blockquote:after, blockquote:before, q:after, q:before {
+    content: '';
+    content: none
+}
 
 table {
     border-collapse: collapse;
@@ -42,7 +42,7 @@ canvas {
 
 body {
     background-color: #f6f6f6;
-    font-family: Roboto,Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-family: Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-weight: 400;
     color: #4e4745;
     line-height: 1.1;
@@ -99,27 +99,27 @@ b {
     z-index: 1;
 }
 
-    .button--raised:hover {
-        background-color: #00a545;
-        color: #fff
-    }
+.button--raised:hover {
+    background-color: #00a545;
+    color: #fff
+}
 
-    .button--secure::before {
-        content: "";
-        display: inline-block;
-        width: 12px;
-        height: 15px;
-        margin-right: 8px;
-        background-image: url(lock-white.gif);
-        background-repeat: no-repeat;
-        background-size: contain;
-        vertical-align: baseline
-    }
+.button--secure::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 15px;
+    margin-right: 8px;
+    background-image: url(./images/lock-white.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: baseline
+}
 
-    .button--raised[disabled] {
-        background-color: #D6D6D6;
-        cursor: inherit;
-    }
+.button--raised[disabled] {
+    background-color: #D6D6D6;
+    cursor: inherit;
+}
 
 .banner {
     background-color: #fff;
@@ -129,29 +129,29 @@ b {
     vertical-align: middle
 }
 
-    .banner .banner-content {
-        max-width: 960px;
-        margin: 0 auto;
-        overflow: hidden;
-        position: relative
-    }
+.banner .banner-content {
+    max-width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative
+}
 
-        .banner .banner-content h1 {
-            float: left;
-            margin: 0;
-            font-style: normal;
-            font-weight: 300;
-            font-size: 42px;
-            color: #4e4745
-        }
+.banner .banner-content h1 {
+    float: left;
+    margin: 0;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 42px;
+    color: #4e4745
+}
 
-        .banner .banner-content .merchant-logo {
-            float: right
-        }
+.banner .banner-content .merchant-logo {
+    float: right
+}
 
-        .banner .banner-content img.logo {
-            vertical-align: middle
-        }
+.banner .banner-content img.logo {
+    vertical-align: middle
+}
 
 .main-content {
     min-height: calc(100vh - 298px);
@@ -161,219 +161,214 @@ b {
     padding-top: 50px
 }
 
-    .main-content .orderpart h2, .main-content .paymentpart h2 {
-        margin: 0 0 24px;
-        font-size: 24px;
-        font-weight: 400
-    }
+.main-content .orderpart h2, .main-content .paymentpart h2 {
+    margin: 0 0 24px;
+    font-size: 24px;
+    font-weight: 400
+}
 
-    .main-content .orderpart h3, .main-content .paymentpart h3 {
-        margin: 0 0 18px;
-        font-size: 18px;
-        font-weight: 400
-    }
+.main-content .orderpart h3, .main-content .paymentpart h3 {
+    margin: 0 0 18px;
+    font-size: 18px;
+    font-weight: 400
+}
 
-    #payment_method_list_title h3 {
-        margin: 0 0 18px;
-        padding-top: 8px;
-        font-size: 18px;
-        font-weight: 400
-    }
+#payment_method_list_title h3 {
+    margin: 0 0 18px;
+    padding-top: 8px;
+    font-size: 18px;
+    font-weight: 400
+}
 
-    .main-content .orderpart .card > label, .main-content .paymentpart .card > label {
-        min-height: 30px;
-        padding: 12px;
-        border: 1px solid #e5e5e5;
-        border-radius: 4px;
-        box-shadow: none
-    }
+.main-content .orderpart .card > label, .main-content .paymentpart .card > label {
+    min-height: 30px;
+    padding: 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    box-shadow: none
+}
 
-        .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="image"]:focus + label,
-        .main-content .orderpart .card > label:hover, .main-content .paymentpart .card input[type="radio"]:checked + label,
-        .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > label:focus,
-        .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > label:hover {
-            border-color: #008236;
-            cursor: pointer;
-        }
+.main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="image"]:focus + label,
+.main-content .orderpart .card > label:hover, .main-content .paymentpart .card input[type="radio"]:checked + label,
+.main-content .orderpart .card > label:hover, .main-content .paymentpart .card > label:focus,
+.main-content .orderpart .card > label:hover, .main-content .paymentpart .card > label:hover {
+    border-color: #008236;
+    cursor: pointer;
+}
 
-            .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="image"]:focus + label *,
-            .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="radio"]:checked + label *,
-            .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > label:focus *,
-            .main-content .orderpart .card > label:hover *, .main-content .paymentpart .card > label:hover * {
-                color: #008236
-            }
+.main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="image"]:focus + label *,
+.main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="radio"]:checked + label *,
+.main-content .orderpart .card > label:hover, .main-content .paymentpart .card > label:focus *,
+.main-content .orderpart .card > label:hover *, .main-content .paymentpart .card > label:hover * {
+    color: #008236
+}
 
-        .main-content .orderpart .card > label *, .main-content .paymentpart .card > label * {
-            vertical-align: middle
-        }
+.main-content .orderpart .card > label *, .main-content .paymentpart .card > label * {
+    vertical-align: middle
+}
 
-        .main-content .orderpart .card > label .card__radio, .main-content .paymentpart .card > label .card__radio {
-            position: relative;
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            margin-top: 6px;
-            border: 2px solid #cccaca;
-            border-radius: 100%
-        }
+.main-content .orderpart .card > label .card__radio, .main-content .paymentpart .card > label .card__radio {
+    position: relative;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-top: 6px;
+    border: 2px solid #cccaca;
+    border-radius: 100%
+}
 
-        .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="image"]:focus + label .card__radio span,
-        .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="radio"]:checked + label .card__radio span,
-        .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > label:focus .card__radio span,
-        .main-content .orderpart .card > label .card__radio, .main-content .paymentpart .card > label:hover .card__radio span {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            display: block;
-            width: 8px;
-            height: 8px;
-            margin: auto;
-            border-radius: 100%;
-            background-color: #008236;
-        }
+.main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="image"]:focus + label .card__radio span,
+.main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="radio"]:checked + label .card__radio span,
+.main-content .orderpart .card > label:hover, .main-content .paymentpart .card > label:focus .card__radio span,
+.main-content .orderpart .card > label .card__radio, .main-content .paymentpart .card > label:hover .card__radio span {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin: auto;
+    border-radius: 100%;
+    background-color: #008236;
+}
 
-        .main-content .orderpart .card > label .card__name, .main-content .paymentpart .card > label .card__name {
-            display: inline-block;
-            margin: 0 16px;
-            font-size: 16px;
-            font-weight: 700;
-            width: calc(100% - 90px);
-        }
+.main-content .orderpart .card > label .card__name, .main-content .paymentpart .card > label .card__name {
+    display: inline-block;
+    margin: 0 16px;
+    font-size: 16px;
+    font-weight: 700;
+    width: calc(100% - 90px);
+}
 
-    .cobadging label.radio-button ~ label.radio-button, .main-content #input_cardexpirationmonth select + select {
-        margin-left: 8px
-    }
+.cobadging label.radio-button ~ label.radio-button, .main-content #input_cardexpirationmonth select + select {
+    margin-left: 8px
+}
 
-    .main-content .orderpart .card > label img, .main-content .paymentpart .card > label img {
-        max-width: 50px;
-        max-height: 30px;
-        padding: 0 4px
-    }
+.main-content .orderpart .card > label img, .main-content .paymentpart .card > label img {
+    max-width: 50px;
+    max-height: 30px;
+    padding: 0 4px
+}
 
-    .main-content form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist input[type=checkbox][name=cobadging]:checked + .brandlabel {
-        border: 2px solid #008236;
-        padding: 12px 0
-    }
+.main-content form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist input[type=checkbox][name=cobadging]:checked + .brandlabel {
+    border: 2px solid #008236;
+    padding: 12px 0
+}
 
-    .main-content form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.brandlabel {
-        display: inline-block;
-        background: #fff;
-        padding: 1px;
-        border: 1px solid #e5e5e5;
-        border-radius: 4px;
-        font-size: 14px;
-        text-align: center;
-        white-space: nowrap
-    }
+.main-content form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.brandlabel {
+    display: inline-block;
+    background: #fff;
+    padding: 1px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap
+}
 
-        .main-content form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.brandlabel:hover {
-            border: 2px solid #008236;
-            padding: 0
-        }
+.main-content form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.brandlabel:hover {
+    border: 2px solid #008236;
+    padding: 0
+}
 
-        .main-content form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.brandlabel img {
-            max-width: 50px;
-            max-height: 30px;
-            margin-right: 4px;
-            padding: 12px 40px;
-            vertical-align: middle;
-            cursor: pointer
-        }
+.main-content form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.brandlabel img {
+    max-width: 50px;
+    max-height: 30px;
+    margin-right: 4px;
+    padding: 12px 40px;
+    vertical-align: middle;
+    cursor: pointer
+}
 
-    .main-content #payment-aliasmerchantusage-text {
-        margin-top: 32px;
-        font-weight: 700;
-        font-size: 16px;
-        display: block
-    }
+.main-content #payment-aliasmerchantusage-text {
+    margin-top: 32px;
+    font-weight: 700;
+    font-size: 16px;
+    display: block
+}
 
-    .main-content #input_cardexpirationmonth.hidden,
-    .main-content #input_cardexpirationdate.hidden,
-    .main-content #input_cardexpirationdate.hidden + .payment-field-container#input_cvc,
-    .main-content #input_cardexpirationmonth.hidden + .payment-field-container#input_cvc {
-        box-sizing: border-box;
-        display: inline-block;
-        width: 100%;
-    }
+.main-content #input_cardexpirationmonth.hidden,
+.main-content #input_cardexpirationdate.hidden,
+.main-content #input_cardexpirationdate.hidden + .payment-field-container#input_cvc,
+.main-content #input_cardexpirationmonth.hidden + .payment-field-container#input_cvc {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+}
 
-        .main-content #input_cardexpirationdate.hidden + .payment-field-container#input_cvc,
-        .main-content #input_cardexpirationmonth.hidden + .payment-field-container#input_cvc {
-            margin-top: -73px;
-            margin-left: 16px;
-            align-self: flex-end;
-            vertical-align: bottom;
-        }
+.main-content #input_cardexpirationdate.hidden + .payment-field-container#input_cvc,
+.main-content #input_cardexpirationmonth.hidden + .payment-field-container#input_cvc {
+    margin-top: -73px;
+    margin-left: 16px;
+    align-self: flex-end;
+    vertical-align: bottom;
+}
 
-        .main-content #input_cardexpirationmonth.hidden select {
-            display: none;
-        }
+.main-content #input_cardexpirationmonth.hidden select {
+    display: none;
+}
 
-    .main-content #input_cardexpirationmonth select {
-        width: 44%
-    }
-    .main-content #input_cardexpirationmonth input-icon {
-        background-color: #ffffff;
-        border: 1px solid #cccaca;
-        border-radius: 4px;
-    }
+.main-content #input_cardexpirationmonth select {
+    width: 44%
+}
 
-    .main-content input#payment-cardexpirationdate {
-        margin-top: -18px;
-    }
+.main-content input#payment-cardexpirationdate {
+    margin-top: -18px;
+}
 
-    .main-content form.payment-paymentmethodform .payment-field-container#input_cvc {
-        display: block;
-    }
+.main-content form.payment-paymentmethodform .payment-field-container#input_cvc {
+    display: block;
+}
 
-    .main-content #payment-submit {
-        margin-top: 24px
-    }
+.main-content #payment-submit {
+    margin-top: 24px
+}
 
-    .main-content form [type=checkbox] + label {
-        position: relative;
-        padding-left: 40px
-    }
+.main-content form [type=checkbox] + label {
+    position: relative;
+    padding-left: 40px
+}
 
-        .main-content form [type=checkbox] + label::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            margin: auto;
-            display: block;
-            width: 24px;
-            height: 24px;
-            border: 2px solid #cccaca;
-            border-radius: 4px
-        }
+.main-content form [type=checkbox] + label::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #cccaca;
+    border-radius: 4px
+}
 
-    .main-content form [type=checkbox]:checked + label::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 4px;
-        width: 20px;
-        height: 16px;
-        margin: auto;
-        background: url(success-green.gif) no-repeat;
-        background-size: contain;
-        z-index: 1
-    }
+.main-content form [type=checkbox]:checked + label::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 4px;
+    width: 20px;
+    height: 16px;
+    margin: auto;
+    background: url(./images/success-green.gif) no-repeat;
+    background-size: contain;
+    z-index: 1
+}
 
 .order-summary__content {
     padding: 0 24px 8px;
     background: #fff
 }
 
-    .order-summary__content h2 {
-        margin: 0;
-        padding: 16px 0;
-        font-size: 20px
-    }
+.order-summary__content h2 {
+    margin: 0;
+    padding: 16px 0;
+    font-size: 20px
+}
 
 .order-summary__label span:first-of-type, .order__total span:first-of-type {
     margin-right: 1em
@@ -395,33 +390,49 @@ b {
     width: 100%
 }
 
-    .order-summary td {
-        padding: 12px 0
-    }
+.order-summary td {
+    padding: 12px 0
+}
 
-        .order-summary td.price {
-            font-size: 18px;
-            text-align: right
-        }
+.order-summary td.price {
+    font-size: 18px;
+    text-align: right
+}
 
-        .order-summary td span {
-            font-size: 12px;
-            color: #9a9695;
-        }
+.order-summary td span {
+    font-size: 12px;
+    color: #9a9695;
+}
 
 .footer .content .row {
     float: left
 }
 
-    .footer .content .row + .row {
-        float: right;
-        margin-top: 16px
-    }
+.footer .content .row + .row {
+    float: right;
+    margin-top: 16px
+}
 
-    .footer .content .row a, .footer .content .row a:visited {
-        color: #757570;
-        font-size: 14px
-    }
+.footer .content .row a, .footer .content .row a:visited {
+    color: #757570;
+    font-size: 14px;
+    border-right: solid 1px #757570;
+    padding: 0 6px 0 2px;
+}
+
+.footer .content .row a:last-of-type, .footer .content .row a:visited:last-of-type {
+    border: none;
+    padding-left: 2px;
+}
+
+.footer .content .row a:last-of-type, .footer .content .row a:last-of-type:after {
+    content: ""
+}
+
+.footer .content .row a, .footer .content .row a:after {
+    margin-left: 4px;
+}
+
 
 .footer .footer__processed-legend {
     display: block;
@@ -444,7 +455,7 @@ b {
 .payment-status-icon--success {
     width: 48px;
     height: 48px;
-    background: url(success_white.gif) no-repeat;
+    background: url(./images/success_white.gif) no-repeat;
     background-size: contain;
     display: inline-block;
     margin: 0px 10px -10px 0px;
@@ -462,6 +473,34 @@ b {
     font-weight: 700
 }
 
+.centered {
+    text-align: center;
+}
+
+.headinglevel1 {
+    font-size: 32px;
+}
+
+.headinglevel2 {
+    font-size: 24px;
+}
+
+.headinglevel3 {
+    font-size: 20px;
+}
+
+.headinglevel4 {
+    font-size: 18px;
+}
+
+.headinglevel5 {
+    font-size: 16px;
+}
+
+.headinglevel6 {
+    font-size: 14px;
+}
+
 .accordion {
     display: none;
     transition: .2s all
@@ -472,20 +511,20 @@ label.accordion__label {
     display: block
 }
 
-    label.accordion__label::after {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        display: block;
-        width: 32px;
-        height: 32px;
-        background-image: url(caret-grey.gif);
-        background-size: contain;
-        transition: .2s all
-    }
+label.accordion__label::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url(./images/caret-grey.gif);
+    background-size: contain;
+    transition: .2s all
+}
 
 input.accordion__input:checked ~ .accordion {
     display: block
@@ -503,9 +542,9 @@ input.accordion__input:checked ~ label.accordion__label::after {
     background: #fff
 }
 
-    .order__summary .accordion__label::after {
-        right: 24px
-    }
+.order__summary .accordion__label::after {
+    right: 24px
+}
 
 .order__summary-content {
     padding: 0 24px 8px;
@@ -521,24 +560,25 @@ input.accordion__input:checked ~ label.accordion__label::after {
 .order__reference, form {
     margin-bottom: 16px
 }
-    form.payment-cancelform{
-        margin-bottom: 0px;
-    }
 
-    .order__reference {
-        word-break: break-word
-    }
+form.payment-cancelform {
+    margin-bottom: 0px;
+}
+
+.order__reference {
+    word-break: break-word
+}
 
 .order__products table {
     border-spacing: 0;
     width: 100%
 }
 
-    .order__products table tbody tr td {
-        padding: 8px 0;
-        border: none;
-        vertical-align: middle
-    }
+.order__products table tbody tr td {
+    padding: 8px 0;
+    border: none;
+    vertical-align: middle
+}
 
 .order__products td[colspan] + td {
     text-align: right
@@ -582,7 +622,7 @@ input.accordion__input:checked ~ label.accordion__label::after {
 
 .order__products table tfoot tr:first-of-type td {
     padding-top: 8px;
-    border-top: 1px solid rgba(68,69,73,.15)
+    border-top: 1px solid rgba(68, 69, 73, .15)
 }
 
 .order__products table tfoot td {
@@ -641,6 +681,7 @@ form input[type=text], form input[type=tel], form input[type=number], select {
     -moz-box-sizing: border-box;
     box-sizing: border-box
 }
+
 form select, #payment-cardexpirationyear, #payment-cardexpirationmonth {
     box-sizing: border-box;
     width: 48.5%;
@@ -680,7 +721,7 @@ form .payment-field-container.checkbox-field > input[type=checkbox]:checked + la
     width: 20px;
     height: 16px;
     margin: auto;
-    background: url(success-green.gif) no-repeat;
+    background: url(./images/success-green.gif) no-repeat;
     background-size: contain;
     z-index: 1
 }
@@ -689,44 +730,48 @@ form .payment-field-container .input-icon {
     position: relative
 }
 
-        form .payment-field-container .input-icon::before,
-        form .payment-field-container .input-icon > img:not([alt="QRCode"]) {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 8px;
-        margin: auto;
-        max-width: 39px;
-        z-index: 1
-    }
+form .payment-field-container .input-icon::before,
+form .payment-field-container .input-icon > img:not([alt="QRCode"]) {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 8px;
+    margin: auto;
+    max-width: 39px;
+    z-index: 1
+}
 
-    form .payment-field-container .input-icon input {
-        padding-left: 36px
-    }
+form .payment-field-container .input-icon input {
+    padding-left: 36px
+}
 
-    form .payment-field-container .input-icon::before {
-        width: 24px;
-        height: 24px;
-        background-repeat: no-repeat;
-        background-size: contain;
-        pointer-events: none;
-    }
+form .payment-field-container .input-icon::before {
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+}
 
 form .payment-field-container#input_cardnumber .input-icon::before {
-    background-image: url(card-grey.gif);
+    background-image: url(./images/card-grey.gif);
 }
 
 form .payment-field-container#input_cardholdername .input-icon::before {
-    background-image: url(user-grey.gif);
+    background-image: url(./images/user-grey.gif);
 }
 
 form .payment-field-container#input_cvc .input-icon::before,
 form .payment-field-container#input_pincode .input-icon::before {
-    background-image: url(lock-grey.gif);
+    background-image: url(./images/lock-grey.gif);
 }
 
 form #input_bancontactlogo {
+    text-align: center;
+}
+
+form #input_wechatpaylogo {
     text-align: center;
 }
 
@@ -762,9 +807,11 @@ form .payment-field-container#input_cardnumber.valid .input-bg {
 form .payment-field-container#input_cardnumber .payment-input-valid {
     padding-right: 70px;
 }
-    form .payment-field-container#input_cardnumber .payment-input-valid ~ .payment-pm-image {
-        right: 32px;
-    }
+
+form .payment-field-container#input_cardnumber .payment-input-valid ~ .payment-pm-image {
+    right: 32px;
+}
+
 form .payment-field-container .payment-input-valid ~ .payment-input-success::after,
 form .payment-field-container.valid .input-icon::after {
     content: "";
@@ -776,7 +823,7 @@ form .payment-field-container.valid .input-icon::after {
     margin: auto;
     width: 16px;
     height: 12px;
-    background: url(success-green.gif) no-repeat;
+    background: url(./images/success-green.gif) no-repeat;
     background-size: contain
 }
 
@@ -827,7 +874,7 @@ form .button.raised {
     width: 12px;
     height: 15px;
     margin-right: 8px;
-    background-image: url(lock-white.gif);
+    background-image: url(./images/lock-white.gif);
     background-repeat: no-repeat;
     background-size: contain;
     vertical-align: baseline
@@ -850,49 +897,49 @@ form .button.raised {
     z-index: 1;
 }
 
-    #payment-cancel:hover,
-    .cancel:hover {
-        cursor: pointer
-    }
+#payment-cancel:hover,
+.cancel:hover {
+    cursor: pointer
+}
 
-    #payment-cancel:visited,
-    .cancel:visited {
-        color: inherit
-    }
+#payment-cancel:visited,
+.cancel:visited {
+    color: inherit
+}
 
 .cobadging-wrapper {
     margin-top: 4px
 }
 
-    .cobadging-wrapper.hidden {
-        pointer-events: none
-    }
+.cobadging-wrapper.hidden {
+    pointer-events: none
+}
 
-    .cobadging-wrapper input[type=checkbox] ~ .cobadging {
-        display: none
-    }
+.cobadging-wrapper input[type=checkbox] ~ .cobadging {
+    display: none
+}
 
-    .cobadging-wrapper input[type=checkbox] ~ label.link {
-        display: block;
-        font-size: 14px;
-        text-align: right
-    }
+.cobadging-wrapper input[type=checkbox] ~ label.link {
+    display: block;
+    font-size: 14px;
+    text-align: right
+}
 
-    .cobadging-wrapper input[type=checkbox]:checked ~ .cobadging {
-        display: block
-    }
+.cobadging-wrapper input[type=checkbox]:checked ~ .cobadging {
+    display: block
+}
 
-    .cobadging-wrapper input[type=checkbox]:checked ~ label.link {
-        display: none
-    }
+.cobadging-wrapper input[type=checkbox]:checked ~ label.link {
+    display: none
+}
 
-    .cobadging-wrapper label.link {
-        text-decoration: underline
-    }
+.cobadging-wrapper label.link {
+    text-decoration: underline
+}
 
-    .cobadging-wrapper input:focus ~ .cobadging label.close, .cobadging-wrapper input:focus ~ label.link {
-        outline: auto
-    }
+.cobadging-wrapper input:focus ~ .cobadging label.close, .cobadging-wrapper input:focus ~ label.link {
+    outline: auto
+}
 
 .cobadging {
     position: relative;
@@ -901,55 +948,55 @@ form .button.raised {
     background: #f6f6f6
 }
 
-    .cobadging > label {
-        display: block;
-        width: 22px;
-        height: 24px;
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        margin: auto;
-        cursor: pointer
-    }
+.cobadging > label {
+    display: block;
+    width: 22px;
+    height: 24px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    margin: auto;
+    cursor: pointer
+}
 
-    .cobadging p {
-        margin: 12px;
-        font-size: 12px;
-        line-height: 1.25
-    }
+.cobadging p {
+    margin: 12px;
+    font-size: 12px;
+    line-height: 1.25
+}
 
-    .cobadging > .options {
-        margin: 0 11px
-    }
+.cobadging > .options {
+    margin: 0 11px
+}
 
-    .cobadging label.radio-button {
-        display: inline-block;
-        width: calc(50% - 8px);
-        padding: 11px 1px;
-        background: #fff;
-        border: 1px solid #e5e5e5;
-        border-radius: 4px;
-        font-size: 14px;
-        text-align: center;
-        cursor: pointer;
-        white-space: nowrap
-    }
+.cobadging label.radio-button {
+    display: inline-block;
+    width: calc(50% - 8px);
+    padding: 11px 1px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap
+}
 
-        .cobadging label.radio-button img {
-            max-width: 34px;
-            max-height: 24px;
-            margin-right: 4px;
-            vertical-align: middle
-        }
+.cobadging label.radio-button img {
+    max-width: 34px;
+    max-height: 24px;
+    margin-right: 4px;
+    vertical-align: middle
+}
 
-    .cobadging input:checked + label.radio-button {
-        border: 2px solid #008236;
-        padding: 12px 0
-    }
+.cobadging input:checked + label.radio-button {
+    border: 2px solid #008236;
+    padding: 12px 0
+}
 
 form.payment-paymentmethodform #payment-cardnumber-cobadging-container {
     display: none;
-    font-family: Roboto,Arial,"Helvetica Neue",Helvetica,sans-serif
+    font-family: Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif
 }
 
 form.payment-paymentmethodform #payment-cardnumber-cobadging-link {
@@ -958,6 +1005,15 @@ form.payment-paymentmethodform #payment-cardnumber-cobadging-link {
     margin-bottom: 8px;
     font-size: 14px;
     text-align: right
+}
+
+form.payment-paymentmethodform label#payment-cardnumber-cobadging-brandconfirmation {
+    float: right;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-align: right;
+    padding: .2rem 0 0 0;
+    color: #938c8c;
 }
 
 form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-container {
@@ -978,12 +1034,12 @@ form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-label {
     -webkit-font-smoothing: antialiased
 }
 
-    form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-label img {
-        max-width: 34px;
-        max-height: 24px;
-        margin-right: 4px;
-        vertical-align: middle
-    }
+form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-label img {
+    max-width: 34px;
+    max-height: 24px;
+    margin-right: 4px;
+    vertical-align: middle
+}
 
 form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist {
     display: none;
@@ -991,24 +1047,37 @@ form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist {
     text-align: center
 }
 
-    form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.brandlabel {
-        display: inline-block;
-        width: auto;
-        margin: 0 5px 8px;
-        background: #fff;
-        border: 1px solid #e5e5e5;
-        border-radius: 4px;
-        font-size: 14px;
-        text-align: center;
-        cursor: pointer;
-        white-space: nowrap
-    }
+form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.brandlabel {
+    display: inline-block;
+    width: auto;
+    margin: 0 5px 8px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap
+}
 
 #payment-BCMC-image {
     display: block;
     position: relative;
     max-width: 200px;
     pointer-events: none;
+}
+
+#payment-WeChatPayLogo-image {
+    display: block;
+    position: relative;
+    max-width: 200px;
+    pointer-events: none;
+}
+
+#payment-TwintLogoWithText-image {
+    position: initial;
+    max-width: 100px;
+    padding-bottom: 17px;
 }
 
 form .payment-field-container#input_paywithyourbancontactapp {
@@ -1031,6 +1100,22 @@ form .payment-field-container#input_processingwithbancontactqrcode {
     display: none;
 }
 
+form .payment-field-container#input_transactiondenied {
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    margin-top: auto;
+    font-size: 24px;
+}
+
+form .payment-field-container#input_expired {
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    margin-top: auto;
+    font-size: 24px;
+}
+
 form .payment-field-container#input_urlintent a {
     width: 100%;
     display: block;
@@ -1044,9 +1129,10 @@ form .payment-field-container#input_urlintent a {
     text-decoration: none;
     padding: 12px 0;
 }
-    form .payment-field-container#input_urlintent a:hover {
-        background-color: #00a545
-    }
+
+form .payment-field-container#input_urlintent a:hover {
+    background-color: #00a545
+}
 
 form .payment-field-container#input_urlintent span {
     color: #ffffff;
@@ -1074,29 +1160,29 @@ form .payment-field-container#input_bancontactmobileseparatorurlintent label.pay
     margin: auto;
 }
 
-    form .payment-field-container#input_bancontactmobileseparatorqrcode label.payment-label:before {
-        text-decoration: line-through;
-        content: "\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0";
-        padding: 0 5px;
-    }
+form .payment-field-container#input_bancontactmobileseparatorqrcode label.payment-label:before {
+    text-decoration: line-through;
+    content: "\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0";
+    padding: 0 5px;
+}
 
-    form .payment-field-container#input_bancontactmobileseparatorurlintent label.payment-label:before {
-        text-decoration: line-through;
-        content: "\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0";
-        padding: 0 5px;
-    }
+form .payment-field-container#input_bancontactmobileseparatorurlintent label.payment-label:before {
+    text-decoration: line-through;
+    content: "\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0";
+    padding: 0 5px;
+}
 
-    form .payment-field-container#input_bancontactmobileseparatorqrcode label.payment-label:after {
-        text-decoration: line-through;
-        content: "\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0";
-        padding: 0 0 0 5px;
-    }
+form .payment-field-container#input_bancontactmobileseparatorqrcode label.payment-label:after {
+    text-decoration: line-through;
+    content: "\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0";
+    padding: 0 0 0 5px;
+}
 
-    form .payment-field-container#input_bancontactmobileseparatorurlintent label.payment-label:after {
-        text-decoration: line-through;
-        content: "\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0";
-        padding: 0 0 0 5px;
-    }
+form .payment-field-container#input_bancontactmobileseparatorurlintent label.payment-label:after {
+    text-decoration: line-through;
+    content: "\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0";
+    padding: 0 0 0 5px;
+}
 
 form .payment-field-container#input_paybyscanningqrcode {
     display: none;
@@ -1116,9 +1202,22 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
 
 #input_qrcode .input-icon {
     text-align: center;
-}   
+}
 
 #input_qrcode img {
+    max-width: initial;
+    position: initial;
+}
+
+#input_qrcodeurl {
+    display: block;
+}
+
+#input_qrcodeurl .input-icon {
+    text-align: center;
+}
+
+#input_qrcodeurl img {
     max-width: initial;
     position: initial;
 }
@@ -1138,31 +1237,31 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
     border-radius: 100%
 }
 
-    .progress-bar__step + .progress-bar__step {
-        margin-left: 52px
-    }
+.progress-bar__step + .progress-bar__step {
+    margin-left: 52px
+}
 
-        .progress-bar__step + .progress-bar__step::after {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 18px;
-            display: block;
-            content: '';
-            width: 36px;
-            height: 2px;
-            margin: auto;
-            background: #D6D6D6
-        }
+.progress-bar__step + .progress-bar__step::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 18px;
+    display: block;
+    content: '';
+    width: 36px;
+    height: 2px;
+    margin: auto;
+    background: #D6D6D6
+}
 
-    .progress-bar__step + .progress-bar__step--active::after,
-    .progress-bar__step + .progress-bar__step--error::after,
-    .progress-bar__step + .progress-bar__step--failureretry::after,
-    .progress-bar__step + .progress-bar__step--failurenoretry::after,
-    .progress-bar__step + .progress-bar__step--success::after,
-    .progress-bar__step--active {
-        background: #4E4745
-    }
+.progress-bar__step + .progress-bar__step--active::after,
+.progress-bar__step + .progress-bar__step--error::after,
+.progress-bar__step + .progress-bar__step--failureretry::after,
+.progress-bar__step + .progress-bar__step--failurenoretry::after,
+.progress-bar__step + .progress-bar__step--success::after,
+.progress-bar__step--active {
+    background: #4E4745
+}
 
 .progress-bar__step-short {
     display: inline-block;
@@ -1174,31 +1273,31 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
     border-radius: 100%
 }
 
-    .progress-bar__step-short + .progress-bar__step-short {
-        margin-left: 52px
-    }
+.progress-bar__step-short + .progress-bar__step-short {
+    margin-left: 52px
+}
 
-        .progress-bar__step-short + .progress-bar__step-short::after {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 18px;
-            display: block;
-            content: '';
-            width: 36px;
-            height: 2px;
-            margin: auto;
-            background: #D6D6D6
-        }
+.progress-bar__step-short + .progress-bar__step-short::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 18px;
+    display: block;
+    content: '';
+    width: 36px;
+    height: 2px;
+    margin: auto;
+    background: #D6D6D6
+}
 
-    .progress-bar__step-short + .progress-bar__step--active::after,
-    .progress-bar__step-short + .progress-bar__step--error::after,
-    .progress-bar__step-short + .progress-bar__step--failureretry::after,
-    .progress-bar__step-short + .progress-bar__step--failurenoretry::after,
-    .progress-bar__step-short + .progress-bar__step--success::after,
-    .progress-bar__step--active {
-        background: #4E4745
-    }
+.progress-bar__step-short + .progress-bar__step--active::after,
+.progress-bar__step-short + .progress-bar__step--error::after,
+.progress-bar__step-short + .progress-bar__step--failureretry::after,
+.progress-bar__step-short + .progress-bar__step--failurenoretry::after,
+.progress-bar__step-short + .progress-bar__step--success::after,
+.progress-bar__step--active {
+    background: #4E4745
+}
 
 .progress-bar__step--error,
 .progress-bar__step--failureretry,
@@ -1212,12 +1311,12 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
 .progress-bar__step--error,
 .progress-bar__step--failureretry,
 .progress-bar__step--failurenoretry {
-    background: url(cross_stepper.gif) no-repeat;
+    background: url(./images/cross_stepper.gif) no-repeat;
     background-size: contain;
 }
 
 .progress-bar__step--success {
-    background: url(success-green.gif) no-repeat;
+    background: url(images/success-green.gif) no-repeat;
     background-size: contain;
 }
 
@@ -1242,97 +1341,97 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
     text-align: center
 }
 
-    .progress-bar--desktop .progress-bar__step {
-        width: 25%;
-        height: auto;
-        margin-bottom: 24px;
-        background: 0 0;
-        font-size: 12px;
-        text-align: center
-    }
+.progress-bar--desktop .progress-bar__step {
+    width: 25%;
+    height: auto;
+    margin-bottom: 24px;
+    background: 0 0;
+    font-size: 12px;
+    text-align: center
+}
 
-        .progress-bar--desktop .progress-bar__step + .progress-bar__step {
-            margin-left: 12.5%
-        }
+.progress-bar--desktop .progress-bar__step + .progress-bar__step {
+    margin-left: 12.5%
+}
 
-        .progress-bar--desktop .progress-bar__step:before {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            margin: 8px auto 0;
-            display: block;
-            width: 8px;
-            height: 8px;
-            background: #D6D6D6;
-            border-radius: 100%
-        }
+.progress-bar--desktop .progress-bar__step:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 8px auto 0;
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #D6D6D6;
+    border-radius: 100%
+}
 
-        .progress-bar--desktop .progress-bar__step:after {
-            top: 100%;
-            left: 0;
-            right: 0;
-            width: 100%;
-            margin-top: 11px;
-            transform: translateX(calc(-50% - 24px))
-        }
+.progress-bar--desktop .progress-bar__step:after {
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-top: 11px;
+    transform: translateX(calc(-50% - 24px))
+}
 
-    .progress-bar--desktop .progress-bar__step-short {
-        width: 25%;
-        height: auto;
-        margin-bottom: 24px;
-        background: 0 0;
-        font-size: 12px;
-        text-align: center
-    }
+.progress-bar--desktop .progress-bar__step-short {
+    width: 25%;
+    height: auto;
+    margin-bottom: 24px;
+    background: 0 0;
+    font-size: 12px;
+    text-align: center
+}
 
-        .progress-bar--desktop .progress-bar__step-short + .progress-bar__step-short {
-            margin-left: 12.5%
-        }
+.progress-bar--desktop .progress-bar__step-short + .progress-bar__step-short {
+    margin-left: 12.5%
+}
 
-        .progress-bar--desktop .progress-bar__step-short:before {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            margin: 8px auto 0;
-            display: block;
-            width: 8px;
-            height: 8px;
-            background: #D6D6D6;
-            border-radius: 100%
-        }
+.progress-bar--desktop .progress-bar__step-short:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 8px auto 0;
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #D6D6D6;
+    border-radius: 100%
+}
 
-        .progress-bar--desktop .progress-bar__step-short:after {
-            top: 100%;
-            left: 0;
-            right: 0;
-            width: 100%;
-            margin-top: 11px;
-            transform: translateX(calc(-50% - 24px))
-        }
+.progress-bar--desktop .progress-bar__step-short:after {
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-top: 11px;
+    transform: translateX(calc(-50% - 24px))
+}
 
-    .progress-bar--desktop .progress-bar__step--active:before {
-        background-color: #4E4745
-    }
+.progress-bar--desktop .progress-bar__step--active:before {
+    background-color: #4E4745
+}
 
-    .progress-bar--desktop .progress-bar__step--error:before,
-    .progress-bar--desktop .progress-bar__step--failureretry:before,
-    .progress-bar--desktop .progress-bar__step--failurenoretry:before {
-        width: 16px;
-        height: 16px;
-        background: url(cross_stepper.gif) center no-repeat;
-        background-size: contain
-    }
+.progress-bar--desktop .progress-bar__step--error:before,
+.progress-bar--desktop .progress-bar__step--failureretry:before,
+.progress-bar--desktop .progress-bar__step--failurenoretry:before {
+    width: 16px;
+    height: 16px;
+    background: url(./images/cross_stepper.gif) center no-repeat;
+    background-size: contain
+}
 
-    .progress-bar--desktop .progress-bar__step--success:before {
-        width: 16px;
-        height: 16px;
-        background: url(success-green.gif) no-repeat;
-        background-size: contain
-    }
+.progress-bar--desktop .progress-bar__step--success:before {
+    width: 16px;
+    height: 16px;
+    background: url(./images/success-green.gif) no-repeat;
+    background-size: contain
+}
 
 .with-tooltip,
 #input_cvc {
@@ -1353,26 +1452,26 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
     width: 16px;
     height: 16px;
     margin: auto auto auto 8px;
-    background-image: url(question-circle-regular.gif);
+    background-image: url(./images/question-circle-regular.gif);
     background-repeat: no-repeat;
     background-size: 16px;
     background-size: contain;
 }
 
-    .payment-tooltip > img {
-        width: .9em;
-        height: .9em
-    }
+.payment-tooltip > img {
+    width: .9em;
+    height: .9em
+}
 
-    .payment-tooltip:focus .payment-tooltip-container, .payment-tooltip:hover .payment-tooltip-container {
-        display: block;
-        opacity: 1;
-        z-index: 99
-    }
+.payment-tooltip:focus .payment-tooltip-container, .payment-tooltip:hover .payment-tooltip-container {
+    display: block;
+    opacity: 1;
+    z-index: 99
+}
 
-    .payment-tooltip-container label {
-        display: none
-    }
+.payment-tooltip-container label {
+    display: none
+}
 
 .payment-tooltip-container {
     position: absolute;
@@ -1381,41 +1480,42 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
     margin: 0 auto;
     padding: 1em;
     width: 240px;
+    height: auto;
     background: #FFF;
-    border: 1px solid rgba(68,69,73,.15);
+    border: 1px solid rgba(68, 69, 73, .15);
     font-size: 14px;
     text-align: left;
     line-height: initial;
     transition: .2s all;
-    box-shadow: 0 0 10px rgba(0,0,0,.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .05);
     opacity: 0;
     z-index: -10
 }
 
-    .payment-tooltip-container .payment-title--big {
-        font-size: 16px
-    }
+.payment-tooltip-container .payment-title--big {
+    font-size: 16px
+}
 
-    .payment-tooltip-container .payment-title {
-        display: block;
-        margin: 1.5em auto .5em;
-        font-weight: 700
-    }
+.payment-tooltip-container .payment-title {
+    display: block;
+    margin: 1.5em auto .5em;
+    font-weight: 700
+}
 
-        .payment-tooltip-container .payment-title:first-of-type {
-            margin-top: 0
-        }
+.payment-tooltip-container .payment-title:first-of-type {
+    margin-top: 0
+}
 
-    .payment-tooltip-container p, .payment-tooltip-container ul, .payment-tooltip-container .payment-content {
-        margin: 0;
-        padding: 0;
-        text-align: left;
-        list-style-type: none;
-    }
+.payment-tooltip-container p, .payment-tooltip-container ul, .payment-tooltip-container .payment-content {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style-type: none;
+}
 
-    .payment-tooltip-container div {
-        text-align: center
-    }
+.payment-tooltip-container div {
+    text-align: center
+}
 
 #security-code-amex, #security-code-visa {
     width: 100%;
@@ -1432,23 +1532,23 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
     margin-left: 16px;
 }
 
-    #payment-tooltip-cvc #payment-tooltip-cvc-card-text,
-    #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
-        display: inline-block;
-        width: 149px;
-        height: 98px;
-        background-repeat: no-repeat;
-        background-size: contain;
-        text-indent: -9999px;
-    }
+#payment-tooltip-cvc #payment-tooltip-cvc-card-text,
+#payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
+    display: inline-block;
+    width: 149px;
+    height: 98px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: -9999px;
+}
 
-    #payment-tooltip-cvc #payment-tooltip-cvc-card-text {
-        background-image: url('security-code-card.gif');
-    }
+#payment-tooltip-cvc #payment-tooltip-cvc-card-text {
+    background-image: url('./images/security-code-card.gif');
+}
 
-    #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
-        background-image: url('security-code-amex.gif');
-    }
+#payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
+    background-image: url('./images/security-code-amex.gif');
+}
 
 img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-card-text {
     display: none;
@@ -1474,7 +1574,7 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
     display: inline-block !important;
 }
 
-@media (min-width:680px) {
+@media (min-width: 680px) {
     .payment-tooltip-container {
         left: auto;
         width: 320px;
@@ -1482,7 +1582,7 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
     }
 }
 
-@media (hover:none) and (max-width:959px) {
+@media (hover: none) and (max-width: 959px) {
     .payment-tooltip-container {
         position: fixed;
         top: 1em;
@@ -1495,7 +1595,7 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
     }
 }
 
-@media (hover:none) and (min-width:679px) and (max-width:959px) {
+@media (hover: none) and (min-width: 679px) and (max-width: 959px) {
     .payment-tooltip-container {
         position: absolute;
         left: auto;
@@ -1505,7 +1605,7 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
     }
 }
 
-@media (min-width:961px) {
+@media (min-width: 961px) {
     .banner-content {
         padding: 0 24px
     }
@@ -1529,38 +1629,38 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         padding: 16px
     }
 
-        main .payment-form h2 {
-            padding-top: 16px
-        }
+    main .payment-form h2 {
+        padding-top: 16px
+    }
 
     .error-container.show {
         position: relative;
         margin-top: 32px
     }
 
-        .error-container.show::before {
-            content: "Please select a payment method";
-            display: block;
-            position: absolute;
-            bottom: 100%;
-            left: 0;
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: #cf2117
-        }
+    .error-container.show::before {
+        content: "Please select a payment method";
+        display: block;
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: #cf2117
+    }
 
-        .error-container.show::after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: -8px;
-            bottom: -8px;
-            left: -8px;
-            right: -8px;
-            border: 1px solid #cf2117;
-            border-radius: 4px;
-            pointer-events: none
-        }
+    .error-container.show::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -8px;
+        bottom: -8px;
+        left: -8px;
+        right: -8px;
+        border: 1px solid #cf2117;
+        border-radius: 4px;
+        pointer-events: none
+    }
 
     .order__summary, .redirect .button-container {
         display: none
@@ -1575,7 +1675,6 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
     /*.payment-tooltip {
         margin-left: 0
     }*/
-
     .button-container {
         margin-bottom: 8px
     }
@@ -1604,16 +1703,16 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         background-color: #fff
     }
 
-        .footer .footer__processed-legend {
-            display: block;
-            margin-bottom: .25em;
-            font-size: 11px;
-            color: #757570;
-        }
+    .footer .footer__processed-legend {
+        display: block;
+        margin-bottom: .25em;
+        font-size: 11px;
+        color: #757570;
+    }
 
-        .footer a {
-            display: inline-block;
-        }
+    .footer a {
+        display: inline-block;
+    }
 
     .main-content .orderpart, .main-content .paymentpart {
         padding: 0 24px;
@@ -1630,7 +1729,7 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
     }
 }
 
-@media screen and (max-width:960px) {
+@media screen and (max-width: 960px) {
     .banner .banner-content h1, .footer .content .row, .footer .content .row + .row {
         float: none;
         text-align: center
@@ -1644,13 +1743,13 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         padding: 24px
     }
 
-        .main-content .orderpart .card > label, .main-content .paymentpart .card > label, .main-content form [type=checkbox] + label::before, form input[type=text], form input[type=tel], form input[type=number], select {
-            background-color: #fff
-        }
+    .main-content .orderpart .card > label, .main-content .paymentpart .card > label, .main-content form [type=checkbox] + label::before, form input[type=text], form input[type=tel], form input[type=number], select {
+        background-color: #fff
+    }
 
-        form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-container {
-            background: #fff
-        }
+    form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-container {
+        background: #fff
+    }
 
     .navigation__back,
     .order-summary tfoot,
@@ -1659,18 +1758,27 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         line-height: normal
     }
 
+    .payment-tooltip-container {
+        bottom: 0;
+        left: 50%;
+        position: fixed;
+        right: auto;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
     .progress-bar__step {
         text-indent: -9999px;
         margin-top: 3px;
         vertical-align: top;
     }
 
-        .progress-bar__step.progress-bar__step--success,
-        .progress-bar__step.progress-bar__step--error,
-        .progress-bar__step.progress-bar__step--failureretry,
-        .progress-bar__step.progress-bar__step--failurenoretry {
-            margin-top: 0;
-        }
+    .progress-bar__step.progress-bar__step--success,
+    .progress-bar__step.progress-bar__step--error,
+    .progress-bar__step.progress-bar__step--failureretry,
+    .progress-bar__step.progress-bar__step--failurenoretry {
+        margin-top: 0;
+    }
 
     .progress-bar__step-short {
         text-indent: -9999px;
@@ -1678,19 +1786,19 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         vertical-align: top;
     }
 
-        .progress-bar__step-short.progress-bar__step--success,
-        .progress-bar__step-short.progress-bar__step--error,
-        .progress-bar__step-short.progress-bar__step--failureretry,
-        .progress-bar__step-short.progress-bar__step--failurenoretry {
-            margin-top: 0;
-        }
+    .progress-bar__step-short.progress-bar__step--success,
+    .progress-bar__step-short.progress-bar__step--error,
+    .progress-bar__step-short.progress-bar__step--failureretry,
+    .progress-bar__step-short.progress-bar__step--failurenoretry {
+        margin-top: 0;
+    }
 
     .order-total {
         display: none;
     }
 }
 
-@media (min-width:961px) {
+@media (min-width: 961px) {
     .banner-content {
         margin: 0 auto
     }
@@ -1703,9 +1811,9 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         float: left
     }
 
-        .footer .row + .row {
-            float: right
-        }
+    .footer .row + .row {
+        float: right
+    }
 
     .order-summary--mobile, .progress-bar--mobile {
         display: none
@@ -1713,7 +1821,6 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
 
     .progress-bar {
         width: 47.5%;
-        margin: auto;
         max-height: 41px;
         margin: 0 16px 0 auto;
         padding: 24px 0 6px;
@@ -1721,99 +1828,99 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         white-space: nowrap;
     }
 
-        .progress-bar .progress-bar__step {
-            width: 23.5%;
-            height: auto;
-            margin-bottom: 24px;
-            background: 0 0;
-            font-size: 12px;
-            text-align: center;
-            white-space: normal;
-        }
+    .progress-bar .progress-bar__step {
+        width: 23.5%;
+        height: auto;
+        margin-bottom: 24px;
+        background: 0 0;
+        font-size: 12px;
+        text-align: center;
+        white-space: normal;
+    }
 
-            .progress-bar .progress-bar__step + .progress-bar__step {
-                margin-left: 12.5%
-            }
+    .progress-bar .progress-bar__step + .progress-bar__step {
+        margin-left: 12.5%
+    }
 
-            .progress-bar .progress-bar__step:before {
-                content: "";
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                margin: 8px auto 0;
-                display: block;
-                width: 8px;
-                height: 8px;
-                background: #d6d6d6;
-                border-radius: 100%
-            }
+    .progress-bar .progress-bar__step:before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: 8px auto 0;
+        display: block;
+        width: 8px;
+        height: 8px;
+        background: #d6d6d6;
+        border-radius: 100%
+    }
 
-            .progress-bar .progress-bar__step:after {
-                top: 100%;
-                left: 0;
-                right: 0;
-                width: 100%;
-                margin-top: 11px;
-                transform: translateX(calc(-50% - 30px))
-            }
+    .progress-bar .progress-bar__step:after {
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 11px;
+        transform: translateX(calc(-50% - 30px))
+    }
 
-        .progress-bar .progress-bar__step-short {
-            width: 15%;
-            height: auto;
-            margin-bottom: 24px;
-            background: 0 0;
-            font-size: 12px;
-            text-align: center;
-            white-space: normal;
-        }
+    .progress-bar .progress-bar__step-short {
+        width: 15%;
+        height: auto;
+        margin-bottom: 24px;
+        background: 0 0;
+        font-size: 12px;
+        text-align: center;
+        white-space: normal;
+    }
 
-            .progress-bar .progress-bar__step-short + .progress-bar__step-short {
-                margin-left: 12.5%
-            }
+    .progress-bar .progress-bar__step-short + .progress-bar__step-short {
+        margin-left: 12.5%
+    }
 
-            .progress-bar .progress-bar__step-short:before {
-                content: "";
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                margin: 8px auto 0;
-                display: block;
-                width: 8px;
-                height: 8px;
-                background: #d6d6d6;
-                border-radius: 100%
-            }
+    .progress-bar .progress-bar__step-short:before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: 8px auto 0;
+        display: block;
+        width: 8px;
+        height: 8px;
+        background: #d6d6d6;
+        border-radius: 100%
+    }
 
-            .progress-bar .progress-bar__step-short:after {
-                top: 100%;
-                left: 0;
-                right: 0;
-                width: 100%;
-                margin-top: 11px;
-                transform: translateX(calc(-50% - 30px))
-            }
+    .progress-bar .progress-bar__step-short:after {
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 11px;
+        transform: translateX(calc(-50% - 30px))
+    }
 
-        .progress-bar .progress-bar__step--active:before {
-            background-color: #4e4745
-        }
+    .progress-bar .progress-bar__step--active:before {
+        background-color: #4e4745
+    }
 
-        .progress-bar .progress-bar__step--error:before,
-        .progress-bar .progress-bar__step--failureretry:before,
-        .progress-bar .progress-bar__step--failurenoretry:before {
-            width: 16px;
-            height: 16px;
-            background: url(cross_stepper.gif) center no-repeat;
-            background-size: contain
-        }
+    .progress-bar .progress-bar__step--error:before,
+    .progress-bar .progress-bar__step--failureretry:before,
+    .progress-bar .progress-bar__step--failurenoretry:before {
+        width: 16px;
+        height: 16px;
+        background: url(./images/cross_stepper.gif) center no-repeat;
+        background-size: contain
+    }
 
-        .progress-bar .progress-bar__step--success:before {
-            width: 16px;
-            height: 16px;
-            background: url(success-green.gif) no-repeat;
-            background-size: contain
-        }
+    .progress-bar .progress-bar__step--success:before {
+        width: 16px;
+        height: 16px;
+        background: url(./images/success-green.gif) no-repeat;
+        background-size: contain
+    }
 
     .navigation {
         width: 100%;
@@ -1832,20 +1939,20 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         text-decoration: none;
     }
 
-        .navigation__back:hover {
-            border-bottom: 1px solid;
-            color: #757570;
-        }
+    .navigation__back:hover {
+        border-bottom: 1px solid;
+        color: #757570;
+    }
 
-        .navigation__back::before {
-            content: "<";
-            margin-right: 8px;
-        }
+    .navigation__back::before {
+        content: "<";
+        margin-right: 8px;
+    }
 
-        .navigation__back span {
-            margin-left: 14px;
-            text-decoration: underline
-        }
+    .navigation__back span {
+        margin-left: 14px;
+        text-decoration: underline
+    }
 
     .main-content h2 {
         padding-top: 16px
@@ -1905,37 +2012,43 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         margin: auto;
     }
 
-        .order-summary td {
-            font-size: 14px;
-        }
+    .order-summary td {
+        font-size: 14px;
+    }
 
-        .order-summary tfoot {
-            border-top: 1px solid #cccaca;
-            font-size: 21px;
-            font-weight: 700
-        }
+    .order-summary tfoot {
+        border-top: 1px solid #cccaca;
+        font-size: 21px;
+        font-weight: 700
+    }
 
-            .order-summary tfoot td {
-                padding: 24px 0;
-                font-size: 21px;
-            }
+    .order-summary tfoot td {
+        padding: 24px 0;
+        font-size: 21px;
+    }
 
     .banner {
         padding: 0;
         line-height: 96px
     }
 
-        .banner .banner__merchant-name {
-            float: left;
-            margin: 0 16px;
-            padding: 0;
-            font-size: 32px
-        }
+    .banner .banner__merchant-name {
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+    }
 
-        .banner .banner__merchant-logo {
-            float: right;
-            max-height: 96px
-        }
+    .banner .banner__merchant-name img {
+      width: 150px;
+      height: auto;
+    }
+
+    .banner .banner__merchant-logo {
+        float: right;
+        max-height: 96px
+    }
 
     .footer .content {
         padding-left: 0;
@@ -1967,7 +2080,7 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
 
 .js-expirydate-switch form .payment-field-container#input_cardexpirationdate .input-icon::before,
 .js-expirydate-switch form .payment-field-container#input_cardexpirationmonth .input-icon::before {
-    background-image: url(calendar-grey.gif);
+    background-image: url(./images/calendar-grey.gif);
 }
 
 .js-expirydate-switch form.payment-paymentmethodform #input_cardexpirationmonth {
@@ -1987,31 +2100,33 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
     flex-direction: column;
 }
 
-    .js-expirydate-switch .payment-paymentmethodform .paymentpart .payment-field-container {
-        order: 0;
-    }
+.js-expirydate-switch .payment-paymentmethodform .paymentpart .payment-field-container {
+    order: 0;
+}
 
-    .js-expirydate-switch .payment-paymentmethodform .paymentpart #input_cardholdername {
-        order: 1;
-    }
+.js-expirydate-switch .payment-paymentmethodform .paymentpart #input_cardholdername {
+    order: 1;
+}
 
-    .js-expirydate-switch .payment-paymentmethodform .paymentpart #payment-aliascreation {
-        order: 2;
-    }
+.js-expirydate-switch .payment-paymentmethodform .paymentpart #payment-aliascreation {
+    order: 2;
+}
 
-    .js-expirydate-switch .payment-paymentmethodform .paymentpart #payment-submit-field-container {
-        order: 3;
-    }
+.js-expirydate-switch .payment-paymentmethodform .paymentpart #payment-submit-field-container {
+    order: 3;
+}
 
-@media (max-width:960px) {
-    .js-paysecurely-switch #payment-submit-switch { display: none; }
+@media (max-width: 960px) {
+    .js-paysecurely-switch #payment-submit-switch {
+        display: none;
+    }
 
     .js-paysecurely-switch .payment-submit-switch-mobile {
         display: block;
         margin-top: 24px;
     }
-    /*.js-paysecurely-switch #payment-submit { display: block; }*/
 
+    /*.js-paysecurely-switch #payment-submit { display: block; }*/
     .js-paysecurely-switch #payment-ContinueToPaymentPage {
         display: block;
     }
@@ -2041,4 +2156,212 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
 
 .pm-selection-hidden {
     visibility: hidden;
+}
+
+.order-summary td.error-cell {
+    padding: 0 !important;
+}
+
+.order-summary td.error-cell div.error {
+    font-weight: normal;
+}
+
+.order-summary td.error-cell div.error span {
+    font-size: 14px;
+    color: #a81c14;
+}
+
+.dcc-row {
+    display: none;
+}
+
+.dcc-row.show {
+    display: table-row;
+}
+
+.surcharge-order-container {
+    font-size: 0.8em;
+    margin: -10px 0 15px 0;
+}
+
+    .surcharge-order-container.show {
+        display: block !important;
+    }
+
+tr.surcharge-row.show {
+    display: table-row;
+}
+
+.dcc-select-currency-cell {
+    padding: 0 !important;
+}
+
+.dcc-select-currency-cell label {
+    font-size: 21px;
+    padding: 0 !important;
+    font-weight: 700;
+}
+
+.dcc-input-table td.error-cell {
+    font-size: 21px !important;
+}
+
+.dcc-cell {
+    position: relative !important;
+    z-index: 1 !important;
+    padding: 15px 0 0 10px !important;
+    font-size: 21px !important;
+}
+
+.dcc-cell > label {
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 0.85em;
+    font-weight: 400;
+}
+
+.dcc-exchange-rate-cell {
+    padding: 10px 0 15px 0 !important;
+    text-align: left;
+    font-size: 21px !important;
+}
+
+.dcc-exchange-rate-cell > label {
+    font-size: 0.7em;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: left;
+    font-weight: normal;
+}
+
+.dcc-payment-summary-cell {
+    padding: 0 !important;
+    font-size: 21px !important;
+}
+
+.dcc-payment-summary-cell div {
+    margin-bottom: 7px;
+}
+
+.dcc-payment-summary-cell span {
+    font-size: 0.7em !important;
+    color: #4e4745 !important;
+    font-weight: normal !important;
+}
+
+.static-page {
+    padding: 24px 80px;
+    font-size: 14px;
+}
+
+.static-page h1, .static-page h2 {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.static-page h1 {
+    color: #007B7C;
+}
+
+.static-page > h1, .static-page > h2 {
+    margin-top: 40px;
+}
+
+.static-page > h1:first-of-type {
+    margin-top: 0;
+}
+
+.static-page p {
+    margin-top: 16px;
+}
+
+.static-page table {
+    width: 100%;
+    margin-top: 16px;
+}
+
+.static-page table td, .static-page table th {
+    padding: 16px;
+}
+
+.static-page table tr {
+    background-color: #ffffff;
+}
+
+.static-page table tr:nth-of-type(even) {
+    background-color: #fafafa;
+}
+
+.static-page table tr:first-of-type td, .static-page table tr:first-of-type th {
+    color: #007B7C;
+}
+
+.security-page > div > h1 {
+    margin-top: 40px;
+}
+
+.link-border-right {
+    border-right: solid 1px #757570;
+    padding: 0 6px 0 2px;
+}
+
+.link-last-element {
+    padding-left: 2px;
+}
+
+#input_twintintenturl > div.error {
+    display: none;
+}
+
+#input_twintintenturl > div.input-icon > a, #payment-twintswitchtomobileapp-label {
+    width: 100%;
+    display: block;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 12px 0;
+}
+
+#payment-twintcopytoclipboard-label {
+    width: 100%;
+    display: block;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 12px 0;
+}
+
+#payment-twintcopytoclipboard-label.inactive, #payment-twintswitchtomobileapp-label.inactive {
+    background-color: #dadada;
+    border-color: #aaaaaa;
+}
+
+select#payment-twintbanklistwithoutlogo {
+    width: 100%;
+}
+
+div#payment-twintbanklistwithlogo-input-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    grid-row-gap: 16px;
+}
+
+div#payment-twintbanklistwithlogo-input-container img {
+    width: 64px;
+}
+
+#payment-twintbanklistwithoutlogo-label {
+    display: none;
 }
