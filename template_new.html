@@ -81,13 +81,58 @@
 							</payment-surcharge-lineitems-container>
 						</tbody>
 						<tfoot>
-							<tr class="footer">
+							<payment-subtotal-amount-container>
+								<tr class="footer mobile divider">
+									<td colspan="2"></td>
+								</tr>
+								<tr class="footer subtotal">
+									<td class="bolder"><payment-subtotal-amount-text /></td>
+									<td class="bold price total-amount"><payment-currency />&nbsp;<payment-subtotal-amount /></td>
+								</tr>
+								<payment-global-discount-container>
+									<tr class="footer discount">
+										<td><payment-global-discount-text /></td>
+										<td class="price total-amount"><payment-currency />&nbsp;<payment-global-discount /></td>
+									</tr>
+								</payment-global-discount-container>
+								<payment-shipping-amount-container>
+									<tr class="footer shipping">
+										<td><payment-shipping-amount-text /></td>
+										<td class="price total-amount"><payment-currency />&nbsp;<payment-shipping-amount /></td>
+									</tr>
+								</payment-shipping-amount-container>
+								<tr class="footer desktop divider">
+									<td colspan="2"></td>
+								</tr>
+							</payment-subtotal-amount-container>
+							
+							<tr class="footer total-charge">
 								<td class="bolder"><payment-total-amount-text /></td>
 								<td class="bold price total-amount"><payment-currency />&nbsp;<payment-total-amount /></td>
 							</tr>
 						</tfoot>
 					</table>
 				</payment-lineitems>
+
+				<payment-dcc-surcharge-loading-spinner>
+					<div id="dcc-surcharge-spinner" class="dcc-surcharge-loading">
+						<div class="spinner">
+							<!--show spinner segments-->
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+					</div>
+				</payment-dcc-surcharge-loading-spinner>
 
 				<payment-dcc-container>
 					<payment-dcc-paymentform-container>
@@ -121,58 +166,49 @@
 								</payment-dcc-currency-list>
 
 								<tr class="dcc-row">
-                                    <td colspan="2" class="dcc-exchange-rate-cell">
-                                        <label id="payment-dcc-exchange-rate-caption"><payment-dcc-exchange-rate-displayvalue /></label>
-                                        <label id="<payment-dcc-exchange-rate-label-id />"></label><br />
-                                        <label id="payment-dcc-markup-rate-caption"><payment-dcc-markup-rate-displayvalue /></label>
-                                        <label id="<payment-dcc-markup-rate-label-id />"></label><br />
-                                        <label id="<payment-dcc-confirm-statement-label-id />"> <payment-dcc-confirm-statement-displayvalue /></label>
-                                    </td>
+									<td colspan="2" class="dcc-exchange-rate-cell">
+										<label id="payment-dcc-exchange-rate-caption"><payment-dcc-exchange-rate-displayvalue /></label>
+										<label id="<payment-dcc-exchange-rate-label-id />"></label><br />
+										<label id="payment-dcc-markup-rate-caption"><payment-dcc-markup-rate-displayvalue /></label>
+										<label id="<payment-dcc-markup-rate-label-id />"></label><br />
+										<label id="<payment-dcc-confirm-statement-label-id />"> <payment-dcc-confirm-statement-displayvalue /></label>
+									</td>
 								</tr>
 							</tbody>
 						</table>
 					</payment-dcc-paymentform-container>
 
-					<payment-dcc-summary-container>
-						<table class="order-summary dcc-input-table">
-							<tbody>
-								<tr class="dcc-summary-row">
-									<td colspan="2" class="dcc-payment-summary-cell">
-										<div>
-											<span>
-												<payment-dcc-summary-cardtype-text />: <payment-dcc-summary-cardtype-displayvalue />
-											</span>
-										</div>
-										<div>
-											<span>
-												<payment-dcc-summary-cardholdername-text />: <payment-dcc-summary-cardholdername-displayvalue />
-											</span>
-										</div>
-										<div>
-											<span>
-												<payment-dcc-summary-transactiontotal-text /> <payment-dcc-summary-transactioncurrency-displayvalue />: <payment-dcc-summary-transactiontotaltargetcurrencyamount-displayvalue />
-											</span>
-										</div>
-										<div>
-											<span>
-												<payment-dcc-exchange-rate-displayvalue />: <payment-dcc-summary-exchangerate-displayvalue />
-											</span>
-										</div>
-										<div>
-											<span>
-												<payment-dcc-markup-rate-displayvalue /> <payment-dcc-summary-markup-rate-displayvalue />
-											</span>
-                                        </div>
-                                        <div>
-                                            <span>
-                                                <payment-dcc-confirm-statement-displayvalue />
-                                            </span>
-                                        </div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</payment-dcc-summary-container>
+                    <payment-dcc-summary-container>
+                        <table class="order-summary dcc-input-table">
+                            <tbody>
+                            <tr class="dcc-summary-row">
+                                <td colspan="2" class="dcc-payment-summary-cell">
+                                    <div>
+                                        <payment-dcc-summary-cardtype-text />: <payment-dcc-summary-cardtype-displayvalue />
+                                    </div>
+                                    <div>
+                                        <payment-dcc-summary-cardholdername-text />: <payment-dcc-summary-cardholdername-displayvalue />
+                                    </div>
+									<div>
+										<payment-dcc-summary-transactioncurrency-text />: <payment-dcc-summary-transactioncurrency-displayvalue /> <payment-dcc-summary-transactioncurrencytargetcurrencyamount-displayvalue />
+									</div>
+                                    <div>
+                                        <payment-dcc-exchange-rate-displayvalue />: <payment-dcc-summary-exchangerate-displayvalue />
+                                    </div>
+                                    <div>
+                                        <payment-dcc-markup-rate-displayvalue /> <payment-dcc-summary-markup-rate-displayvalue />
+                                    </div>
+                                    <div>
+                                        <payment-dcc-summary-accepted-displayvalue />
+                                    </div>
+                                    <div>
+                                        <payment-dcc-summary-provider-displayvalue />
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </payment-dcc-summary-container>
 				</payment-dcc-container>
 
 				<payment-splitpayment class="order__products">
@@ -207,9 +243,9 @@
 					</table>
 				</payment-splitpayment>
 
-                <payment-submit-switch />
-                <payment-cancel-button />
-            </div>
+				<payment-submit-switch />
+				<payment-cancel-button />
+			</div>
             <label for="order-summary-accordion"
                    class="order-summary__label accordion__label">
                 <span class="bolder"><payment-total-amount-text /></span>
