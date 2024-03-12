@@ -182,7 +182,7 @@ b {
 
 .main-content .orderpart .card > label, .main-content .paymentpart .card > label {
     min-height: 30px;
-    padding: 12px;
+    padding: 4px;
     border: 1px solid #e5e5e5;
     border-radius: 4px;
     box-shadow: none
@@ -236,10 +236,10 @@ b {
 
 .main-content .orderpart .card > label .card__name, .main-content .paymentpart .card > label .card__name {
     display: inline-block;
-    margin: 0 16px;
     font-size: 16px;
     font-weight: 700;
-    width: calc(100% - 90px);
+    width: calc(100% - 110px);
+    padding-left: 10px;
 }
 
 .cobadging label.radio-button ~ label.radio-button, .main-content #input_cardexpirationmonth select + select {
@@ -247,8 +247,8 @@ b {
 }
 
 .main-content .orderpart .card > label img, .main-content .paymentpart .card > label img {
-    max-width: 50px;
-    max-height: 30px;
+    max-width: 100px;
+    max-height: 50px;
     padding: 0 4px
 }
 
@@ -1060,7 +1060,7 @@ form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.bra
     white-space: nowrap
 }
 
-#payment-BCMC-image {
+#input_bancontactlogo img {
     display: block;
     position: relative;
     max-width: 200px;
@@ -1700,6 +1700,7 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
     .footer {
         margin-top: 0;
         padding: 35px;
+        padding-bottom: 20px;
         background-color: #fff
     }
 
@@ -1752,7 +1753,7 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
     }
 
     .navigation__back,
-    .order-summary tfoot,
+    .order-summary tfoot .total-charge,
     .main-content .orderpart {
         display: none;
         line-height: normal
@@ -2171,14 +2172,6 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
     color: #a81c14;
 }
 
-.dcc-row {
-    display: none;
-}
-
-.dcc-row.show {
-    display: table-row;
-}
-
 .surcharge-order-container {
     font-size: 0.8em;
     margin: -10px 0 15px 0;
@@ -2192,31 +2185,36 @@ tr.surcharge-row.show {
     display: table-row;
 }
 
+.dcc-row {
+    display: none;
+}
+
+    .dcc-row.show {
+        display: table-row;
+    }
+
+.dcc-row td {
+    font-size: 21px !important;
+    display: block;
+}
+
 .dcc-select-currency-cell {
     padding: 0 !important;
 }
 
 .dcc-select-currency-cell label {
-    font-size: 21px;
     padding: 0 !important;
     font-weight: 700;
-}
-
-.dcc-input-table td.error-cell {
-    font-size: 21px !important;
 }
 
 .dcc-cell {
     position: relative !important;
     z-index: 1 !important;
     padding: 15px 0 0 10px !important;
-    font-size: 21px !important;
 }
 
 .dcc-cell > label {
-    color: rgba(0, 0, 0, 0.65);
-    font-size: 0.85em;
-    font-weight: 400;
+    font-size: 0.75em;
 }
 
 .dcc-exchange-rate-cell {
@@ -2226,10 +2224,8 @@ tr.surcharge-row.show {
 }
 
 .dcc-exchange-rate-cell > label {
-    font-size: 0.7em;
-    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.75em;
     text-align: left;
-    font-weight: normal;
 }
 
 .dcc-payment-summary-cell {
@@ -2237,14 +2233,118 @@ tr.surcharge-row.show {
     font-size: 21px !important;
 }
 
-.dcc-payment-summary-cell div {
-    margin-bottom: 7px;
+    .dcc-payment-summary-cell > div {
+        margin: 8px 0 16px;
+        font-size: 0.75em;
+    }
+
+.dcc-surcharge-loading {
+    display: none;
 }
 
-.dcc-payment-summary-cell span {
-    font-size: 0.7em !important;
-    color: #4e4745 !important;
-    font-weight: normal !important;
+.dcc-surcharge-loading.show {
+    min-height: 6rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    display: inline-block;
+    position: relative;
+    height: 6.4em;
+    width: 6.4em;
+    transform: scale(0.375);
+}
+
+.spinner div {
+    transform-origin: 3.2em 3.2em;
+    animation: spinner 1.2s linear infinite;
+}
+
+.spinner div:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 0.3em;
+    left: 3em;
+    width: 0.5em;
+    height: 1.4em;
+    border-radius: 1em / 2em;
+    background-color: #4E4745 /* Transparent white background */
+}
+
+/* spinner segments */
+.spinner div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+}
+
+.spinner div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+}
+
+.spinner div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+}
+
+.spinner div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+}
+
+.spinner div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+}
+
+.spinner div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+}
+
+.spinner div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+}
+
+.spinner div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+}
+
+.spinner div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+}
+
+.spinner div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+}
+
+.spinner div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+}
+
+.spinner div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+}
+
+@keyframes spinner {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 .static-page {
@@ -2364,4 +2464,52 @@ div#payment-twintbanklistwithlogo-input-container img {
 
 #payment-twintbanklistwithoutlogo-label {
     display: none;
+}
+
+.static-page.unknown-session {
+    position: absolute;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    text-align: center;
+    color: #8B8B9A;
+    top: calc(50% - 72px);
+}
+
+tr.footer.divider {
+    border-bottom: 1px solid #cccaca;
+}
+
+tr.footer.divider > td {
+    padding: 0;
+}
+
+tr.footer.subtotal > td {
+    padding-bottom: 12px;
+    font-size: 18px;
+}
+
+tr.footer.discount > td,
+tr.footer.shipping > td{
+    font-weight: 400;
+    padding: 12px 0;
+    font-size: 18px;
+}
+
+tr.mobile {
+    display: none;
+}
+
+tr.desktop {
+    display: table-row;
+}
+
+@media screen and (max-width: 960px) {
+    tr.mobile {
+        display: table-row;
+    }
+
+    tr.desktop {
+        display: none;
+    }
 }
