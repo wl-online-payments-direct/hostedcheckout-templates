@@ -1320,7 +1320,7 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
 }
 
 .progress-bar__step--success {
-    background: url(images/success-green.gif) no-repeat;
+    background: url(./success-green.gif) no-repeat;
     background-size: contain;
 }
 
