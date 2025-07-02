@@ -1,4 +1,4 @@
-@import url('./font_family_roboto.css');
+@import url('./fonts/font_family_roboto.css');
 
 .css-hidden, .main-content form [type=checkbox]:checked, .main-content form [type=checkbox]:not(:checked), .sr-only {
     position: absolute;
@@ -71,6 +71,29 @@ b {
     display: none;
 }
 
+.proceed-to-payment-label-error-id {
+    font-size: 0.9em;
+    color: red;
+    display: inline-block;
+    margin-bottom: 4px;
+    position: relative;
+    bottom: 4px;
+}
+
+#payment-proceed-to-payment {
+    position: relative;
+}
+
+label.pmchoice_label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
 .button {
     width: 100%;
     padding: 12px 0;
@@ -92,7 +115,7 @@ b {
 
 .button--raised {
     position: relative;
-    background-color: #008236;
+    background-color: #00682b;
     color: #fff;
     text-align: center;
     text-decoration: none;
@@ -100,7 +123,7 @@ b {
 }
 
 .button--raised:hover {
-    background-color: #00a545;
+    background-color: #008736;
     color: #fff
 }
 
@@ -110,7 +133,7 @@ b {
     width: 12px;
     height: 15px;
     margin-right: 8px;
-    background-image: url(./lock-white.gif);
+    background-image: url(./images/lock-white.gif);
     background-repeat: no-repeat;
     background-size: contain;
     vertical-align: baseline
@@ -119,6 +142,11 @@ b {
 .button--raised[disabled] {
     background-color: #D6D6D6;
     cursor: inherit;
+}
+
+.button.disabled,
+.button[aria-disabled="true"] {
+    background: #757575;
 }
 
 .banner {
@@ -188,6 +216,7 @@ b {
     box-shadow: none
 }
 
+.main-content .paymentpart .card label:has(input[type="radio"]:checked),
 .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="image"]:focus + label,
 .main-content .orderpart .card > label:hover, .main-content .paymentpart .card input[type="radio"]:checked + label,
 .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > label:focus,
@@ -196,6 +225,7 @@ b {
     cursor: pointer;
 }
 
+.main-content .paymentpart .card label:has(input[type="radio"]:checked),
 .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="image"]:focus + label *,
 .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > input[type="radio"]:checked + label *,
 .main-content .orderpart .card > label:hover, .main-content .paymentpart .card > label:focus *,
@@ -345,6 +375,10 @@ b {
     border-radius: 4px
 }
 
+.main-content form [type=checkbox]:focus-visible + label::before {
+    outline: 2px solid #005fcc;
+}
+
 .main-content form [type=checkbox]:checked + label::after {
     content: "";
     position: absolute;
@@ -354,7 +388,7 @@ b {
     width: 20px;
     height: 16px;
     margin: auto;
-    background: url(./success-green.gif) no-repeat;
+    background: url(./images/success-green.gif) no-repeat;
     background-size: contain;
     z-index: 1
 }
@@ -455,7 +489,7 @@ b {
 .payment-status-icon--success {
     width: 48px;
     height: 48px;
-    background: url(./success_white.gif) no-repeat;
+    background: url(./images/success_white.gif) no-repeat;
     background-size: contain;
     display: inline-block;
     margin: 0px 10px -10px 0px;
@@ -521,7 +555,7 @@ label.accordion__label::after {
     display: block;
     width: 32px;
     height: 32px;
-    background-image: url(./caret-grey.gif);
+    background-image: url(./images/caret-grey.gif);
     background-size: contain;
     transition: .2s all
 }
@@ -721,7 +755,7 @@ form .payment-field-container.checkbox-field > input[type=checkbox]:checked + la
     width: 20px;
     height: 16px;
     margin: auto;
-    background: url(./success-green.gif) no-repeat;
+    background: url(./images/success-green.gif) no-repeat;
     background-size: contain;
     z-index: 1
 }
@@ -758,17 +792,23 @@ form .payment-field-container .input-icon::before {
     pointer-events: none;
 }
 
+#required-fields-disclaimer {
+    font-size: 14px;
+    color: #4e4745;
+    margin-bottom: 12px;
+}
+
 form .payment-field-container#input_cardnumber .input-icon::before {
-    background-image: url(./card-grey.gif);
+    background-image: url(./images/card-grey.gif);
 }
 
 form .payment-field-container#input_cardholdername .input-icon::before {
-    background-image: url(./user-grey.gif);
+    background-image: url(./images/user-grey.gif);
 }
 
 form .payment-field-container#input_cvc .input-icon::before,
 form .payment-field-container#input_pincode .input-icon::before {
-    background-image: url(./lock-grey.gif);
+    background-image: url(./images/lock-grey.gif);
 }
 
 form #input_bancontactlogo {
@@ -827,7 +867,7 @@ form .payment-field-container.valid .input-icon::after {
     margin: auto;
     width: 16px;
     height: 12px;
-    background: url(./success-green.gif) no-repeat;
+    background: url(./images/success-green.gif) no-repeat;
     background-size: contain
 }
 
@@ -878,13 +918,14 @@ form .button.raised {
     width: 12px;
     height: 15px;
     margin-right: 8px;
-    background-image: url(./lock-white.gif);
+    background-image: url(./images/lock-white.gif);
     background-repeat: no-repeat;
     background-size: contain;
     vertical-align: baseline
 }
 
 #payment-cancel,
+#payment-cancel-mobile,
 .cancel {
     position: relative;
     display: block;
@@ -902,11 +943,13 @@ form .button.raised {
 }
 
 #payment-cancel:hover,
+#payment-cancel-mobile:hover,
 .cancel:hover {
     cursor: pointer
 }
 
 #payment-cancel:visited,
+#payment-cancel-mobile:visited,
 .cancel:visited {
     color: inherit
 }
@@ -1315,12 +1358,12 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
 .progress-bar__step--error,
 .progress-bar__step--failureretry,
 .progress-bar__step--failurenoretry {
-    background: url(./cross_stepper.gif) no-repeat;
+    background: url(./images/cross_stepper.gif) no-repeat;
     background-size: contain;
 }
 
 .progress-bar__step--success {
-    background: url(./success-green.gif) no-repeat;
+    background: url(images/success-green.gif) no-repeat;
     background-size: contain;
 }
 
@@ -1426,14 +1469,14 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
 .progress-bar--desktop .progress-bar__step--failurenoretry:before {
     width: 16px;
     height: 16px;
-    background: url(./cross_stepper.gif) center no-repeat;
+    background: url(./images/cross_stepper.gif) center no-repeat;
     background-size: contain
 }
 
 .progress-bar--desktop .progress-bar__step--success:before {
     width: 16px;
     height: 16px;
-    background: url(./success-green.gif) no-repeat;
+    background: url(./images/success-green.gif) no-repeat;
     background-size: contain
 }
 
@@ -1449,6 +1492,7 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
 }
 
 .payment-tooltip {
+    border: 1px solid transparent;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -1456,7 +1500,7 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
     width: 16px;
     height: 16px;
     margin: auto auto auto 8px;
-    background-image: url(./question-circle-regular.gif);
+    background-image: url(./images/question-circle-regular.gif);
     background-repeat: no-repeat;
     background-size: 16px;
     background-size: contain;
@@ -1467,10 +1511,8 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
     height: .9em
 }
 
-.payment-tooltip:focus .payment-tooltip-container, .payment-tooltip:hover .payment-tooltip-container {
-    display: block;
-    opacity: 1;
-    z-index: 99
+.payment-tooltip:hover {
+    border: 1px solid
 }
 
 .payment-tooltip-container label {
@@ -1478,6 +1520,12 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
 }
 
 .payment-tooltip-container {
+    background-color: #fff;
+    font-family: Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400;
+    color: #4e4745;
+    line-height: 1.1;
+    -webkit-font-smoothing: antialiased;
     position: absolute;
     bottom: 200%;
     right: 0;
@@ -1485,11 +1533,9 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
     padding: 1em;
     width: 240px;
     height: auto;
-    background: #FFF;
     border: 1px solid rgba(68, 69, 73, .15);
     font-size: 14px;
     text-align: left;
-    line-height: initial;
     transition: .2s all;
     box-shadow: 0 0 10px rgba(0, 0, 0, .05);
     opacity: 0;
@@ -1511,6 +1557,8 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
 }
 
 .payment-tooltip-container p, .payment-tooltip-container ul, .payment-tooltip-container .payment-content {
+    display: flex;
+    justify-content: center;
     margin: 0;
     padding: 0;
     text-align: left;
@@ -1547,11 +1595,11 @@ form .payment-field-container#input_paywithyourbancontactcard label.payment-labe
 }
 
 #payment-tooltip-cvc #payment-tooltip-cvc-card-text {
-    background-image: url('./security-code-card.gif');
+    background-image: url('./images/security-code-card.gif');
 }
 
 #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
-    background-image: url('./security-code-amex.gif');
+    background-image: url('./images/security-code-amex.gif');
 }
 
 img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-card-text {
@@ -1567,15 +1615,20 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
     right: 0;
 }
 
+#payment-tooltip-alias:focus-visible {
+    outline: 2px solid #005fcc;
+}
+
 #payment-max-amount {
-    display: inline;
+    display: inline-flex;
 }
 
 #payment-max-amount-tooltip {
     position: relative !important;
     left: auto !important;
-    margin-bottom: -2px !important;
-    display: inline-block !important;
+    margin-right: 8px !important;
+    background-color: #FFFFFF;
+    vertical-align: middle;
 }
 
 @media (min-width: 680px) {
@@ -1698,7 +1751,11 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
     }
 
     .main-content {
-        min-height: calc(100vh - 220px)
+        min-height: var(--box-height)
+    }
+
+    :root {
+        --box-height: calc(100vh - 220px);
     }
 
     .footer {
@@ -1732,6 +1789,10 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         max-width: 960px;
         margin: auto
     }
+
+    #buttons-part-mobile {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 960px) {
@@ -1756,7 +1817,37 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         background: #fff
     }
 
-    .navigation__back,
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation__back {
+        margin: 0;
+        padding: 16px 0 4px;
+        border-bottom: 1px solid;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .navigation__back:hover {
+        border-bottom: 1px solid;
+        color: #6B6B66;
+    }
+
+    .navigation__back::before {
+        content: "<";
+        margin-right: 8px;
+    }
+
+    .navigation__back span {
+        margin-left: 14px;
+        text-decoration: underline;
+    }
+
     .order-summary tfoot .total-charge,
     .main-content .orderpart {
         display: none;
@@ -1770,37 +1861,130 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         right: auto;
         top: 50%;
         transform: translate(-50%, -50%);
+        overflow-y: auto;
     }
 
-    .progress-bar__step {
-        text-indent: -9999px;
-        margin-top: 3px;
-        vertical-align: top;
+    .progress-bar {
+        width: 100%;
+        max-height: 41px;
+        margin: 0;
+        text-align: center;
+        white-space: nowrap;
     }
 
-    .progress-bar__step.progress-bar__step--success,
-    .progress-bar__step.progress-bar__step--error,
-    .progress-bar__step.progress-bar__step--failureretry,
-    .progress-bar__step.progress-bar__step--failurenoretry {
-        margin-top: 0;
+    .progress-bar .progress-bar__step {
+        width: 23.5%;
+        height: auto;
+        margin-bottom: 24px;
+        background: none;
+        font-size: 12px;
+        text-align: center;
+        white-space: normal;
     }
 
-    .progress-bar__step-short {
-        text-indent: -9999px;
-        margin-top: 3px;
-        vertical-align: top;
+    .progress-bar .progress-bar__step + .progress-bar__step {
+        margin-left: 12.5%;
     }
 
-    .progress-bar__step-short.progress-bar__step--success,
-    .progress-bar__step-short.progress-bar__step--error,
-    .progress-bar__step-short.progress-bar__step--failureretry,
-    .progress-bar__step-short.progress-bar__step--failurenoretry {
-        margin-top: 0;
+    .progress-bar .progress-bar__step:before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: 8px auto 0;
+        display: block;
+        width: 8px;
+        height: 8px;
+        background: #d6d6d6;
+        border-radius: 100%;
+    }
+
+    .progress-bar .progress-bar__step:after {
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 11px;
+        transform: translateX(calc(-50% - 30px));
+    }
+
+    .progress-bar .progress-bar__step--active:before {
+        background-color: #4e4745;
+    }
+
+    .progress-bar .progress-bar__step--error:before,
+    .progress-bar .progress-bar__step--failureretry:before,
+    .progress-bar .progress-bar__step--failurenoretry:before {
+        width: 16px;
+        height: 16px;
+        background: url(./images/cross_stepper.gif) center no-repeat;
+        background-size: contain;
+    }
+
+    .progress-bar .progress-bar__step--success:before {
+        width: 16px;
+        height: 16px;
+        background: url(./images/success-green.gif) no-repeat;
+        background-size: contain;
     }
 
     .order-total {
         display: none;
     }
+}
+
+.progress-bar .progress-bar__step-short {
+    width: 15%;
+    height: auto;
+    margin-bottom: 24px;
+    background: 0 0;
+    font-size: 12px;
+    text-align: center;
+    white-space: normal;
+}
+
+.progress-bar .progress-bar__step-short + .progress-bar__step-short {
+    margin-left: 12.5%
+}
+
+.progress-bar .progress-bar__step-short:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 8px auto 0;
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #d6d6d6;
+    border-radius: 100%
+}
+
+.progress-bar .progress-bar__step-short:after {
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-top: 11px;
+    transform: translateX(calc(-50% - 30px))
+}
+
+.progress-bar .progress-bar__step--error:before,
+.progress-bar .progress-bar__step--failureretry:before,
+.progress-bar .progress-bar__step--failurenoretry:before {
+    width: 16px;
+    height: 16px;
+    background: url(./images/cross_stepper.gif) center no-repeat;
+    background-size: contain;
+}
+
+.progress-bar .progress-bar__step--success:before {
+    width: 16px;
+    height: 16px;
+    background: url(./images/success-green.gif) no-repeat;
+    background-size: contain;
 }
 
 @media (min-width: 961px) {
@@ -1870,43 +2054,6 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         transform: translateX(calc(-50% - 30px))
     }
 
-    .progress-bar .progress-bar__step-short {
-        width: 15%;
-        height: auto;
-        margin-bottom: 24px;
-        background: 0 0;
-        font-size: 12px;
-        text-align: center;
-        white-space: normal;
-    }
-
-    .progress-bar .progress-bar__step-short + .progress-bar__step-short {
-        margin-left: 12.5%
-    }
-
-    .progress-bar .progress-bar__step-short:before {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        margin: 8px auto 0;
-        display: block;
-        width: 8px;
-        height: 8px;
-        background: #d6d6d6;
-        border-radius: 100%
-    }
-
-    .progress-bar .progress-bar__step-short:after {
-        top: 100%;
-        left: 0;
-        right: 0;
-        width: 100%;
-        margin-top: 11px;
-        transform: translateX(calc(-50% - 30px))
-    }
-
     .progress-bar .progress-bar__step--active:before {
         background-color: #4e4745
     }
@@ -1916,14 +2063,14 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
     .progress-bar .progress-bar__step--failurenoretry:before {
         width: 16px;
         height: 16px;
-        background: url(./cross_stepper.gif) center no-repeat;
+        background: url(./images/cross_stepper.gif) center no-repeat;
         background-size: contain
     }
 
     .progress-bar .progress-bar__step--success:before {
         width: 16px;
         height: 16px;
-        background: url(./success-green.gif) no-repeat;
+        background: url(./images/success-green.gif) no-repeat;
         background-size: contain
     }
 
@@ -1938,7 +2085,7 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         margin-top: 24.5px;
         margin-left: 16px;
         padding: 16px 0 4px;
-        border-bottom: 1px solid transparent;
+        border-bottom: 1px solid;
         font-size: 14px;
         font-weight: 700;
         text-decoration: none;
@@ -1946,7 +2093,7 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
 
     .navigation__back:hover {
         border-bottom: 1px solid;
-        color: #757570;
+        color: #6B6B66;
     }
 
     .navigation__back::before {
@@ -1992,9 +2139,11 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         box-sizing: border-box;
         display: block;
         float: right;
-        width: 47.5%;
-        margin-top: 95px;
-        margin-right: 16px;
+        width: 456px;
+        position: absolute;
+        left: 50%;
+        margin-left: 8px;
+        top: 192px;
         padding: 16px 24px 24px;
         border: 1px solid #e3e3e4;
         border-radius: 4px;
@@ -2065,6 +2214,11 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
     display: none;
 }
 
+.orderpart-mobile {
+    display: none;
+    z-index: -99;
+}
+
 .paysecurely-switch #payment-submit-switch {
     display: none;
 }
@@ -2085,7 +2239,7 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
 
 .js-expirydate-switch form .payment-field-container#input_cardexpirationdate .input-icon::before,
 .js-expirydate-switch form .payment-field-container#input_cardexpirationmonth .input-icon::before {
-    background-image: url(./calendar-grey.gif);
+    background-image: url(./images/calendar-grey.gif);
 }
 
 .js-expirydate-switch form.payment-paymentmethodform #input_cardexpirationmonth {
@@ -2131,9 +2285,36 @@ img[alt="amex"] + #payment-tooltip-cvc #payment-tooltip-cvc-amex-text {
         margin-top: 24px;
     }
 
+    .js-paysecurely-switch .orderpart-mobile {
+        display: block;
+        z-index: 1;
+    }
+
+    .orderpart {
+        display: none;
+        z-index: -99;
+    }
+
     /*.js-paysecurely-switch #payment-submit { display: block; }*/
     .js-paysecurely-switch #payment-ContinueToPaymentPage {
         display: block;
+    }
+
+    #buttons-part-mobile {
+        display: block;
+        padding-left: 24px;
+        padding-right: 24px;
+        margin-top: 36px
+    }
+
+    .paymentpart .orderpart-mobile {
+        margin-left: -24px;
+        width: 100vw;
+        margin-top: 36px;
+    }
+
+    .paymentpart .orderpart-mobile .accordion__label {
+        font-size: 16px;
     }
 }
 
@@ -2528,7 +2709,7 @@ tr.desktop {
 .form_container {
     display: none;
     padding: 10px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #008236;
     border-top: 0;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
@@ -2546,4 +2727,192 @@ tr.desktop {
 .main-content .orderpart .open > label:hover, .main-content .paymentpart .open > label:focus,
 .main-content .orderpart .open > label:hover, .main-content .paymentpart .open > label:hover {
     border-color: #e5e5e5;
+}
+
+/* Blik Design */
+
+#payment-blikcode-label {
+    display: none;
+}
+
+#payment-blikgeneratedinyourbankapp-label {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+#payment-blikcode {
+    padding-left: calc(50% - 92.4px);
+    padding-right: 80px;
+    letter-spacing: 25px;
+    caret-color: transparent;
+    color: transparent;
+    z-index: 1;
+}
+
+    #payment-blikcode.payment-input-valid ~ .payment-input-success::after {
+        display: none;
+    }
+
+.blikcode {
+    flex: 1 1 0;
+    align-self: stretch;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    display: flex;
+}
+
+.blik-code-sections {
+    gap: 15px;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    margin-top: -47px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.blik-code-box {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding: 4px -1px;
+    width: 18px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    display: flex;
+    border-bottom: 1.8px solid;
+}
+
+.blik-margin-left {
+    margin-left: -10px;
+}
+
+#payment-blikcode::selection {
+    background-color: lightblue;
+    color: transparent;
+}
+
+.disable-submit-blik {
+    pointer-events: none;
+}
+
+#payment-blikcode-error {
+    color: #d50000;
+    position: absolute;
+    top: 50px;
+    left: 4px;
+    margin-top: 2px;
+    font-size: 12.5px;
+    font-weight: 400;
+    line-height: 16.94px;
+    font-family: Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#payment-Blik-image {
+    position: initial;
+    max-width: 100px;
+}
+
+/* reponsive blik page */
+@media (max-width: 960px) {
+
+    .disable-submit-blik {
+        pointer-events: none;
+    }
+
+    #payment-blikcode {
+        padding-left: calc(50% - 92.4px);
+        padding-right: 80px;
+        letter-spacing: 25px;
+        caret-color: transparent;
+        color: transparent;
+        z-index: 1;
+    }
+
+    .blik-code-sections {
+        justify-content: flex-start;
+        align-items: center;
+        display: flex;
+        margin-top: -47px;
+        margin-left: -9px;
+        margin-right: -4px;
+        z-index: 2;
+    }
+
+    #payment-blikcode::selection {
+        background-color: lightgrey;
+        color: transparent;
+    }
+}
+
+@media (max-width: 275px) {
+
+    .disable-submit-blik {
+        pointer-events: none;
+    }
+
+    #payment-blikcode {
+        padding-left: calc(50% - 92.4px);
+        padding-right: 80px;
+        letter-spacing: 25px;
+        caret-color: transparent;
+        color: transparent;
+        z-index: 1;
+    }
+
+    .blik-code-sections {
+        justify-content: flex-start;
+        align-items: center;
+        display: flex;
+        margin-top: -47px;
+        margin-left: -9px;
+        margin-right: -4px;
+    }
+
+    #payment-blikcode::selection {
+        background-color: lightgrey;
+        color: transparent;
+    }
+}
+
+#gpay-button-online-api-id:focus-visible {
+    outline-offset: 3px;
+}
+
+.payment-status-icon-information-description {
+    position: absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0, 0, 0, 0);
+    white-space:nowrap;
+    border:0;
+}
+
+#progress-bar-label-text {
+    position: absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0, 0, 0, 0);
+    white-space:nowrap;
+    border:0;
+}
+
+#card-brand-live-region {
+    position: absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0, 0, 0, 0);
+    white-space:nowrap;
+    border:0;
 }
