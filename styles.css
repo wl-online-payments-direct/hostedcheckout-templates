@@ -1,4 +1,4 @@
-@import url('./fonts/font_family_roboto.css');
+@import url('./font_family_roboto.css');
 
 html,
 body {
@@ -175,7 +175,7 @@ input[type="submit"],
         top: 12px;
         left: 7px;
         font-size: 65px;
-        background: url("./images/check.png") no-repeat;
+        background: url("./check.png") no-repeat;
         background-size: 37px 29px;
         -webkit-background-size: 37px 29px;
     }
@@ -589,7 +589,7 @@ form.payment-paymentmethodform select.payment-select {
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAYAAAC5Sw6hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACsSURBVHgBndExCsIwGIbhLw3ZPYJHqJtDhV4hN+kilEyZQsGlN8kRbAk4ewTHji7iIDWagENRf1PfJSGBB5IfeKaraoE/03W9DCuLG5HtMd6kNrvjLESpHMxbXK6rTDfNCSMkuLBabfPZiGdSt+2Zh8POuaEsNj04t2Wx7jt3GJIRY+Ir+OsyFfuETKAU7BvyBlEYhYQYqH/gsGGagACFkNAEu3tQSFIBi+CPHv5Odh6mhnUxAAAAAElFTkSuQmCC');
      */
     /* REPLACE with relative image url */
-    background: transparent url('./images/down-arrow.png') no-repeat;
+    background: transparent url('./down-arrow.png') no-repeat;
     background-position-x: calc(100% - 15px);
     background-position-y: 50%;
 }
@@ -906,7 +906,7 @@ form #input_bancontactlogo {
             width: 100%;
             text-align: left;
             padding-left: 15px;
-            background: #fff url("./images/right-arrow.png") no-repeat;
+            background: #fff url("./right-arrow.png") no-repeat;
             background-position-x: calc(100% - 15px);
             background-position-y: 50%;
         }
