@@ -37,9 +37,11 @@
 								</li>
 								<li class="progress-bar__step">
 									<payment-progress-bar-details-text />
+									<span class="payment-status-icon-information-description">&nbsp;<payment-progress-bar-label-status-indicator /></span>
 								</li>
 								<li class="progress-bar__step">
 									<payment-progress-bar-complete-text />
+									<span class="payment-status-icon-information-description">&nbsp;<payment-progress-bar-label-status-indicator /></span>
 								</li>
 							</ol>
 						</div>
@@ -129,12 +131,13 @@
                                         <span class="payment-status-icon-information-description">&nbsp;<payment-progress-bar-label-success-status /></span>
                                     </li>
                                 </payment-gift-card-navigation-point>
-                                <li class="<payment-progress-bar-sep-class /> progress-bar__step--active" aria-current="step">
-                                    <payment-progress-bar-details-text />
-                                </li>
-                                <li class="<payment-progress-bar-sep-class /> progress-bar__step--<payment-flow-status-indicator />">
-                                    <payment-progress-bar-complete-text />
-                                </li>
+								<li class="<payment-progress-bar-sep-class /> progress-bar__step--active" aria-current="step">
+									<payment-progress-bar-details-text />
+								</li>
+								<li class="<payment-progress-bar-sep-class /> progress-bar__step--<payment-flow-status-indicator />">
+									<payment-progress-bar-complete-text />
+									<span class="payment-status-icon-information-description">&nbsp;<payment-progress-bar-label-status-indicator /></span>
+								</li>
                             </ol>
 						</div>
 					</div>
@@ -155,7 +158,9 @@
 								<span class="payment-input-success"></span>
 								<payment-input-specific-content for="cardnumber">
 									<payment-pm-image class="input-bg" />
-                                    <span id="card-brand-live-region" aria-live="polite"></span>
+									<div id="integrated-cobadging-brandlist"></div>
+									<span id="card-brand-live-region" aria-live="polite"></span>
+									<span id="intersolve-card-validation-message" hidden="hidden"><payment-intersolve-card-validation-message-text /></span>
 								</payment-input-specific-content>
 							</div>
 							<payment-cobadging />
@@ -166,6 +171,7 @@
                         <div id="payment-max-amount" class="payment-label">
                             <button id="payment-max-amount-tooltip" class="payment-tooltip" type="button" tabindex="0" aria-haspopup="true" aria-controls="tooltip-container" aria-expanded="false">
                                 <div id="payment-max-amount-tooltip-container" class="payment-tooltip-container" style="display: none; opacity: 0; z-index: -1;" aria-hidden="true">
+                                    <div class="payment-tooltip-close-button" id="payment-tooltip-max-amount-close-button" role="button" tabindex="0"></div>
                                     <div class="payment-content"><payment-max-amount-tooltip-text /></div>
                                 </div>
                             </button>
@@ -199,10 +205,18 @@
 					</payment-alias-section>
 
                     <div class="order-summary orderpart-mobile">
+                        <label id="order-summary-accordion-toggle-label"
+							   for="order-summary-accordion"
+                               class="order-summary__label accordion__label"
+							   aria-label="<payment-total-amount-text /> <payment-currency /> <payment-total-amount />"
+							   aria-expanded="false">
+                            <span class="bolder"><payment-total-amount-text /></span>
+							<span class="bold price total-amount"><payment-currency />&nbsp;<payment-total-amount /></span>
+                        </label>
                         <input type="checkbox"
                                class="css-hidden accordion__input"
                                id="order-summary-accordion"
-                               aria-hidden="true" checked/>
+                               aria-hidden="true"/>
                         <div class="accordion order-summary__content">
                             <div class="row">
                                 <h2 class="order__summary-title"><payment-order-overview-text /></h2>
@@ -333,9 +347,9 @@
                                                 <td class="dcc-cell">
                                                     <input type="radio" id="<payment-dcc-currency-radio-id />"
                                                            name="payment-dcc-currency-selection" />
-                                                    <label for="<payment-dcc-currency-radio-id />">
+                                                    <label class="dcc-label-mobile" for="<payment-dcc-currency-radio-id />">
                                                         <payment-dcc-pay-displayvalue />
-                                                        <label id="<payment-dcc-currency-radio-label-id />"
+                                                        <label class="dcc-label-mobile" id="<payment-dcc-currency-radio-label-id />"
                                                                for="<payment-dcc-currency-radio-id />"></label>
                                                     </label>
                                                 </td>
@@ -420,11 +434,6 @@
                                 </table>
                             </payment-splitpayment>
                         </div>
-                        <label for="order-summary-accordion"
-                               class="order-summary__label accordion__label">
-                            <span class="bolder"><payment-total-amount-text /></span>
-                            <span class="bold price total-amount"><payment-currency />&nbsp;<payment-total-amount /></span>
-                        </label>
                     </div>
 
 					<div id="payment-submit-field-container" class="row">
@@ -472,7 +481,7 @@
 				</div>
 				<div class="paymentpart">
 					<div class="row">
-						<h2>
+						<h2 id="payment-status-header">
 							<span class="payment-status-icon--<payment-icon-status-indicator />"></span>
 							<payment-status-title />
 						</h2>
@@ -513,9 +522,10 @@
                                 <li class="<payment-progress-bar-sep-class /> progress-bar__step--active" aria-current="step">
                                     <payment-progress-bar-details-text />
                                 </li>
-                                <li class="<payment-progress-bar-sep-class /> progress-bar__step--<payment-flow-status-indicator />">
-                                    <payment-progress-bar-complete-text />
-                                </li>
+								<li class="<payment-progress-bar-sep-class /> progress-bar__step--<payment-flow-status-indicator />">
+									<payment-progress-bar-complete-text />
+									<span class="payment-status-icon-information-description">&nbsp;<payment-progress-bar-label-status-indicator /></span>
+								</li>
                             </ol>
                         </div>
 					</div>
@@ -603,11 +613,22 @@
 			</payment-split-payment-status-page>
 		</div>
         <div class="order-summary orderpart-mobile" id="paymentmethod-selection-order-summary-mobile">
+            <label id="order-summary-accordion-toggle-label"
+				   for="order-summary-accordion"
+				   aria-expanded="false"
+				   aria-controls="order-summary-accordion-content"
+				   tabindex="0"
+				   role="button"
+                   class="order-summary__label accordion__label">
+                <span class="bolder"><payment-total-amount-text /></span>
+				<span class="bold price total-amount"><payment-currency />&nbsp;<payment-total-amount /></span>
+            </label>
             <input type="checkbox"
+				   tabindex="-1"
                    class="css-hidden accordion__input"
                    id="order-summary-accordion"
-                   aria-hidden="true" checked/>
-            <div class="accordion order-summary__content">
+                   aria-hidden="true" />
+            <div class="accordion order-summary__content" id="order-summary-accordion-content">
                 <div class="row">
                     <h2 class="order__summary-title"><payment-order-overview-text /></h2>
                 </div>
@@ -824,11 +845,6 @@
                     </table>
                 </payment-splitpayment>
             </div>
-            <label for="order-summary-accordion"
-                   class="order-summary__label accordion__label">
-                <span class="bolder"><payment-total-amount-text /></span>
-                <span class="bold price total-amount"><payment-currency />&nbsp;<payment-total-amount /></span>
-            </label>
         </div>
         <div id="buttons-part-mobile">
             <payment-proceed-to-payment />
@@ -838,7 +854,7 @@
 			<input type="checkbox"
 				   class="css-hidden accordion__input"
 				   id="order-summary-accordion"
-				   aria-hidden="true" checked/>
+				   aria-hidden="true"/>
 			<div class="accordion order-summary__content">
 				<div class="row">
 					<h2 class="order__summary-title"><payment-order-overview-text /></h2>

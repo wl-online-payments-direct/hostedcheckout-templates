@@ -1,39 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
     const cvcButton = document.getElementById('payment-tooltip-cvc');
     const cvcTooltipContent = document.getElementById('payment-tooltip-container');
+    const cvcTooltipCloseButton = document.getElementById('payment-tooltip-cvc-close-button');
 
     const aliasButton = document.getElementById('payment-tooltip-alias');
     const aliasTooltipContent = document.getElementById('payment-tooltip-container-alias');
+    const aliasTooltipCloseButton = document.getElementById('payment-tooltip-alias-close-button');
 
-    const cardholderNameError = document.getElementById('payment-cardholdername-error');
-    const cardNumberError = document.getElementById('payment-cardnumber-error');
-    const cvcError = document.getElementById('payment-cvc-error');
-    const paySecurelyButton = document.getElementById('submit-all');
-    const paySecurelyButtonMobile = document.getElementById('payment-submit-switch-mobile');
-
-    const parent = document.querySelector('div.order-summary.orderpart');
-    const orderSummary = parent.querySelector('div.accordion.order-summary__content');
-    const surchargeTable = document.querySelector('table.order-summary.dcc-input-table');
-    const paymentPart = document.querySelector('.paymentpart');
-    const mainContent = document.querySelector('.main-content');
-    const footer = document.querySelector('.center.footer');
+    const cobadgingButton = document.getElementById('payment-tooltip-cobadging');
+    const cobadgingTooltipContent = document.getElementById('payment-tooltip-container-cobadging');
+    const cobadgingTooltipCloseButton = document.getElementById('payment-tooltip-cobadging-close-button');
 
     function toggleTooltip(button, tooltipContent) {
         const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        isExpanded ? closeTooltip(button, tooltipContent) : expandTooltip(button, tooltipContent);
+    }
 
-        if (isExpanded) {
-            tooltipContent.style.display = 'none';
-            tooltipContent.style.opacity = '0';
-            tooltipContent.style.zIndex = '-1';
-            button.setAttribute('aria-expanded', 'false');
-            tooltipContent.setAttribute('aria-hidden', 'true');
-        } else {
-            tooltipContent.style.display = 'block';
-            tooltipContent.style.opacity = '1';
-            tooltipContent.style.zIndex = '99';
-            button.setAttribute('aria-expanded', 'true');
-            tooltipContent.setAttribute('aria-hidden', 'false');
-        }
+    function expandTooltip(button, tooltipContent) {
+        button.setAttribute('aria-expanded', 'true');
+        tooltipContent.setAttribute('aria-hidden', 'false');
+        tooltipContent.style.display = 'block';
+        tooltipContent.style.opacity = '1';
+        tooltipContent.style.zIndex = '99';
+    }
+
+    function closeTooltip(button, tooltipContent) {
+        button.setAttribute('aria-expanded', 'false');
+        tooltipContent.setAttribute('aria-hidden', 'true');
+        tooltipContent.style.display = 'none';
+        tooltipContent.style.opacity = '0';
+        tooltipContent.style.zIndex = '-1';
     }
 
     cvcButton?.addEventListener('click', function () {
@@ -44,46 +40,43 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleTooltip(aliasButton, aliasTooltipContent);
     });
 
-    addEventListener(paySecurelyButtonMobile, 'touchstart', function () {
-        refreshFieldAlerts();
+    cobadgingButton?.addEventListener('click', function () {
+        toggleTooltip(cobadgingButton, cobadgingTooltipContent);
     });
 
-    addEventListener(paySecurelyButton, 'click', function () {
-        refreshFieldAlerts();
+    cvcTooltipCloseButton?.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            closeTooltip(cvcButton, cvcTooltipContent);
+        }
     });
 
-    function refreshFieldAlerts() {
-        refreshAlertContent(cardholderNameError);
-        refreshAlertContent(cvcError);
-        refreshAlertContent(cardNumberError);
-    }
-
-    function refreshAlertContent(elementWithErrorMessage) {
-        let message = elementWithErrorMessage.innerHTML;
-        if (message !== "") {
-            elementWithErrorMessage.innerHTML = "";
-            elementWithErrorMessage.innerHTML = message;
+    aliasTooltipCloseButton?.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            closeTooltip(aliasButton, aliasTooltipCloseButton);
         }
-    }
+    });
 
-    function addEventListener(element, event, callback) {
-        element?.addEventListener(event, callback);
-    }
-
-    setDesktopViewHeight();
-
-    function setDesktopViewHeight() {
-        if ((paymentPart.offsetHeight < orderSummary.offsetHeight && mainContent.offsetHeight < orderSummary.offsetHeight) || surchargeTable !== null) {
-            let mainContentHeight = getMainContentHeight();
-            document.documentElement.style.setProperty('--box-height', (mainContentHeight) + 'px');
+    cobadgingTooltipCloseButton?.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            closeTooltip(cobadgingButton, cobadgingTooltipCloseButton);
         }
-    }
+    });
 
-    function getMainContentHeight() {
-        if (surchargeTable !== null) {
-            return mainContent.offsetHeight * 1.1;
-        } else {
-            return orderSummary.offsetHeight + footer.offsetHeight;
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            if (cvcButton?.getAttribute('aria-expanded') === 'true') {
+                closeTooltip(cvcButton, cvcTooltipContent);
+            }
+            if (aliasButton?.getAttribute('aria-expanded') === 'true') {
+                closeTooltip(aliasButton, aliasTooltipContent);
+            }
+            if (cobadgingButton?.getAttribute('aria-expanded') === 'true') {
+                closeTooltip(cobadgingButton, cobadgingTooltipContent);
+            }
         }
-    }
+    });
 });
