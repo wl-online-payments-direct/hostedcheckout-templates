@@ -12,7 +12,7 @@
 </head>
 
 <body class="paysecurely-switch">
-    <main role="main">
+	<main role="main">
 		<div class="container">
 			<div class="row banner">
 				<div class="banner-content">
@@ -127,7 +127,7 @@
 										<span class="payment-status-icon-information-description">&nbsp;<payment-progress-bar-label-success-status /></span>
 									</li>
 									<payment-gift-card-navigation-point>
-                                    <li class="<payment-progress-bar-sep-class /> progress-bar__step--success" >
+										<li class="<payment-progress-bar-sep-class /> progress-bar__step--success" >
 											<payment-progress-bar-gift-card-text />
 											<span class="payment-status-icon-information-description">&nbsp;<payment-progress-bar-label-success-status /></span>
 										</li>
@@ -156,7 +156,7 @@
 								<div class="input-icon">
 									<payment-input-input />
 									<payment-security-code-tooltip />
-                                    <span id="security-code-tooltip-description" class="sr-only"><payment-security-code-tooltip-description /></span>
+									<span id="security-code-tooltip-description" class="sr-only"><payment-security-code-tooltip-description /></span>
 									<span class="payment-input-success"></span>
 									<payment-input-specific-content for="cardnumber">
 										<payment-pm-image class="input-bg" />
@@ -167,7 +167,7 @@
 								</div>
 								<payment-cobadging />
 							</div>
-                            <span id="cobadging-tooltip-description" class="sr-only"><payment-cobadging-tooltip-description/></span>
+							<span id="cobadging-tooltip-description" class="sr-only"><payment-cobadging-tooltip-description/></span>
 						</payment-input-list>
 
 						<div id="payment-gift-card-maxvalue" hidden="hidden" class="row payment-field-container">
@@ -179,7 +179,7 @@
 									</div>
 								</button>
 								<payment-max-amount-info-text />
-                                <span id="giftcard-tooltip-description" class="sr-only"><payment-giftcard-tooltip-description /></span>
+								<span id="giftcard-tooltip-description" class="sr-only"><payment-giftcard-tooltip-description /></span>
 							</div>
 						</div>
 
@@ -205,243 +205,244 @@
 									<payment-alias-input-label />
 									<payment-alias-tooltip tabindex="0" />
 								</div>
-                                <span id="remember-payment-details-tooltip-description" class="sr-only"><payment-remember-payment-details-tooltip-description/></span>
+								<span id="remember-payment-details-tooltip-description" class="sr-only"><payment-remember-payment-details-tooltip-description/></span>
 							</div>
 						</payment-alias-section>
 
-						<div class="order-summary orderpart-mobile">
-							<label id="order-summary-accordion-toggle-label"
-								   for="order-summary-accordion"
-								   class="order-summary__label accordion__label"
-								   aria-label="<payment-total-amount-text /> <payment-currency /> <payment-total-amount />"
-								   aria-expanded="false">
-								<p class="bolder" id="total-amount-label-text"><payment-total-amount-text /></p>
-								<p class="bold price total-amount" id="total-amount-number"><payment-currency />&nbsp;<payment-total-amount /></p>
-							</label>
-							<input type="checkbox"
-								   class="css-hidden accordion__input"
-								   id="order-summary-accordion"
-                               aria-hidden="true"/>
-							<div class="accordion order-summary__content">
-								<div class="row">
-									<h2 class="order__summary-title"><payment-order-overview-text /></h2>
-								</div>
-								<div class="row order-total">
-									<p><payment-total-amount-text />:&nbsp;</p>
-									<p class="total-amount"><payment-currency />&nbsp;<payment-total-amount /></p>
-								</div>
-
-								<payment-surcharge-order-container>
-									<div class="row surcharge-row surcharge-order-container">
-										<payment-surcharge-order-lineitem-text />:
-										<span id="surcharge-amount-cell">
-											<payment-currency />
-											<payment-surcharge-lineitem-displayvalue />
-										</span>
+						<payment-order-summary-content>
+							<div class="order-summary orderpart-mobile">
+								<label id="order-summary-accordion-toggle-label"
+									   for="order-summary-accordion"
+									   class="order-summary__label accordion__label"
+									   aria-label="<payment-total-amount-text /> <payment-currency /> <payment-total-amount />"
+									   aria-expanded="false">
+									<p class="bolder" id="total-amount-label-text"><payment-total-amount-text /></p>
+									<p class="bold price total-amount" id="total-amount-number"><payment-currency />&nbsp;<payment-total-amount /></p>
+								</label>
+								<input type="checkbox"
+									   class="css-hidden accordion__input"
+									   id="order-summary-accordion"
+									   aria-hidden="true"/>
+								<div class="accordion order-summary__content">
+									<div class="row">
+										<h2 class="order__summary-title"><payment-order-overview-text /></h2>
 									</div>
-								</payment-surcharge-order-container>
+									<div class="row order-total">
+										<p><payment-total-amount-text />:&nbsp;</p>
+										<p class="total-amount"><payment-currency />&nbsp;<payment-total-amount /></p>
+									</div>
 
-								<div class="row order-ref order__reference">
-									<p><payment-orderid-text />: <payment-orderid /></p>
-								</div>
-
-								<payment-lineitems class="order__products">
-									<table class="order-summary">
-										<thead class="sr-only">
-											<tr>
-												<th scope="col">Products</th>
-												<th scope="col">Prices</th>
-											</tr>
-										</thead>
-										<tbody>
-											<payment-lineitems-list>
-												<tr>
-													<td>
-														<payment-item-productname />&nbsp;<b>x&nbsp;<payment-item-quantity /></b>
-													</td>
-													<td class="price">
-														<payment-currency />&nbsp;<payment-item-totalamount />
-													</td>
-												</tr>
-											</payment-lineitems-list>
-
-											<payment-surcharge-lineitems-container>
-												<tr class="surcharge-row">
-													<td id="surcharge-lineitem-cell">
-														<payment-surcharge-lineitem-text />
-													</td>
-													<td class="price" id="surcharge-amount-cell">
-														<payment-currency />&nbsp;<payment-surcharge-lineitem-displayvalue />
-													</td>
-												</tr>
-											</payment-surcharge-lineitems-container>
-										</tbody>
-										<tfoot>
-											<payment-subtotal-amount-container>
-												<tr class="footer mobile divider">
-													<td colspan="2"></td>
-												</tr>
-												<tr class="footer subtotal">
-													<td class="bolder"><payment-subtotal-amount-text /></td>
-													<td class="bold price total-amount"><payment-currency />&nbsp;<payment-subtotal-amount /></td>
-												</tr>
-												<payment-global-discount-container>
-													<tr class="footer discount">
-														<td><payment-global-discount-text /></td>
-														<td class="price total-amount"><payment-currency />&nbsp;<payment-global-discount /></td>
-													</tr>
-												</payment-global-discount-container>
-												<payment-shipping-amount-container>
-													<tr class="footer shipping">
-														<td><payment-shipping-amount-text /></td>
-														<td class="price total-amount"><payment-currency />&nbsp;<payment-shipping-amount /></td>
-													</tr>
-												</payment-shipping-amount-container>
-												<tr class="footer desktop divider">
-													<td colspan="2"></td>
-												</tr>
-											</payment-subtotal-amount-container>
-
-											<tr class="footer total-charge">
-												<td class="bolder"><payment-total-amount-text /></td>
-												<td class="bold price total-amount"><payment-currency />&nbsp;<payment-total-amount /></td>
-											</tr>
-										</tfoot>
-									</table>
-								</payment-lineitems>
-
-								<payment-dcc-surcharge-loading-spinner>
-									<div id="dcc-surcharge-spinner" class="dcc-surcharge-loading">
-										<div class="spinner">
-											<!--show spinner segments-->
-											<div></div>
-											<div></div>
-											<div></div>
-											<div></div>
-											<div></div>
-											<div></div>
-											<div></div>
-											<div></div>
-											<div></div>
-											<div></div>
-											<div></div>
-											<div></div>
+									<payment-surcharge-order-container>
+										<div class="row surcharge-row surcharge-order-container">
+											<payment-surcharge-order-lineitem-text />:
+											<span id="surcharge-amount-cell">
+												<payment-currency />
+												<payment-surcharge-lineitem-displayvalue />
+											</span>
 										</div>
+									</payment-surcharge-order-container>
+
+									<div class="row order-ref order__reference">
+										<p><payment-orderid-text />: <payment-orderid /></p>
 									</div>
-								</payment-dcc-surcharge-loading-spinner>
 
-								<payment-dcc-container>
-									<payment-dcc-paymentform-container>
-										<table class="order-summary dcc-input-table">
-											<tbody>
-												<tr class="dcc-row">
-													<td class="dcc-select-currency-cell">
-														<label id="payment-dcc-select-currency-label"><payment-dcc-select-currency-text /></label>
-													</td>
-												</tr>
+									<payment-lineitems class="order__products">
+										<table class="order-summary">
+											<thead class="sr-only">
 												<tr>
-													<td class="error-cell" colspan="2">
-														<div class="error">
-															<span id="payment-dccAcceptedByUser-error"></span>
-														</div>
-													</td>
+													<th scope="col">Products</th>
+													<th scope="col">Prices</th>
 												</tr>
-
-												<payment-dcc-currency-list>
-													<tr class="dcc-row">
-														<td class="dcc-cell">
-															<input type="radio" id="<payment-dcc-currency-radio-id />"
-																   name="payment-dcc-currency-selection" />
-															<label class="dcc-label-mobile" for="<payment-dcc-currency-radio-id />">
-																<payment-dcc-pay-displayvalue />
-																<label class="dcc-label-mobile" id="<payment-dcc-currency-radio-label-id />"
-																	   for="<payment-dcc-currency-radio-id />"></label>
-															</label>
+											</thead>
+											<tbody>
+												<payment-lineitems-list>
+													<tr>
+														<td>
+															<payment-item-productname />&nbsp;<b>x&nbsp;<payment-item-quantity /></b>
+														</td>
+														<td class="price">
+															<payment-currency />&nbsp;<payment-item-totalamount />
 														</td>
 													</tr>
-												</payment-dcc-currency-list>
+												</payment-lineitems-list>
 
-												<tr class="dcc-row">
-													<td colspan="2" class="dcc-exchange-rate-cell">
-														<label id="payment-dcc-exchange-rate-caption"><payment-dcc-exchange-rate-displayvalue /></label>
-														<label id="<payment-dcc-exchange-rate-label-id />"></label><br />
-														<label id="payment-dcc-markup-rate-caption"><payment-dcc-markup-rate-displayvalue /></label>
-														<label id="<payment-dcc-markup-rate-label-id />"></label><br />
-														<label id="<payment-dcc-confirm-statement-label-id />"> <payment-dcc-confirm-statement-displayvalue /></label>
-													</td>
-												</tr>
+												<payment-surcharge-lineitems-container>
+													<tr class="surcharge-row">
+														<td id="surcharge-lineitem-cell">
+															<payment-surcharge-lineitem-text />
+														</td>
+														<td class="price" id="surcharge-amount-cell">
+															<payment-currency />&nbsp;<payment-surcharge-lineitem-displayvalue />
+														</td>
+													</tr>
+												</payment-surcharge-lineitems-container>
 											</tbody>
-										</table>
-									</payment-dcc-paymentform-container>
+											<tfoot>
+												<payment-subtotal-amount-container>
+													<tr class="footer mobile divider">
+														<td colspan="2"></td>
+													</tr>
+													<tr class="footer subtotal">
+														<td class="bolder"><payment-subtotal-amount-text /></td>
+														<td class="bold price total-amount"><payment-currency />&nbsp;<payment-subtotal-amount /></td>
+													</tr>
+													<payment-global-discount-container>
+														<tr class="footer discount">
+															<td><payment-global-discount-text /></td>
+															<td class="price total-amount"><payment-currency />&nbsp;<payment-global-discount /></td>
+														</tr>
+													</payment-global-discount-container>
+													<payment-shipping-amount-container>
+														<tr class="footer shipping">
+															<td><payment-shipping-amount-text /></td>
+															<td class="price total-amount"><payment-currency />&nbsp;<payment-shipping-amount /></td>
+														</tr>
+													</payment-shipping-amount-container>
+													<tr class="footer desktop divider">
+														<td colspan="2"></td>
+													</tr>
+												</payment-subtotal-amount-container>
 
-									<payment-dcc-summary-container>
-										<table class="order-summary dcc-input-table">
+												<tr class="footer total-charge">
+													<td class="bolder"><payment-total-amount-text /></td>
+													<td class="bold price total-amount"><payment-currency />&nbsp;<payment-total-amount /></td>
+												</tr>
+											</tfoot>
+										</table>
+									</payment-lineitems>
+
+									<payment-dcc-surcharge-loading-spinner>
+										<div id="dcc-surcharge-spinner" class="dcc-surcharge-loading">
+											<div class="spinner">
+												<!--show spinner segments-->
+												<div></div>
+												<div></div>
+												<div></div>
+												<div></div>
+												<div></div>
+												<div></div>
+												<div></div>
+												<div></div>
+												<div></div>
+												<div></div>
+												<div></div>
+												<div></div>
+											</div>
+										</div>
+									</payment-dcc-surcharge-loading-spinner>
+
+									<payment-dcc-container>
+										<payment-dcc-paymentform-container>
+											<table class="order-summary dcc-input-table">
+												<tbody>
+													<tr class="dcc-row">
+														<td class="dcc-select-currency-cell">
+															<label id="payment-dcc-select-currency-label"><payment-dcc-select-currency-text /></label>
+														</td>
+													</tr>
+													<tr>
+														<td class="error-cell" colspan="2">
+															<div class="error">
+																<span id="payment-dccAcceptedByUser-error"></span>
+															</div>
+														</td>
+													</tr>
+
+													<payment-dcc-currency-list>
+														<tr class="dcc-row">
+															<td class="dcc-cell">
+																<input type="radio" id="<payment-dcc-currency-radio-id />"
+																	   name="payment-dcc-currency-selection" />
+																<label class="dcc-label-mobile" for="<payment-dcc-currency-radio-id />">
+																	<payment-dcc-pay-displayvalue />
+																	<label class="dcc-label-mobile" id="<payment-dcc-currency-radio-label-id />"
+																		   for="<payment-dcc-currency-radio-id />"></label>
+																</label>
+															</td>
+														</tr>
+													</payment-dcc-currency-list>
+
+													<tr class="dcc-row">
+														<td colspan="2" class="dcc-exchange-rate-cell">
+															<label id="payment-dcc-exchange-rate-caption"><payment-dcc-exchange-rate-displayvalue /></label>
+															<label id="<payment-dcc-exchange-rate-label-id />"></label><br />
+															<label id="payment-dcc-markup-rate-caption"><payment-dcc-markup-rate-displayvalue /></label>
+															<label id="<payment-dcc-markup-rate-label-id />"></label><br />
+															<label id="<payment-dcc-confirm-statement-label-id />"> <payment-dcc-confirm-statement-displayvalue /></label>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</payment-dcc-paymentform-container>
+
+										<payment-dcc-summary-container>
+											<table class="order-summary dcc-input-table">
+												<tbody>
+													<tr class="dcc-summary-row">
+														<td colspan="2" class="dcc-payment-summary-cell">
+															<div>
+																<payment-dcc-summary-cardtype-text />: <payment-dcc-summary-cardtype-displayvalue />
+															</div>
+															<div>
+																<payment-dcc-summary-cardholdername-text />: <payment-dcc-summary-cardholdername-displayvalue />
+															</div>
+															<div>
+																<payment-dcc-summary-transactioncurrency-text />: <payment-dcc-summary-transactioncurrency-displayvalue /> <payment-dcc-summary-transactioncurrencytargetcurrencyamount-displayvalue />
+															</div>
+															<div>
+																<payment-dcc-exchange-rate-displayvalue />: <payment-dcc-summary-exchangerate-displayvalue />
+															</div>
+															<div>
+																<payment-dcc-markup-rate-displayvalue /> <payment-dcc-summary-markup-rate-displayvalue />
+															</div>
+															<div>
+																<payment-dcc-summary-accepted-displayvalue />
+															</div>
+															<div>
+																<payment-dcc-summary-provider-displayvalue />
+															</div>
+															<div><payment-dcc-report /></div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</payment-dcc-summary-container>
+									</payment-dcc-container>
+
+									<payment-splitpayment class="order__products">
+										<table class="order-summary">
 											<tbody>
-												<tr class="dcc-summary-row">
-													<td colspan="2" class="dcc-payment-summary-cell">
-														<div>
-															<payment-dcc-summary-cardtype-text />: <payment-dcc-summary-cardtype-displayvalue />
-														</div>
-														<div>
-															<payment-dcc-summary-cardholdername-text />: <payment-dcc-summary-cardholdername-displayvalue />
-														</div>
-														<div>
-															<payment-dcc-summary-transactioncurrency-text />: <payment-dcc-summary-transactioncurrency-displayvalue /> <payment-dcc-summary-transactioncurrencytargetcurrencyamount-displayvalue />
-														</div>
-														<div>
-															<payment-dcc-exchange-rate-displayvalue />: <payment-dcc-summary-exchangerate-displayvalue />
-														</div>
-														<div>
-															<payment-dcc-markup-rate-displayvalue /> <payment-dcc-summary-markup-rate-displayvalue />
-														</div>
-														<div>
-															<payment-dcc-summary-accepted-displayvalue />
-														</div>
-														<div>
-															<payment-dcc-summary-provider-displayvalue />
-														</div>
-														<div><payment-dcc-report /></div>
-													</td>
-												</tr>
+												<payment-splitpayments-list>
+													<tr>
+														<td>
+															<payment-splitpayment-brand />
+															<span>
+																<payment-splitpayment-gift-card-text />
+															</span>
+														</td>
+														<td class="price">
+															<payment-currency />
+															-<payment-splitpayment-amount />
+														</td>
+													</tr>
+												</payment-splitpayments-list>
 											</tbody>
-										</table>
-									</payment-dcc-summary-container>
-								</payment-dcc-container>
-
-								<payment-splitpayment class="order__products">
-									<table class="order-summary">
-										<tbody>
-											<payment-splitpayments-list>
+											<tfoot>
 												<tr>
 													<td>
-														<payment-splitpayment-brand />
-														<span>
-															<payment-splitpayment-gift-card-text />
-														</span>
+														<payment-remaining-amount-text />
 													</td>
 													<td class="price">
 														<payment-currency />
-														-<payment-splitpayment-amount />
+														<payment-remaining-amount />
 													</td>
 												</tr>
-											</payment-splitpayments-list>
-										</tbody>
-										<tfoot>
-											<tr>
-												<td>
-													<payment-remaining-amount-text />
-												</td>
-												<td class="price">
-													<payment-currency />
-													<payment-remaining-amount />
-												</td>
-											</tr>
-										</tfoot>
-									</table>
-								</payment-splitpayment>
+											</tfoot>
+										</table>
+									</payment-splitpayment>
+								</div>
 							</div>
-						</div>
-
+						</payment-order-summary-content>
 						<div id="payment-submit-field-container" class="row">
 							<payment-submit-button class="button button--raised button--secure" />
 
@@ -618,496 +619,498 @@
 					<div class="clear"></div>
 				</payment-split-payment-status-page>
 			</div>
-			<div class="order-summary orderpart-mobile" id="paymentmethod-selection-order-summary-mobile">
-				<label id="order-summary-accordion-toggle-label"
-					   for="order-summary-accordion"
-					   aria-expanded="false"
-					   aria-controls="order-summary-accordion-content"
-					   tabindex="0"
-					   role="button"
-					   class="order-summary__label accordion__label">
-					<span class="bolder"><payment-total-amount-text /></span>
-					<span class="bold price total-amount"><payment-currency />&nbsp;<payment-total-amount /></span>
-				</label>
-				<input type="checkbox"
-					   tabindex="-1"
-					   class="css-hidden accordion__input"
-					   id="order-summary-accordion"
-					   aria-hidden="true" />
-				<div class="accordion order-summary__content" id="order-summary-accordion-content">
-					<div class="row">
-						<h2 class="order__summary-title"><payment-order-overview-text /></h2>
-					</div>
-					<div class="row order-total">
-						<p><payment-total-amount-text />:&nbsp;</p>
-						<p class="total-amount"><payment-currency />&nbsp;<payment-total-amount /></p>
-					</div>
-
-					<payment-surcharge-order-container>
-						<div class="row surcharge-row surcharge-order-container">
-							<payment-surcharge-order-lineitem-text />:
-							<span id="surcharge-amount-cell">
-								<payment-currency />
-								<payment-surcharge-lineitem-displayvalue />
-							</span>
+			<payment-order-summary-content>
+				<div class="order-summary orderpart-mobile" id="paymentmethod-selection-order-summary-mobile">
+					<label id="order-summary-accordion-toggle-label"
+						   for="order-summary-accordion"
+						   aria-expanded="false"
+						   aria-controls="order-summary-accordion-content"
+						   tabindex="0"
+						   role="button"
+						   class="order-summary__label accordion__label">
+						<span class="bolder"><payment-total-amount-text /></span>
+						<span class="bold price total-amount"><payment-currency />&nbsp;<payment-total-amount /></span>
+					</label>
+					<input type="checkbox"
+						   tabindex="-1"
+						   class="css-hidden accordion__input"
+						   id="order-summary-accordion"
+						   aria-hidden="true" />
+					<div class="accordion order-summary__content" id="order-summary-accordion-content">
+						<div class="row">
+							<h2 class="order__summary-title"><payment-order-overview-text /></h2>
 						</div>
-					</payment-surcharge-order-container>
+						<div class="row order-total">
+							<p><payment-total-amount-text />:&nbsp;</p>
+							<p class="total-amount"><payment-currency />&nbsp;<payment-total-amount /></p>
+						</div>
 
-					<div class="row order-ref order__reference">
-                        <p><payment-orderid-text />: <payment-orderid /></p>
-					</div>
-
-					<payment-lineitems class="order__products">
-						<table class="order-summary">
-							<thead class="sr-only">
-								<tr>
-									<th scope="col">Products</th>
-									<th scope="col">Prices</th>
-								</tr>
-							</thead>
-							<tbody>
-								<payment-lineitems-list>
-									<tr>
-										<td>
-											<payment-item-productname />&nbsp;<b>x&nbsp;<payment-item-quantity /></b>
-										</td>
-										<td class="price">
-											<payment-currency />&nbsp;<payment-item-totalamount />
-										</td>
-									</tr>
-								</payment-lineitems-list>
-
-								<payment-surcharge-lineitems-container>
-									<tr class="surcharge-row">
-										<td id="surcharge-lineitem-cell">
-											<payment-surcharge-lineitem-text />
-										</td>
-										<td class="price" id="surcharge-amount-cell">
-											<payment-currency />&nbsp;<payment-surcharge-lineitem-displayvalue />
-										</td>
-									</tr>
-								</payment-surcharge-lineitems-container>
-							</tbody>
-							<tfoot>
-								<payment-subtotal-amount-container>
-									<tr class="footer mobile divider">
-										<td colspan="2"></td>
-									</tr>
-									<tr class="footer subtotal">
-										<td class="bolder"><payment-subtotal-amount-text /></td>
-										<td class="bold price total-amount"><payment-currency />&nbsp;<payment-subtotal-amount /></td>
-									</tr>
-									<payment-global-discount-container>
-										<tr class="footer discount">
-											<td><payment-global-discount-text /></td>
-											<td class="price total-amount"><payment-currency />&nbsp;<payment-global-discount /></td>
-										</tr>
-									</payment-global-discount-container>
-									<payment-shipping-amount-container>
-										<tr class="footer shipping">
-											<td><payment-shipping-amount-text /></td>
-											<td class="price total-amount"><payment-currency />&nbsp;<payment-shipping-amount /></td>
-										</tr>
-									</payment-shipping-amount-container>
-									<tr class="footer desktop divider">
-										<td colspan="2"></td>
-									</tr>
-								</payment-subtotal-amount-container>
-
-								<tr class="footer total-charge">
-									<td class="bolder"><payment-total-amount-text /></td>
-									<td class="bold price total-amount"><payment-currency />&nbsp;<payment-total-amount /></td>
-								</tr>
-							</tfoot>
-						</table>
-					</payment-lineitems>
-
-					<payment-dcc-surcharge-loading-spinner>
-						<div id="dcc-surcharge-spinner" class="dcc-surcharge-loading">
-							<div class="spinner">
-								<!--show spinner segments-->
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
+						<payment-surcharge-order-container>
+							<div class="row surcharge-row surcharge-order-container">
+								<payment-surcharge-order-lineitem-text />:
+								<span id="surcharge-amount-cell">
+									<payment-currency />
+									<payment-surcharge-lineitem-displayvalue />
+								</span>
 							</div>
+						</payment-surcharge-order-container>
+
+						<div class="row order-ref order__reference">
+							<p><payment-orderid-text />: <payment-orderid /></p>
 						</div>
-					</payment-dcc-surcharge-loading-spinner>
 
-					<payment-dcc-container>
-						<payment-dcc-paymentform-container>
-							<table class="order-summary dcc-input-table">
-								<tbody>
-									<tr class="dcc-row">
-										<td class="dcc-select-currency-cell">
-											<label id="payment-dcc-select-currency-label"><payment-dcc-select-currency-text /></label>
-										</td>
-									</tr>
+						<payment-lineitems class="order__products">
+							<table class="order-summary">
+								<thead class="sr-only">
 									<tr>
-										<td class="error-cell" colspan="2">
-											<div class="error">
-												<span id="payment-dccAcceptedByUser-error"></span>
-											</div>
-										</td>
+										<th scope="col">Products</th>
+										<th scope="col">Prices</th>
 									</tr>
-
-									<payment-dcc-currency-list>
-										<tr class="dcc-row">
-											<td class="dcc-cell">
-												<input type="radio" id="<payment-dcc-currency-radio-id />"
-													   name="payment-dcc-currency-selection" />
-												<label for="<payment-dcc-currency-radio-id />">
-													<payment-dcc-pay-displayvalue />
-													<label id="<payment-dcc-currency-radio-label-id />"
-														   for="<payment-dcc-currency-radio-id />"></label>
-												</label>
+								</thead>
+								<tbody>
+									<payment-lineitems-list>
+										<tr>
+											<td>
+												<payment-item-productname />&nbsp;<b>x&nbsp;<payment-item-quantity /></b>
+											</td>
+											<td class="price">
+												<payment-currency />&nbsp;<payment-item-totalamount />
 											</td>
 										</tr>
-									</payment-dcc-currency-list>
+									</payment-lineitems-list>
 
-									<tr class="dcc-row">
-										<td colspan="2" class="dcc-exchange-rate-cell">
-											<label id="payment-dcc-exchange-rate-caption"><payment-dcc-exchange-rate-displayvalue /></label>
-											<label id="<payment-dcc-exchange-rate-label-id />"></label><br />
-											<label id="payment-dcc-markup-rate-caption"><payment-dcc-markup-rate-displayvalue /></label>
-											<label id="<payment-dcc-markup-rate-label-id />"></label><br />
-											<label id="<payment-dcc-confirm-statement-label-id />"> <payment-dcc-confirm-statement-displayvalue /></label>
-										</td>
-									</tr>
+									<payment-surcharge-lineitems-container>
+										<tr class="surcharge-row">
+											<td id="surcharge-lineitem-cell">
+												<payment-surcharge-lineitem-text />
+											</td>
+											<td class="price" id="surcharge-amount-cell">
+												<payment-currency />&nbsp;<payment-surcharge-lineitem-displayvalue />
+											</td>
+										</tr>
+									</payment-surcharge-lineitems-container>
 								</tbody>
-							</table>
-						</payment-dcc-paymentform-container>
+								<tfoot>
+									<payment-subtotal-amount-container>
+										<tr class="footer mobile divider">
+											<td colspan="2"></td>
+										</tr>
+										<tr class="footer subtotal">
+											<td class="bolder"><payment-subtotal-amount-text /></td>
+											<td class="bold price total-amount"><payment-currency />&nbsp;<payment-subtotal-amount /></td>
+										</tr>
+										<payment-global-discount-container>
+											<tr class="footer discount">
+												<td><payment-global-discount-text /></td>
+												<td class="price total-amount"><payment-currency />&nbsp;<payment-global-discount /></td>
+											</tr>
+										</payment-global-discount-container>
+										<payment-shipping-amount-container>
+											<tr class="footer shipping">
+												<td><payment-shipping-amount-text /></td>
+												<td class="price total-amount"><payment-currency />&nbsp;<payment-shipping-amount /></td>
+											</tr>
+										</payment-shipping-amount-container>
+										<tr class="footer desktop divider">
+											<td colspan="2"></td>
+										</tr>
+									</payment-subtotal-amount-container>
 
-						<payment-dcc-summary-container>
-							<table class="order-summary dcc-input-table">
+									<tr class="footer total-charge">
+										<td class="bolder"><payment-total-amount-text /></td>
+										<td class="bold price total-amount"><payment-currency />&nbsp;<payment-total-amount /></td>
+									</tr>
+								</tfoot>
+							</table>
+						</payment-lineitems>
+
+						<payment-dcc-surcharge-loading-spinner>
+							<div id="dcc-surcharge-spinner" class="dcc-surcharge-loading">
+								<div class="spinner">
+									<!--show spinner segments-->
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+								</div>
+							</div>
+						</payment-dcc-surcharge-loading-spinner>
+
+						<payment-dcc-container>
+							<payment-dcc-paymentform-container>
+								<table class="order-summary dcc-input-table">
+									<tbody>
+										<tr class="dcc-row">
+											<td class="dcc-select-currency-cell">
+												<label id="payment-dcc-select-currency-label"><payment-dcc-select-currency-text /></label>
+											</td>
+										</tr>
+										<tr>
+											<td class="error-cell" colspan="2">
+												<div class="error">
+													<span id="payment-dccAcceptedByUser-error"></span>
+												</div>
+											</td>
+										</tr>
+
+										<payment-dcc-currency-list>
+											<tr class="dcc-row">
+												<td class="dcc-cell">
+													<input type="radio" id="<payment-dcc-currency-radio-id />"
+														   name="payment-dcc-currency-selection" />
+													<label for="<payment-dcc-currency-radio-id />">
+														<payment-dcc-pay-displayvalue />
+														<label id="<payment-dcc-currency-radio-label-id />"
+															   for="<payment-dcc-currency-radio-id />"></label>
+													</label>
+												</td>
+											</tr>
+										</payment-dcc-currency-list>
+
+										<tr class="dcc-row">
+											<td colspan="2" class="dcc-exchange-rate-cell">
+												<label id="payment-dcc-exchange-rate-caption"><payment-dcc-exchange-rate-displayvalue /></label>
+												<label id="<payment-dcc-exchange-rate-label-id />"></label><br />
+												<label id="payment-dcc-markup-rate-caption"><payment-dcc-markup-rate-displayvalue /></label>
+												<label id="<payment-dcc-markup-rate-label-id />"></label><br />
+												<label id="<payment-dcc-confirm-statement-label-id />"> <payment-dcc-confirm-statement-displayvalue /></label>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</payment-dcc-paymentform-container>
+
+							<payment-dcc-summary-container>
+								<table class="order-summary dcc-input-table">
+									<tbody>
+										<tr class="dcc-summary-row">
+											<td colspan="2" class="dcc-payment-summary-cell">
+												<div>
+													<payment-dcc-summary-cardtype-text />: <payment-dcc-summary-cardtype-displayvalue />
+												</div>
+												<div>
+													<payment-dcc-summary-cardholdername-text />: <payment-dcc-summary-cardholdername-displayvalue />
+												</div>
+												<div>
+													<payment-dcc-summary-transactioncurrency-text />: <payment-dcc-summary-transactioncurrency-displayvalue /> <payment-dcc-summary-transactioncurrencytargetcurrencyamount-displayvalue />
+												</div>
+												<div>
+													<payment-dcc-exchange-rate-displayvalue />: <payment-dcc-summary-exchangerate-displayvalue />
+												</div>
+												<div>
+													<payment-dcc-markup-rate-displayvalue /> <payment-dcc-summary-markup-rate-displayvalue />
+												</div>
+												<div>
+													<payment-dcc-summary-accepted-displayvalue />
+												</div>
+												<div>
+													<payment-dcc-summary-provider-displayvalue />
+												</div>
+												<div><payment-dcc-report /></div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</payment-dcc-summary-container>
+						</payment-dcc-container>
+
+						<payment-splitpayment class="order__products">
+							<table class="order-summary">
 								<tbody>
-									<tr class="dcc-summary-row">
-										<td colspan="2" class="dcc-payment-summary-cell">
-											<div>
-												<payment-dcc-summary-cardtype-text />: <payment-dcc-summary-cardtype-displayvalue />
-											</div>
-											<div>
-												<payment-dcc-summary-cardholdername-text />: <payment-dcc-summary-cardholdername-displayvalue />
-											</div>
-											<div>
-												<payment-dcc-summary-transactioncurrency-text />: <payment-dcc-summary-transactioncurrency-displayvalue /> <payment-dcc-summary-transactioncurrencytargetcurrencyamount-displayvalue />
-											</div>
-											<div>
-												<payment-dcc-exchange-rate-displayvalue />: <payment-dcc-summary-exchangerate-displayvalue />
-											</div>
-											<div>
-												<payment-dcc-markup-rate-displayvalue /> <payment-dcc-summary-markup-rate-displayvalue />
-											</div>
-											<div>
-												<payment-dcc-summary-accepted-displayvalue />
-											</div>
-											<div>
-												<payment-dcc-summary-provider-displayvalue />
-											</div>
-											<div><payment-dcc-report /></div>
-										</td>
-									</tr>
+									<payment-splitpayments-list>
+										<tr>
+											<td>
+												<payment-splitpayment-brand />
+												<span>
+													<payment-splitpayment-gift-card-text />
+												</span>
+											</td>
+											<td class="price">
+												<payment-currency />
+												-<payment-splitpayment-amount />
+											</td>
+										</tr>
+									</payment-splitpayments-list>
 								</tbody>
-							</table>
-						</payment-dcc-summary-container>
-					</payment-dcc-container>
-
-					<payment-splitpayment class="order__products">
-						<table class="order-summary">
-							<tbody>
-								<payment-splitpayments-list>
+								<tfoot>
 									<tr>
 										<td>
-											<payment-splitpayment-brand />
-											<span>
-												<payment-splitpayment-gift-card-text />
-											</span>
+											<payment-remaining-amount-text />
 										</td>
 										<td class="price">
 											<payment-currency />
-											-<payment-splitpayment-amount />
+											<payment-remaining-amount />
 										</td>
 									</tr>
-								</payment-splitpayments-list>
-							</tbody>
-							<tfoot>
-								<tr>
-									<td>
-										<payment-remaining-amount-text />
-									</td>
-									<td class="price">
-										<payment-currency />
-										<payment-remaining-amount />
-									</td>
-								</tr>
-							</tfoot>
-						</table>
-					</payment-splitpayment>
+								</tfoot>
+							</table>
+						</payment-splitpayment>
+					</div>
+				</div>
+				<div id="buttons-part-mobile">
+					<payment-proceed-to-payment />
+					<payment-cancel-button-mobile />
+				</div>
+				<div class="order-summary orderpart">
+					<input type="checkbox"
+						   class="css-hidden accordion__input"
+						   id="order-summary-accordion"
+						   aria-hidden="true"/>
+					<div class="accordion order-summary__content">
+						<div class="row">
+							<h2 class="order__summary-title"><payment-order-overview-text /></h2>
+						</div>
+						<div class="row order-total">
+							<p><payment-total-amount-text />:&nbsp;</p>
+							<p class="total-amount"><payment-currency />&nbsp;<payment-total-amount /></p>
+						</div>
+
+						<payment-surcharge-order-container>
+							<div class="row surcharge-row surcharge-order-container">
+								<payment-surcharge-order-lineitem-text />:
+								<span id="surcharge-amount-cell">
+									<payment-currency />
+									<payment-surcharge-lineitem-displayvalue />
+								</span>
+							</div>
+						</payment-surcharge-order-container>
+
+						<div class="row order-ref order__reference">
+							<p><payment-orderid-text />: <payment-orderid /></p>
+						</div>
+
+						<payment-lineitems class="order__products">
+							<table class="order-summary">
+								<thead class="sr-only">
+									<tr>
+										<th scope="col">Products</th>
+										<th scope="col">Prices</th>
+									</tr>
+								</thead>
+								<tbody>
+									<payment-lineitems-list>
+										<tr>
+											<td>
+												<payment-item-productname />&nbsp;<b>x&nbsp;<payment-item-quantity /></b>
+											</td>
+											<td class="price">
+												<payment-currency />&nbsp;<payment-item-totalamount />
+											</td>
+										</tr>
+									</payment-lineitems-list>
+
+									<payment-surcharge-lineitems-container>
+										<tr class="surcharge-row">
+											<td id="surcharge-lineitem-cell">
+												<payment-surcharge-lineitem-text />
+											</td>
+											<td class="price" id="surcharge-amount-cell">
+												<payment-currency />&nbsp;<payment-surcharge-lineitem-displayvalue />
+											</td>
+										</tr>
+									</payment-surcharge-lineitems-container>
+								</tbody>
+								<tfoot>
+									<payment-subtotal-amount-container>
+										<tr class="footer mobile divider">
+											<td colspan="2"></td>
+										</tr>
+										<tr class="footer subtotal">
+											<td class="bolder"><payment-subtotal-amount-text /></td>
+											<td class="bold price total-amount"><payment-currency />&nbsp;<payment-subtotal-amount /></td>
+										</tr>
+										<payment-global-discount-container>
+											<tr class="footer discount">
+												<td><payment-global-discount-text /></td>
+												<td class="price total-amount"><payment-currency />&nbsp;<payment-global-discount /></td>
+											</tr>
+										</payment-global-discount-container>
+										<payment-shipping-amount-container>
+											<tr class="footer shipping">
+												<td><payment-shipping-amount-text /></td>
+												<td class="price total-amount"><payment-currency />&nbsp;<payment-shipping-amount /></td>
+											</tr>
+										</payment-shipping-amount-container>
+										<tr class="footer desktop divider">
+											<td colspan="2"></td>
+										</tr>
+									</payment-subtotal-amount-container>
+
+									<tr class="footer total-charge">
+										<td class="bolder"><payment-total-amount-text /></td>
+										<td class="bold price total-amount"><payment-currency />&nbsp;<payment-total-amount /></td>
+									</tr>
+								</tfoot>
+							</table>
+						</payment-lineitems>
+
+						<payment-dcc-surcharge-loading-spinner>
+							<div id="dcc-surcharge-spinner" class="dcc-surcharge-loading">
+								<div class="spinner">
+									<!--show spinner segments-->
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+								</div>
+							</div>
+						</payment-dcc-surcharge-loading-spinner>
+
+						<payment-dcc-container>
+							<payment-dcc-paymentform-container>
+								<table class="order-summary dcc-input-table">
+									<tbody>
+										<tr class="dcc-row">
+											<td class="dcc-select-currency-cell">
+												<label id="payment-dcc-select-currency-label"><payment-dcc-select-currency-text /></label>
+											</td>
+										</tr>
+										<tr>
+											<td class="error-cell" colspan="2">
+												<div class="error">
+													<span id="payment-dccAcceptedByUser-error"></span>
+												</div>
+											</td>
+										</tr>
+
+										<payment-dcc-currency-list>
+											<tr class="dcc-row">
+												<td class="dcc-cell">
+													<input type="radio" id="<payment-dcc-currency-radio-id />"
+														   name="payment-dcc-currency-selection" />
+													<label for="<payment-dcc-currency-radio-id />">
+														<payment-dcc-pay-displayvalue />
+														<label id="<payment-dcc-currency-radio-label-id />"
+															   for="<payment-dcc-currency-radio-id />"></label>
+													</label>
+												</td>
+											</tr>
+										</payment-dcc-currency-list>
+
+										<tr class="dcc-row">
+											<td colspan="2" class="dcc-exchange-rate-cell">
+												<label id="payment-dcc-exchange-rate-caption"><payment-dcc-exchange-rate-displayvalue /></label>
+												<label id="<payment-dcc-exchange-rate-label-id />"></label><br />
+												<label id="payment-dcc-markup-rate-caption"><payment-dcc-markup-rate-displayvalue /></label>
+												<label id="<payment-dcc-markup-rate-label-id />"></label><br />
+												<label id="<payment-dcc-confirm-statement-label-id />"> <payment-dcc-confirm-statement-displayvalue /></label>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</payment-dcc-paymentform-container>
+
+							<payment-dcc-summary-container>
+								<table class="order-summary dcc-input-table">
+									<tbody>
+										<tr class="dcc-summary-row">
+											<td colspan="2" class="dcc-payment-summary-cell">
+												<div>
+													<payment-dcc-summary-cardtype-text />: <payment-dcc-summary-cardtype-displayvalue />
+												</div>
+												<div>
+													<payment-dcc-summary-cardholdername-text />: <payment-dcc-summary-cardholdername-displayvalue />
+												</div>
+												<div>
+													<payment-dcc-summary-transactioncurrency-text />: <payment-dcc-summary-transactioncurrency-displayvalue /> <payment-dcc-summary-transactioncurrencytargetcurrencyamount-displayvalue />
+												</div>
+												<div>
+													<payment-dcc-exchange-rate-displayvalue />: <payment-dcc-summary-exchangerate-displayvalue />
+												</div>
+												<div>
+													<payment-dcc-markup-rate-displayvalue /> <payment-dcc-summary-markup-rate-displayvalue />
+												</div>
+												<div>
+													<payment-dcc-summary-accepted-displayvalue />
+												</div>
+												<div>
+													<payment-dcc-summary-provider-displayvalue />
+												</div>
+												<div><payment-dcc-report /></div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</payment-dcc-summary-container>
+						</payment-dcc-container>
+
+						<payment-splitpayment class="order__products">
+							<table class="order-summary">
+								<tbody>
+									<payment-splitpayments-list>
+										<tr>
+											<td>
+												<payment-splitpayment-brand />
+												<span>
+													<payment-splitpayment-gift-card-text />
+												</span>
+											</td>
+											<td class="price">
+												<payment-currency />
+												-<payment-splitpayment-amount />
+											</td>
+										</tr>
+									</payment-splitpayments-list>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td>
+											<payment-remaining-amount-text />
+										</td>
+										<td class="price">
+											<payment-currency />
+											<payment-remaining-amount />
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+						</payment-splitpayment>
+
+						<payment-submit-switch />
+						<payment-proceed-to-payment />
+						<payment-cancel-button />
+					</div>
+					<label for="order-summary-accordion"
+						   class="order-summary__label accordion__label">
+						<span class="bolder"><payment-total-amount-text /></span>
+						<span class="bold price total-amount"><payment-currency />&nbsp;<payment-total-amount /></span>
+					</label>
+				</div>
+			</payment-order-summary-content>
+		</div>
+		<footer role="contentinfo">
+			<div class="u-full-width center footer">
+				<div class="content">
+					<div class="row">
+						<p class="footer__processed-legend">
+							<payment-processedby-text />
+						</p>
+						<payment-processed-img />
+					</div>
+					<div class="row">
+						<payment-about-link /><payment-privacy-policy-link /><payment-security-link /><payment-legal-info-link />
+					</div>
+					<div class="clear"></div>
 				</div>
 			</div>
-			<div id="buttons-part-mobile">
-				<payment-proceed-to-payment />
-				<payment-cancel-button-mobile />
-			</div>
-			<div class="order-summary orderpart">
-				<input type="checkbox"
-					   class="css-hidden accordion__input"
-					   id="order-summary-accordion"
-				   aria-hidden="true"/>
-				<div class="accordion order-summary__content">
-					<div class="row">
-						<h2 class="order__summary-title"><payment-order-overview-text /></h2>
-					</div>
-					<div class="row order-total">
-						<p><payment-total-amount-text />:&nbsp;</p>
-						<p class="total-amount"><payment-currency />&nbsp;<payment-total-amount /></p>
-					</div>
-
-					<payment-surcharge-order-container>
-						<div class="row surcharge-row surcharge-order-container">
-							<payment-surcharge-order-lineitem-text />:
-							<span id="surcharge-amount-cell">
-								<payment-currency />
-								<payment-surcharge-lineitem-displayvalue />
-							</span>
-						</div>
-					</payment-surcharge-order-container>
-
-					<div class="row order-ref order__reference">
-                        <p><payment-orderid-text />: <payment-orderid /></p>
-					</div>
-
-					<payment-lineitems class="order__products">
-						<table class="order-summary">
-							<thead class="sr-only">
-								<tr>
-									<th scope="col">Products</th>
-									<th scope="col">Prices</th>
-								</tr>
-							</thead>
-							<tbody>
-								<payment-lineitems-list>
-									<tr>
-										<td>
-											<payment-item-productname />&nbsp;<b>x&nbsp;<payment-item-quantity /></b>
-										</td>
-										<td class="price">
-											<payment-currency />&nbsp;<payment-item-totalamount />
-										</td>
-									</tr>
-								</payment-lineitems-list>
-
-								<payment-surcharge-lineitems-container>
-									<tr class="surcharge-row">
-										<td id="surcharge-lineitem-cell">
-											<payment-surcharge-lineitem-text />
-										</td>
-										<td class="price" id="surcharge-amount-cell">
-											<payment-currency />&nbsp;<payment-surcharge-lineitem-displayvalue />
-										</td>
-									</tr>
-								</payment-surcharge-lineitems-container>
-							</tbody>
-							<tfoot>
-								<payment-subtotal-amount-container>
-									<tr class="footer mobile divider">
-										<td colspan="2"></td>
-									</tr>
-									<tr class="footer subtotal">
-										<td class="bolder"><payment-subtotal-amount-text /></td>
-										<td class="bold price total-amount"><payment-currency />&nbsp;<payment-subtotal-amount /></td>
-									</tr>
-									<payment-global-discount-container>
-										<tr class="footer discount">
-											<td><payment-global-discount-text /></td>
-											<td class="price total-amount"><payment-currency />&nbsp;<payment-global-discount /></td>
-										</tr>
-									</payment-global-discount-container>
-									<payment-shipping-amount-container>
-										<tr class="footer shipping">
-											<td><payment-shipping-amount-text /></td>
-											<td class="price total-amount"><payment-currency />&nbsp;<payment-shipping-amount /></td>
-										</tr>
-									</payment-shipping-amount-container>
-									<tr class="footer desktop divider">
-										<td colspan="2"></td>
-									</tr>
-								</payment-subtotal-amount-container>
-
-								<tr class="footer total-charge">
-									<td class="bolder"><payment-total-amount-text /></td>
-									<td class="bold price total-amount"><payment-currency />&nbsp;<payment-total-amount /></td>
-								</tr>
-							</tfoot>
-						</table>
-					</payment-lineitems>
-
-					<payment-dcc-surcharge-loading-spinner>
-						<div id="dcc-surcharge-spinner" class="dcc-surcharge-loading">
-							<div class="spinner">
-								<!--show spinner segments-->
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-							</div>
-						</div>
-					</payment-dcc-surcharge-loading-spinner>
-
-					<payment-dcc-container>
-						<payment-dcc-paymentform-container>
-							<table class="order-summary dcc-input-table">
-								<tbody>
-									<tr class="dcc-row">
-										<td class="dcc-select-currency-cell">
-											<label id="payment-dcc-select-currency-label"><payment-dcc-select-currency-text /></label>
-										</td>
-									</tr>
-									<tr>
-										<td class="error-cell" colspan="2">
-											<div class="error">
-												<span id="payment-dccAcceptedByUser-error"></span>
-											</div>
-										</td>
-									</tr>
-
-									<payment-dcc-currency-list>
-										<tr class="dcc-row">
-											<td class="dcc-cell">
-												<input type="radio" id="<payment-dcc-currency-radio-id />"
-													   name="payment-dcc-currency-selection" />
-												<label for="<payment-dcc-currency-radio-id />">
-													<payment-dcc-pay-displayvalue />
-													<label id="<payment-dcc-currency-radio-label-id />"
-														   for="<payment-dcc-currency-radio-id />"></label>
-												</label>
-											</td>
-										</tr>
-									</payment-dcc-currency-list>
-
-									<tr class="dcc-row">
-										<td colspan="2" class="dcc-exchange-rate-cell">
-											<label id="payment-dcc-exchange-rate-caption"><payment-dcc-exchange-rate-displayvalue /></label>
-											<label id="<payment-dcc-exchange-rate-label-id />"></label><br />
-											<label id="payment-dcc-markup-rate-caption"><payment-dcc-markup-rate-displayvalue /></label>
-											<label id="<payment-dcc-markup-rate-label-id />"></label><br />
-											<label id="<payment-dcc-confirm-statement-label-id />"> <payment-dcc-confirm-statement-displayvalue /></label>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</payment-dcc-paymentform-container>
-
-						<payment-dcc-summary-container>
-							<table class="order-summary dcc-input-table">
-								<tbody>
-									<tr class="dcc-summary-row">
-										<td colspan="2" class="dcc-payment-summary-cell">
-											<div>
-												<payment-dcc-summary-cardtype-text />: <payment-dcc-summary-cardtype-displayvalue />
-											</div>
-											<div>
-												<payment-dcc-summary-cardholdername-text />: <payment-dcc-summary-cardholdername-displayvalue />
-											</div>
-											<div>
-												<payment-dcc-summary-transactioncurrency-text />: <payment-dcc-summary-transactioncurrency-displayvalue /> <payment-dcc-summary-transactioncurrencytargetcurrencyamount-displayvalue />
-											</div>
-											<div>
-												<payment-dcc-exchange-rate-displayvalue />: <payment-dcc-summary-exchangerate-displayvalue />
-											</div>
-											<div>
-												<payment-dcc-markup-rate-displayvalue /> <payment-dcc-summary-markup-rate-displayvalue />
-											</div>
-											<div>
-												<payment-dcc-summary-accepted-displayvalue />
-											</div>
-											<div>
-												<payment-dcc-summary-provider-displayvalue />
-											</div>
-											<div><payment-dcc-report /></div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</payment-dcc-summary-container>
-					</payment-dcc-container>
-
-					<payment-splitpayment class="order__products">
-						<table class="order-summary">
-							<tbody>
-								<payment-splitpayments-list>
-									<tr>
-										<td>
-											<payment-splitpayment-brand />
-											<span>
-												<payment-splitpayment-gift-card-text />
-											</span>
-										</td>
-										<td class="price">
-											<payment-currency />
-											-<payment-splitpayment-amount />
-										</td>
-									</tr>
-								</payment-splitpayments-list>
-							</tbody>
-							<tfoot>
-								<tr>
-									<td>
-										<payment-remaining-amount-text />
-									</td>
-									<td class="price">
-										<payment-currency />
-										<payment-remaining-amount />
-									</td>
-								</tr>
-							</tfoot>
-                        </table>
-                    </payment-splitpayment>
-
-                <payment-submit-switch />
-                <payment-proceed-to-payment />
-                <payment-cancel-button />
-                </div>
-                <label for="order-summary-accordion"
-                       class="order-summary__label accordion__label">
-                    <span class="bolder"><payment-total-amount-text /></span>
-                    <span class="bold price total-amount"><payment-currency />&nbsp;<payment-total-amount /></span>
-                </label>
-                </div>
-                </div>
-                <footer role="contentinfo">
-                    <div class="u-full-width center footer">
-                        <div class="content">
-                            <div class="row">
-                                <p class="footer__processed-legend">
-                                    <payment-processedby-text />
-                                </p>
-                                <payment-processed-img />
-                            </div>
-                            <div class="row">
-                                <payment-about-link /><payment-privacy-policy-link /><payment-security-link /><payment-legal-info-link />
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                </footer>
-                <script src="<payment-tp-resource-file name=script.js />"></script>
+		</footer>
+		<script src="<payment-tp-resource-file name=script.js />"></script>
 	</main>
 </body>
 </html>

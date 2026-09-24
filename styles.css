@@ -1164,29 +1164,20 @@ form #input_bancontactlogo {
 
 form.payment-paymentmethodform select.payment-select#payment-cardexpirationmonth {
     float: left;
-    width: calc(50% - 4px);
+    max-width: 55%;
 }
 
 form.payment-paymentmethodform input.payment-input#payment-cardexpirationmonth {
     float: left;
-    width: calc(50% - 4px);
-}
-
-form.payment-paymentmethodform label.payment-label#payment-cardexpirationmonth-label {
-    float: left;
+    max-width: 55%;
 }
 
 form.payment-paymentmethodform select.payment-select#payment-cardexpirationyear {
     float: right;
-    width: calc(50% - 4px);
+    width: 44%;
 }
 
 form.payment-paymentmethodform input.payment-input#payment-cardexpirationyear {
     float: right;
-    width: calc(50% - 4px);
-}
-
-form.payment-paymentmethodform label.payment-label#payment-cardexpirationyear-label {
-    float: right;
-    width: calc(50% - 4px);
+    width: 44%;
 }
