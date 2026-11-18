@@ -801,13 +801,22 @@ form select, #payment-cardexpirationyear, #payment-cardexpirationmonth {
     width: 48.5%;
     padding: 14px 16px;
 }
-
 #payment-cardexpirationmonth-label {
+  float: left;
+  width: 55%;
+}
+
+#payment-cardexpirationyear-label {
+  float: right;
+  width: 44%;
+}
+
+form.payment-paymentmethodform label.payment-label#payment-cardexpirationmonth-label {
     float: left;
     width: 55%;
 }
 
-#payment-cardexpirationyear-label {
+form.payment-paymentmethodform label.payment-label#payment-cardexpirationyear-label {
     float: right;
     width: 44%;
 }
